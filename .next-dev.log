@@ -1,0 +1,18 @@
+
+> mksaas-template@0.1.0 dev /Users/qiaoyang/projects/chronnote/chronnote-websiteV2
+> next dev -p 8888
+
+[MDX] updated map file in 8.270833000000039ms
+[MDX] started dev server
+ ⨯ Failed to start server
+Error: listen EPERM: operation not permitted 0.0.0.0:8888
+    at <unknown> (Error: listen EPERM: operation not permitted 0.0.0.0:8888)
+    at new Promise (<anonymous>) {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 8888
+}
+[?25h
+[MDX] closing dev server
