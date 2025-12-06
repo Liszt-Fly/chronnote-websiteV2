@@ -151,7 +151,20 @@
   "ChangelogPage": {
     "title": "Changelog",
     "description": "Stay up to date with the latest changes in our product",
-    "subtitle": "Stay up to date with the latest changes in our product"
+    "subtitle": "Stay up to date with the latest changes in our product",
+    "loading": "Loading releases…",
+    "retry": "Retry",
+    "empty": "No changelog entries yet.",
+    "fetchError": "Failed to fetch changelog",
+    "unknownError": "Unexpected response from server",
+    "networkError": "Network error, please try again later.",
+    "errorTitle": "Unable to load changelog",
+    "newFeatures": "New features",
+    "improvements": "Improvements",
+    "bugfixes": "Bug fixes",
+    "features": "Updates",
+    "noDetails": "No additional details for this release.",
+    "versionLabel": "Version {version}"
   },
   "ContactPage": {
     "title": "Contact",
@@ -310,6 +323,9 @@
       "features": {
         "title": "Features"
       },
+      "download": {
+        "title": "Download"
+      },
       "pricing": {
         "title": "Pricing"
       },
@@ -447,6 +463,7 @@
         "title": "Product",
         "items": {
           "features": "Features",
+          "download": "Download",
           "pricing": "Pricing",
           "faq": "FAQ"
         }
@@ -758,20 +775,20 @@
     }
   },
   "HomePage": {
-    "title": "ChronNote",
-    "description": "构建你的第二大脑",
+    "title": "Chronnote",
+    "description": "Build your second brain",
     "hero": {
-      "title": "增援未来的自己",
-      "description": "基于原子化设计的知识操作系统。一个笔记原子，同时是思维导图节点、待办事项和PDF片段。通过Chron引擎智能串联，让2个月的学习压缩到2周，成为超级个体。",
-      "introduction": "AI时代的知识加速器",
-      "primary": "免费开始",
-      "secondary": "观看演示"
+      "title": "All-in-one atomic knowledge workspace",
+      "description": "Chronnote is an atomic knowledge OS where every note can also be a mind-map node, to-do item, or PDF highlight. Chron Engine threads those atoms together so two months of learning compress into two weeks.",
+      "introduction": "AI-era learning accelerator",
+      "primary": "Download now",
+      "secondary": "Watch demo"
     },
     "logocloud": { "title": "Trusted by creators and developers" },
     "integration": {
       "title": "Chronnote System Pillars",
       "subtitle": "Atomic knowledge meets the Chron Engine",
-      "description": "Notes, reading, tasks, whiteboards and AI scheduling live in one semantic space so every spark of information can be reactivated.",
+      "description": "Notes, reading, tasks, whiteboards, mind maps and AI scheduling live in one semantic space so every spark of information can be reactivated.",
       "learnMore": "Learn More",
       "items": {
         "item-1": {
@@ -800,6 +817,41 @@
         }
       }
     },
+    "download": {
+      "eyebrow": "Local-first desktop builds",
+      "title": "Download Chronnote",
+      "description": "Pick your platform and start exploring the Chronnote atomic workspace on your device.",
+      "downloadNow": "Download",
+      "comingSoon": "Coming soon",
+      "versionLabel": "Version {version}",
+      "unknownVersion": "Version info coming soon",
+      "otherPlatforms": "Other platforms",
+      "mac": {
+        "title": "macOS",
+        "subtitle": "Universal builds with Chron Engine running locally",
+        "intel": "macOS 11+ (Intel)",
+        "apple": "macOS 11+ (Apple Silicon)",
+        "badgeIntel": "Intel",
+        "badgeApple": "Apple Silicon"
+      },
+      "windows": {
+        "title": "Windows",
+        "subtitle": "Windows 10/11 (x64)",
+        "badge": "x64"
+      },
+      "web": {
+        "title": "Web workspace",
+        "description": "Browser version is currently in closed beta."
+      },
+      "ios": {
+        "title": "iOS app",
+        "description": "Native Chronnote experience for iPhone and iPad."
+      },
+      "android": {
+        "title": "Android app",
+        "description": "Capture and organize ideas on Android devices."
+      }
+    },
     "integration2": {
       "title": "Compose your daily workflow",
       "description": "From AI assistant to local database and system hooks, Chronnote focuses on composable productivity.",
@@ -807,25 +859,25 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "原子化设计：零摩擦知识流转",
-      "subtitle": "一个原子，多种形态",
-      "description": "在ChronNote里，万物皆原子。笔记、思维导图、待办、PDF片段都是平等的原子单位。通过@挂载或直接拖拽，实现知识在不同视图间的无缝流转。",
+      "title": "Atomic design: frictionless knowledge flow",
+      "subtitle": "One atom, many representations",
+      "description": "Inside Chronnote everything is an atom—notes, mind maps, tasks and PDF snippets. Mention it with @ or drag it anywhere and the same piece of knowledge flows between every view.",
       "items": {
         "item-1": {
-          "title": "笔记原子 ⇄ 思维导图节点",
-          "description": "选中PDF中的重点，一键生成笔记原子。拖入思维导图，它瞬间变成结构化节点。双击节点，完整笔记内容展开。支持修改，导图自动同步更新。"
+          "title": "Note atoms ⇄ mind-map nodes",
+          "description": "Pick a PDF highlight to spawn a note atom. Drop it into a mind map and it instantly becomes a structured node. Double-click to expand the entire note and every edit stays synced."
         },
         "item-2": {
-          "title": "笔记原子 ⇄ 待办事项",
-          "description": "觉得这个概念还没掌握？一键将笔记原子标记为待办。它出现在任务清单中，带着完整的上下文和原文链接。完成复习后，笔记自动更新最新理解。"
+          "title": "Note atoms ⇄ to-do items",
+          "description": "Not confident about a concept? Flag that atom as a task. It shows up in your to-do stack with full context and in-place references. Check it off and the note captures your latest understanding."
         },
         "item-3": {
-          "title": "PDF原子 ⇄ 笔记原子",
-          "description": "直接在PDF上做笔记，生成独立的笔记原子。无论把笔记挂在思维导图还是待办清单，双击都能跳转回PDF原文位置。真正的双向溯源，知识不再丢失。"
+          "title": "PDF atoms ⇄ note atoms",
+          "description": "Annotate directly inside the PDF and get a standalone note atom. Wherever you reference it—mind map, task list, whiteboard—a double-click jumps back to the exact spot in the document."
         },
         "item-4": {
-          "title": "单一信源，同步更新",
-          "description": "修改一处，全局同步。原子在不同视图下的表现都是同一份数据的投影。拒绝复制粘贴，拒绝数据孤岛。知识在哪里，行动就在哪里。"
+          "title": "Single source of truth",
+          "description": "Change an atom once and every view updates instantly. No duplicate pages, no copy-and-paste islands—the same knowledge powers every action."
         }
       }
     },
@@ -839,64 +891,64 @@
       "feature-4": "Semantic nesting: mix PDFs, notes, to-dos or boards as parent/child nodes to express precise context."
     },
     "features3": {
-      "title": "Chron引擎：你的AI学习加速器",
-      "subtitle": "2个月压缩到2周的秘密",
-      "description": "Chron引擎不是简单的AI助手，而是你的知识调度中枢。它理解上下文，连接原子，甚至预测你的学习路径。让AI真正为你的第二大脑服务。",
+      "title": "Chron Engine: your AI learning accelerator",
+      "subtitle": "The secret to compressing two months into two weeks",
+      "description": "Chron Engine isn’t just a chatbot—it’s the dispatcher for your second brain. It understands context, links atoms, and even predicts what you should tackle next so AI truly works on your knowledge.",
       "items": {
         "item-1": {
-          "title": "智能上下文关联",
-          "description": "当你复习笔记时，Chron引擎自动推送相关的原子、PDF片段和历史思考。无论是语法分析还是算法实现，AI帮你建立知识网络。"
+          "title": "Context-aware linking",
+          "description": "While you review, Chron Engine surfaces related atoms, PDF fragments, and past thoughts—whether it’s grammar notes or algorithm drafts—so your knowledge graph grows automatically."
         },
         "item-2": {
-          "title": "自动挂载建议",
-          "description": "生成笔记原子后，AI分析内容并建议最佳的挂载位置。'这个概念属于编译原理的语法分析章节，建议挂在LR分析节点下'。像专家一样指导你构建知识树。"
+          "title": "Smart placement suggestions",
+          "description": "After you create a note atom, the engine analyses it and recommends where it should live—“attach this to the LR-parsing branch”—guiding you like a domain expert."
         },
         "item-3": {
-          "title": "间隔重复调度",
-          "description": "基于遗忘曲线和时间维度，Chron引擎智能安排复习计划。'这个LR分析概念你已经3天没复习了，建议明天重点回顾'。真正的增援未来的自己。"
+          "title": "Spaced repetition scheduling",
+          "description": "Chron Engine tracks forgetting curves and time, then schedules reviews—“you haven’t revisited LR parsing in three days, bring it back tomorrow”—so future-you always gets support."
         },
         "item-4": {
-          "title": "思维轨迹记录",
-          "description": "Chron引擎会记录你从'A=B'到'A=C'的认知演变。两个月后问'为什么当时觉得LR分析法很难'，AI回答：'因为你在10月1号混淆了移进和归约，10月5号才修正'。"
+          "title": "Thinking trail capture",
+          "description": "Every insight shift is logged—from “A=B” to “A=C.” Ask months later why LR parsing felt hard and Chron Engine can replay the exact confusion and resolution."
         },
         "item-5": {
-          "title": "自动待办生成",
-          "description": "阅读PDF遇到难点？AI自动生成'验证这个理论需要写代码'的待办事项。理论联系实践，学习不再是纸上谈兵。"
+          "title": "Auto-generated action items",
+          "description": "Hit a tough PDF passage? The engine spins up a task like “implement a quick proof-of-concept” so theory immediately meets practice."
         },
         "item-6": {
-          "title": "知识融合创造",
-          "description": "白板上的知识熔炉功能。放入3个不同领域的原子，AI帮你发现它们之间的联系，甚至生成融合后的新想法。真正的创新往往发生在学科交叉点。"
+          "title": "Knowledge fusion",
+          "description": "Drop atoms from three different domains onto the whiteboard and Chron Engine discovers the links—or proposes an entirely new idea born from the overlap."
         }
       }
     },
     "pricing": {
-      "title": "选择你的学习加速级别",
-      "subtitle": "成为超级个体的投资",
-      "description": "无论你是学生、研究者还是终身学习者，选择最适合你的计划，开始构建第二大脑的旅程。"
+      "title": "Choose your acceleration level",
+      "subtitle": "Invest in becoming a super-learner",
+      "description": "Whether you are a student, researcher, or lifelong learner, pick the plan that helps you build a resilient second brain."
     },
     "faqs": {
-      "title": "常见问题",
-      "subtitle": "关于ChronNote的核心疑问",
+      "title": "FAQ",
+      "subtitle": "Key questions about Chronnote",
       "items": {
         "item-1": {
-          "question": "什么是'原子化设计'？",
-          "answer": "在ChronNote里，每一个知识单元都是'原子'。笔记是原子，思维导图节点是原子，待办事项也是原子。重要的是，同一个原子可以在不同视图下展现，无需复制粘贴。"
+          "question": "What is “atomic design”?",
+          "answer": "Every piece of knowledge is an atom. Notes, mind-map nodes, tasks and PDFs are all the same entity, just viewed differently—so you never duplicate or copy/paste."
         },
         "item-2": {
-          "question": "Chron引擎是如何工作的？",
-          "answer": "Chron引擎是你的知识调度中枢。它会自动关联相关原子，建议最佳的挂载位置，安排复习计划，甚至记录你的思维演变轨迹。目标是让2个月的学习压缩到2周。"
+          "question": "How does the Chron Engine work?",
+          "answer": "It’s the dispatcher for your knowledge base. The engine links related atoms, suggests where they belong, schedules reviews, and records your reasoning path so you learn faster."
         },
         "item-3": {
-          "question": "如何实现'增援未来的自己'？",
-          "answer": "通过记录思维轨迹、安排间隔重复、智能推送相关知识。每当你回顾笔记时，Chron引擎会呈现当时的上下文和思考过程，让未来的你理解现在的你在想什么。"
+          "question": "How does Chronnote “reinforce future me”?",
+          "answer": "By logging thinking trails, scheduling spaced repetition, and surfacing related knowledge every time you review. Future-you immediately sees past context and decisions."
         },
         "item-4": {
-          "question": "支持哪些学习场景？",
-          "answer": "特别适合深度学习场景：阅读技术书籍（如《编译原理》）、研究论文、在线课程。PDF原子和笔记原子的双向溯源，确保你的每一个灵感都有源头可追溯。"
+          "question": "Which learning scenarios are supported?",
+          "answer": "Chronnote shines in deep-learning journeys—technical books, research papers, online courses—because PDF and note atoms keep the source and your thoughts tightly linked."
         },
         "item-5": {
-          "question": "和其他知识管理工具的区别？",
-          "answer": "最大的区别是'单一信源，多态展现'。你的笔记既是笔记，也是导图节点，也是待办事项。修改一处，全局同步。不再有数据孤岛和复制粘贴的繁琐。"
+          "question": "How is Chronnote different from other tools?",
+          "answer": "Single source, multi-form display. The same atom can be a note, task, or map node. Edit once and every view updates, so silos and redundant copies disappear."
         }
       }
     },
@@ -995,10 +1047,34 @@
       }
     },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "badge": "Community",
+      "title": "Join the Chronnote crew",
+      "description": "Get release drops first and ping us anytime you have ideas or problems. Choose a channel and we’ll respond quickly.",
+      "wechatModal": {
+        "title": "Scan our WeChat QR code",
+        "description": "Scan or long-press the code to join the Chronnote community group."
+      },
+      "xhsModal": {
+        "title": "Follow us on Xiaohongshu",
+        "description": "Scan the code to open Chronnote on Xiaohongshu and catch the latest study workflows."
+      },
+      "channels": {
+        "wechat": {
+          "title": "WeChat Group",
+          "description": "Join the WeChat chat to discuss product roadmap, testing, and study methods in real time.",
+          "action": "Show QR code"
+        },
+        "qq": {
+          "title": "QQ group",
+          "description": "Tap to open the Chronnote QQ community, share workflows, and get instant feedback.",
+          "action": "Join QQ group"
+        },
+        "xiaohongshu": {
+          "title": "Xiaohongshu · Chronnote",
+          "description": "Scan the Xiaohongshu code to follow us and unlock curated atomic-learning examples.",
+          "action": "Show QR code"
+        }
+      }
     }
   },
   "AITextPage": {

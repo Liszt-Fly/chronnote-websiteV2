@@ -9,6 +9,7 @@ export enum Routes {
   // marketing pages
   FAQ = '/#faq',
   Features = '/#features',
+  Download = '/#download',
   Pricing = '/#pricing', // use the pricing section in homepage
   Blog = '/blog',
   Docs = '/docs',

@@ -28,8 +28,8 @@ export function useFooterLinks(): NestedMenuItem[] {
           external: false,
         },
         {
-          title: t('product.items.pricing'),
-          href: Routes.Pricing,
+          title: t('product.items.download'),
+          href: Routes.Download,
           external: false,
         },
         {

@@ -57,8 +57,8 @@ export function useNavbarLinks(): NestedMenuItem[] {
       external: false,
     },
     {
-      title: t('pricing.title'),
-      href: Routes.Pricing,
+      title: t('download.title'),
+      href: Routes.Download,
       external: false,
     },
     ...(websiteConfig.blog.enable

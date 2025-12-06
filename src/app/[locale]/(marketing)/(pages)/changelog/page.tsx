@@ -1,15 +1,10 @@
-import { ReleaseCard } from '@/components/changelog/release-card';
+import { ChangelogFeed } from '@/components/changelog/changelog-feed';
 import Container from '@/components/layout/container';
 import { constructMetadata } from '@/lib/metadata';
-import { changelogSource } from '@/lib/source';
 import { getUrlWithLocale } from '@/lib/urls/urls';
-import type { NextPageProps } from '@/types/next-page-props';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-
-import '@/styles/mdx.css';
 
 export async function generateMetadata({
   params,
@@ -27,25 +22,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function ChangelogPage(props: NextPageProps) {
-  const params = await props.params;
-  if (!params) {
-    notFound();
-  }
-
-  const locale = params.locale as Locale;
-  const localeReleases = changelogSource.getPages(locale);
-  const publishedReleases = localeReleases
-    .filter((releaseItem) => releaseItem.data.published)
-    .sort(
-      (a, b) =>
-        new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-    );
-
-  if (!publishedReleases || publishedReleases.length === 0) {
-    notFound();
-  }
-
+export default async function ChangelogPage() {
   const t = await getTranslations('ChangelogPage');
 
   return (
@@ -61,17 +38,7 @@ export default async function ChangelogPage(props: NextPageProps) {
           </p>
         </div>
 
-        {/* Releases */}
-        <div className="mt-8">
-          {publishedReleases.map((releaseItem) => {
-            return (
-              <ReleaseCard
-                key={releaseItem.data.version}
-                releaseItem={releaseItem}
-              />
-            );
-          })}
-        </div>
+        <ChangelogFeed />
       </div>
     </Container>
   );

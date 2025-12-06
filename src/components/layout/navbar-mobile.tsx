@@ -155,37 +155,7 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
       bg-background backdrop-blur-md animate-in fade-in-0"
     >
       <div className="size-full flex flex-col items-start space-y-4">
-        {/* action buttons */}
-        {userLoggedIn ? null : (
-          <div className="w-full flex flex-col gap-4 px-4">
-            <LocaleLink
-              href={Routes.Login}
-              onClick={onLinkClicked}
-              className={cn(
-                buttonVariants({
-                  variant: 'outline',
-                  size: 'lg',
-                }),
-                'w-full'
-              )}
-            >
-              {t('Common.login')}
-            </LocaleLink>
-            <LocaleLink
-              href={Routes.Register}
-              className={cn(
-                buttonVariants({
-                  variant: 'default',
-                  size: 'lg',
-                }),
-                'w-full'
-              )}
-              onClick={onLinkClicked}
-            >
-              {t('Common.signUp')}
-            </LocaleLink>
-          </div>
-        )}
+        {/* auth buttons hidden on marketing site until login/register are ready */}
 
         {/* main menu */}
         <ul className="w-full px-4">
