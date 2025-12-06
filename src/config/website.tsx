@@ -78,8 +78,8 @@ export const websiteConfig: WebsiteConfig = {
   },
   mail: {
     provider: 'resend',
-    fromEmail: 'Chronnote <support@chronnote.top>',
-    supportEmail: 'support@chronnote.top',
+    fromEmail: 'Chronnote <1155181470@link.cuhk.edu>',
+    supportEmail: '1155181470@link.cuhk.edu',
   },
   newsletter: {
     enable: true,

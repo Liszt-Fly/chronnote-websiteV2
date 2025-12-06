@@ -761,28 +761,46 @@
     }
   },
   "HomePage": {
-    "title": "Chronnote",
-    "description": "AI 驱动的本地优先知识笔记",
+    "title": "ChronNote",
+    "description": "构建你的第二大脑",
     "hero": {
-      "title": "AI 驱动的本地优先知识笔记",
-      "description": "使用原子化内容组织思维、文档与网页片段。内置 Gemini Agent、标签树与极速搜索，配合全局快捷键高效捕捉与整理。数据默认存储在本地 SQLite，可选一键备份。",
-      "introduction": "认识 Chronnote",
-      "primary": "开始使用",
-      "secondary": "查看演示"
+      "title": "增援未来的自己",
+      "description": "基于原子化设计的知识操作系统。一个笔记原子，同时是思维导图节点、待办事项和PDF片段。通过Chron引擎智能串联，让2个月的学习压缩到2周，成为超级个体。",
+      "introduction": "AI时代的知识加速器",
+      "primary": "免费开始",
+      "secondary": "观看演示"
     },
     "logocloud": { "title": "深受创作者与开发者信赖" },
     "integration": {
-      "title": "集成",
-      "subtitle": "与常用工具无缝协作",
-      "description": "原生整合 Gemini Agent、本地 SQLite 与桌面系统能力；按需衔接你的工作流。",
+      "title": "Chronnote 的基本架构",
+      "subtitle": "原子化知识 + Chron 智能引擎",
+      "description": "我们把笔记、阅读、待办、导图与 AI 调度编织在同一知识空间里，确保每一种输入都能被重新激活。",
       "learnMore": "了解更多",
       "items": {
-        "item-1": { "title": "Google Gemini", "description": "原生集成的 AI 伙伴，写作、总结、重构与知识问答更高效。" },
-        "item-2": { "title": "Electron 桌面", "description": "跨平台桌面外壳，macOS/Windows/Linux 一致体验。" },
-        "item-3": { "title": "SQLite 本地库", "description": "离线优先的数据持久化，快速、可靠、可备份。" },
-        "item-4": { "title": "Vue 3 + Pinia", "description": "现代化前端架构，响应迅速，交互顺滑。" },
-        "item-5": { "title": "MCP/Agents", "description": "可扩展的智能体能力，连接外部知识与工具。" },
-        "item-6": { "title": "文件与网页", "description": "支持片段摘录与整理，构建你自己的知识库。" }
+        "item-1": {
+          "title": "Chron 智能引擎",
+          "description": "基于 Gemini 2.5 Pro 的调度内核，理解上下文、笔记、PDF 与待办，主动推送关联知识并生成下一步行动。"
+        },
+        "item-2": {
+          "title": "Chron 编辑器",
+          "description": "所见即所得 + Markdown，支持表格、公式、标签，从 PDF 拖拽片段即可形成可跳转的引用。"
+        },
+        "item-3": {
+          "title": "Chron Reader",
+          "description": "多 PDF 分层管理、批注、高亮、划词翻译，并且能把选区直接交给 Chron 引擎解读。"
+        },
+        "item-4": {
+          "title": "原子库",
+          "description": "笔记、PDF、待办、思维导图、白板都是原子。拖拽进入页面视图即可引用，同一知识在所有视图保持同步。"
+        },
+        "item-5": {
+          "title": "页面视图",
+          "description": "页面本身只是一组原子引用，支持页面嵌套页面，用语义层级描述你的学习路径，引用删除也不会丢失内容。"
+        },
+        "item-6": {
+          "title": "智能工作流",
+          "description": "待办清单与 Chron 引擎联动，可嵌套层级任务、双击写笔记，AI 自动生成复习或实践任务。"
+        }
       }
     },
     "integration2": {
@@ -792,52 +810,97 @@
       "secondaryButton": "查看演示"
     },
     "features": {
-      "title": "核心能力",
-      "subtitle": "让知识真正沉淀与流动",
-      "description": "围绕“捕捉—整理—推理—输出”的闭环，Chronnote 提供稳定可靠的本地数据与强大的 AI 协作。",
+      "title": "原子化设计：零摩擦知识流转",
+      "subtitle": "一个原子，多种形态",
+      "description": "在ChronNote里，万物皆原子。笔记、思维导图、待办、PDF片段都是平等的原子单位。通过@挂载或直接拖拽，实现知识在不同视图间的无缝流转。",
       "items": {
-        "item-1": { "title": "Gemini 原生 AI 协作", "description": "在笔记内直接对话、总结文档、重写草稿，生成结构化提纲与行动项。" },
-        "item-2": { "title": "原子化知识与标签树", "description": "以原子为最小单元，多维标签与层级视图，让知识组织更灵活。" },
-        "item-3": { "title": "极速搜索与全局快捷键", "description": "Cmd/Ctrl+K 打开命令面板；全文/标题/标签一体化检索，所想即所得。" },
-        "item-4": { "title": "本地优先与可靠备份", "description": "基于 SQLite 的离线持久化，支持一键备份与数据导出，安心可控。" }
+        "item-1": {
+          "title": "笔记原子 ⇄ 思维导图节点",
+          "description": "选中PDF中的重点，一键生成笔记原子。拖入思维导图，它瞬间变成结构化节点。双击节点，完整笔记内容展开。支持修改，导图自动同步更新。"
+        },
+        "item-2": {
+          "title": "笔记原子 ⇄ 待办事项",
+          "description": "觉得这个概念还没掌握？一键将笔记原子标记为待办。它出现在任务清单中，带着完整的上下文和原文链接。完成复习后，笔记自动更新最新理解。"
+        },
+        "item-3": {
+          "title": "PDF原子 ⇄ 笔记原子",
+          "description": "直接在PDF上做笔记，生成独立的笔记原子。无论把笔记挂在思维导图还是待办清单，双击都能跳转回PDF原文位置。真正的双向溯源，知识不再丢失。"
+        },
+        "item-4": {
+          "title": "单一信源，同步更新",
+          "description": "修改一处，全局同步。原子在不同视图下的表现都是同一份数据的投影。拒绝复制粘贴，拒绝数据孤岛。知识在哪里，行动就在哪里。"
+        }
       }
     },
     "features2": {
-      "title": "效率细节",
-      "subtitle": "把常用动作做到顺手",
-      "description": "从输入、编辑到检索与分享，Chronnote 关注高频动作的流畅体验。",
-      "feature-1": "全局快捷键与命令面板",
-      "feature-2": "可搜索的标签与引用",
-      "feature-3": "离线优先的本地存储",
-      "feature-4": "一键备份与数据导出"
+      "title": "页面视图：引用驱动的语义空间",
+      "subtitle": "页面嵌套页面，所有内容都来自原子库",
+      "description": "Chronnote 的页面视图保留了传统的页面结构，但页面本质上是原子的引用。打开侧边栏就能看到原子库，拖拽任意原子到页面即可生成引用；双击引用会回到原子本体，任何改动都会第一时间同步。",
+      "feature-1": "页面 = 原子引用：页面自身不存储内容，而是实时镜像原子库。",
+      "feature-2": "拖拽即挂载：在原子库中选择原子，一步拖拽到页面视图就能完成引用。",
+      "feature-3": "安全删除：删除页面中的引用不会丢失内容，真正删除发生在原子库；删除原子会连带移除所有引用。",
+      "feature-4": "语义嵌套：让 PDF 做根节点、笔记做子节点，或反过来，用层级关系表达上下文。"
     },
     "features3": {
-      "title": "更多亮点",
-      "subtitle": "持续演进的知识工作台",
-      "description": "Chronnote 在稳定与可扩展之间取得平衡，支持个性化工作方式。",
+      "title": "Chron引擎：你的AI学习加速器",
+      "subtitle": "2个月压缩到2周的秘密",
+      "description": "Chron引擎不是简单的AI助手，而是你的知识调度中枢。它理解上下文，连接原子，甚至预测你的学习路径。让AI真正为你的第二大脑服务。",
       "items": {
-        "item-1": { "title": "MCP/Agent 扩展", "description": "连接外部知识库与工具，定制你的智能体工作流。" },
-        "item-2": { "title": "跨平台", "description": "macOS / Windows / Linux 一致体验。" },
-        "item-3": { "title": "多语言界面", "description": "内置中英文本地化。" },
-        "item-4": { "title": "组件与图标体系", "description": "大量 UI 组件与图标可复用，效率更高。" },
-        "item-5": { "title": "快速捕捉与草稿箱", "description": "随手记录，稍后整理，不打断思路。" },
-        "item-6": { "title": "文件与 PDF 片段", "description": "聚合图片、PDF 与网页内容，统一管理。" }
+        "item-1": {
+          "title": "智能上下文关联",
+          "description": "当你复习笔记时，Chron引擎自动推送相关的原子、PDF片段和历史思考。无论是语法分析还是算法实现，AI帮你建立知识网络。"
+        },
+        "item-2": {
+          "title": "自动挂载建议",
+          "description": "生成笔记原子后，AI分析内容并建议最佳的挂载位置。'这个概念属于编译原理的语法分析章节，建议挂在LR分析节点下'。像专家一样指导你构建知识树。"
+        },
+        "item-3": {
+          "title": "间隔重复调度",
+          "description": "基于遗忘曲线和时间维度，Chron引擎智能安排复习计划。'这个LR分析概念你已经3天没复习了，建议明天重点回顾'。真正的增援未来的自己。"
+        },
+        "item-4": {
+          "title": "思维轨迹记录",
+          "description": "Chron引擎会记录你从'A=B'到'A=C'的认知演变。两个月后问'为什么当时觉得LR分析法很难'，AI回答：'因为你在10月1号混淆了移进和归约，10月5号才修正'。"
+        },
+        "item-5": {
+          "title": "自动待办生成",
+          "description": "阅读PDF遇到难点？AI自动生成'验证这个理论需要写代码'的待办事项。理论联系实践，学习不再是纸上谈兵。"
+        },
+        "item-6": {
+          "title": "知识融合创造",
+          "description": "白板上的知识熔炉功能。放入3个不同领域的原子，AI帮你发现它们之间的联系，甚至生成融合后的新想法。真正的创新往往发生在学科交叉点。"
+        }
       }
     },
     "pricing": {
-      "title": "价格",
-      "subtitle": "清晰可控的购买方式",
-      "description": "按需选择：永久免费入门，或解锁专业功能/终身更新。"
+      "title": "选择你的学习加速级别",
+      "subtitle": "成为超级个体的投资",
+      "description": "无论你是学生、研究者还是终身学习者，选择最适合你的计划，开始构建第二大脑的旅程。"
     },
     "faqs": {
       "title": "常见问题",
-      "subtitle": "如需更多帮助，欢迎加入社区或联系支持",
+      "subtitle": "关于ChronNote的核心疑问",
       "items": {
-        "item-1": { "question": "我的数据存放在哪里？", "answer": "Chronnote 默认将数据保存在本地 SQLite 数据库中。你可以随时一键备份或导出，充分掌控数据。" },
-        "item-2": { "question": "使用是否需要联网？", "answer": "日常写作与检索均可离线使用；AI 功能（Gemini 等）需要联网并提供可用的 API Key。" },
-        "item-3": { "question": "支持哪些平台？", "answer": "当前支持 macOS、Windows 与 Linux。移动端正在开发中。" },
-        "item-4": { "question": "是否支持导入/导出？", "answer": "支持数据备份导出，后续会逐步增强与 Markdown/网页片段等内容的互通能力。" },
-        "item-5": { "question": "是否开源？", "answer": "核心应用以桌面发行为主，相关配套与示例会持续开放更新。" }
+        "item-1": {
+          "question": "什么是'原子化设计'？",
+          "answer": "在ChronNote里，每一个知识单元都是'原子'。笔记是原子，思维导图节点是原子，待办事项也是原子。重要的是，同一个原子可以在不同视图下展现，无需复制粘贴。"
+        },
+        "item-2": {
+          "question": "Chron引擎是如何工作的？",
+          "answer": "Chron引擎是你的知识调度中枢。它会自动关联相关原子，建议最佳的挂载位置，安排复习计划，甚至记录你的思维演变轨迹。目标是让2个月的学习压缩到2周。"
+        },
+        "item-3": {
+          "question": "如何实现'增援未来的自己'？",
+          "answer": "通过记录思维轨迹、安排间隔重复、智能推送相关知识。每当你回顾笔记时，Chron引擎会呈现当时的上下文和思考过程，让未来的你理解现在的你在想什么。"
+        },
+        "item-4": {
+          "question": "支持哪些学习场景？",
+          "answer": "特别适合深度学习场景：阅读技术书籍（如《编译原理》）、研究论文、在线课程。PDF原子和笔记原子的双向溯源，确保你的每一个灵感都有源头可追溯。"
+        },
+        "item-5": {
+          "question": "和其他知识管理工具的区别？",
+          "answer": "最大的区别是'单一信源，多态展现'。你的笔记既是笔记，也是导图节点，也是待办事项。修改一处，全局同步。不再有数据孤岛和复制粘贴的繁琐。"
+        }
       }
     },
     "testimonials": {

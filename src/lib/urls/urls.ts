@@ -9,6 +9,9 @@ const baseUrl =
  * Get the base URL of the application
  */
 export function getBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    return process.env.NEXT_PUBLIC_BASE_URL ?? window.location.origin;
+  }
   return baseUrl;
 }
 
@@ -23,9 +26,10 @@ export function shouldAppendLocale(locale?: Locale | null): boolean {
  * Get the URL of the application with the locale appended
  */
 export function getUrlWithLocale(url: string, locale?: Locale | null): string {
+  const base = getBaseUrl();
   return shouldAppendLocale(locale)
-    ? `${baseUrl}/${locale}${url}`
-    : `${baseUrl}${url}`;
+    ? `${base}/${locale}${url}`
+    : `${base}${url}`;
 }
 
 /**
@@ -88,10 +92,11 @@ export function getImageUrl(image: string): string {
   if (image.startsWith('http://') || image.startsWith('https://')) {
     return image;
   }
+  const base = getBaseUrl();
   if (image.startsWith('/')) {
-    return `${getBaseUrl()}${image}`;
+    return `${base}${image}`;
   }
-  return `${getBaseUrl()}/${image}`;
+  return `${base}/${image}`;
 }
 
 /**

@@ -1,16 +1,16 @@
 import { HeaderSection } from '@/components/layout/header-section';
-import {
-  Gemini,
-  GooglePaLM,
-  MagicUI,
-  MediaWiki,
-  Replit,
-  VSCodium,
-} from '@/components/tailark/logos';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { LocaleLink } from '@/i18n/navigation';
-import { ChevronRight } from 'lucide-react';
+import {
+  Atom,
+  BookOpenText,
+  ChevronRight,
+  FileSpreadsheet,
+  Layers3,
+  NotebookPen,
+  Sparkles,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import type * as React from 'react';
 
@@ -33,42 +33,42 @@ export default function IntegrationSection() {
             title={t('items.item-1.title')}
             description={t('items.item-1.description')}
           >
-            <Gemini />
+            <Sparkles className="size-10" />
           </IntegrationCard>
 
           <IntegrationCard
             title={t('items.item-2.title')}
             description={t('items.item-2.description')}
           >
-            <Replit />
+            <NotebookPen className="size-10" />
           </IntegrationCard>
 
           <IntegrationCard
             title={t('items.item-3.title')}
             description={t('items.item-3.description')}
           >
-            <MagicUI />
+            <BookOpenText className="size-10" />
           </IntegrationCard>
 
           <IntegrationCard
             title={t('items.item-4.title')}
             description={t('items.item-4.description')}
           >
-            <VSCodium />
+            <Atom className="size-10" />
           </IntegrationCard>
 
           <IntegrationCard
             title={t('items.item-5.title')}
             description={t('items.item-5.description')}
           >
-            <MediaWiki />
+            <Layers3 className="size-10" />
           </IntegrationCard>
 
           <IntegrationCard
             title={t('items.item-6.title')}
             description={t('items.item-6.description')}
           >
-            <GooglePaLM />
+            <FileSpreadsheet className="size-10" />
           </IntegrationCard>
         </div>
       </div>

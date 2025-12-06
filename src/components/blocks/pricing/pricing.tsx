@@ -1,6 +1,7 @@
 import { HeaderSection } from '@/components/layout/header-section';
 import { PricingTable } from '@/components/pricing/pricing-table';
 import { useTranslations } from 'next-intl';
+import { Suspense } from 'react';
 
 export default function PricingSection() {
   const t = useTranslations('HomePage.pricing');
@@ -16,7 +17,11 @@ export default function PricingSection() {
           descriptionAs="p"
         />
 
-        <PricingTable />
+        <Suspense
+          fallback={<div className="h-96 animate-pulse bg-muted rounded-lg" />}
+        >
+          <PricingTable />
+        </Suspense>
       </div>
     </section>
   );
