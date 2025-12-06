@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "name": "Chronnote",
-    "title": "Chronnote - AI 驱动的本地优先知识笔记",
-    "description": "Chronnote 是一款基于 Electron + Vue 3 的本地优先、AI 增强的知识笔记应用。内置 Gemini Agent、原子化内容模型、极速搜索与全局快捷键，数据默认保存在本地 SQLite，可选备份与同步。"
+    "title": "Chronnote - All in one 的 AI 笔记 & 知识库工具",
+    "description": "Chronnote 是一款本地优先的 All in one 笔记与知识库工具，把笔记、PDF 阅读、待办、思维导图和白板统一为\"原子\"，由 Chron 引擎进行搜索、联想和调度，在一个空间里管理你的全部知识。"
   },
   "Common": {
     "premium": "付费文章",

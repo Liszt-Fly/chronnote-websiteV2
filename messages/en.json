@@ -1,8 +1,8 @@
 {
   "Metadata": {
     "name": "Chronnote",
-    "title": "Chronnote - Local-first, AI-powered notes",
-    "description": "Chronnote is a local-first, AI-powered knowledge notebook. Electron + Vue 3 desktop app with Gemini agent, atomic notes, fast search, keyboard workflows, and offline SQLite storage with optional backup."
+    "title": "Chronnote – All-in-one AI notes & knowledge base",
+    "description": "Chronnote is a local-first all-in-one notes and knowledge base that turns notes, PDFs, tasks, mind maps and whiteboards into atoms. The built-in Chron Engine searches, links and orchestrates these atoms in a single workspace."
   },
   "Common": {
     "premium": "Premium",
