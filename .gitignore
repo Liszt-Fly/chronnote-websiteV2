@@ -68,3 +68,6 @@ public/movies/*_raw.mp4
 .dev.vars
 .dev.vars*
 !.dev.vars.example
+
+# local large image originals
+public/images/docs/*_raw.png
