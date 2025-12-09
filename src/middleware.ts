@@ -53,25 +53,51 @@ export default async function middleware(req: NextRequest) {
     }
   }
 
-  // do not use getSession() here, it will cause error related to edge runtime
-  // const session = await getSession();
-  const { data: session } = await betterFetch<Session>(
-    '/api/auth/get-session',
-    {
-      baseURL: getBaseUrl(),
-      headers: {
-        cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
-      },
-    }
-  );
-  const isLoggedIn = !!session;
-  // console.log('middleware, isLoggedIn', isLoggedIn);
-
-  // Get the pathname of the request (e.g. /zh/dashboard to /dashboard)
+  // Normalized pathname without locale prefix (e.g. /zh/dashboard -> /dashboard)
   const pathnameWithoutLocale = getPathnameWithoutLocale(
     nextUrl.pathname,
     LOCALES
   );
+
+  // Only routes that depend on auth status need a session check
+  const needsAuthCheck =
+    protectedRoutes.some((route) =>
+      new RegExp(`^${route}$`).test(pathnameWithoutLocale)
+    ) ||
+    routesNotAllowedByLoggedInUsers.some((route) =>
+      new RegExp(`^${route}$`).test(pathnameWithoutLocale)
+    );
+
+  // For most public routes (docs, homepage, marketing, etc.), skip auth logic
+  if (!needsAuthCheck) {
+    console.log(
+      '<< middleware end, public route, skipping auth check, applying intlMiddleware'
+    );
+    return intlMiddleware(req);
+  }
+
+  // do not use getSession() here, it will cause error related to edge runtime
+  // const session = await getSession();
+  let isLoggedIn = false;
+  try {
+    const { data: session } = await betterFetch<Session>(
+      '/api/auth/get-session',
+      {
+        baseURL: getBaseUrl(),
+        headers: {
+          cookie: req.headers.get('cookie') || '', // Forward the cookies from the request
+        },
+      }
+    );
+    isLoggedIn = !!session;
+  } catch (error) {
+    console.error(
+      'middleware: failed to fetch session, treating as guest',
+      error
+    );
+    isLoggedIn = false;
+  }
+  // console.log('middleware, isLoggedIn', isLoggedIn);
 
   // If the route can not be accessed by logged in users, redirect if the user is logged in
   if (isLoggedIn) {

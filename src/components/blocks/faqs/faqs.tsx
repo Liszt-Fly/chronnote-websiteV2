@@ -54,6 +54,10 @@ export default function FaqSection() {
     },
   ];
 
+  const visibleFaqItems = faqItems.filter(
+    (item) => item.question && item.question.trim().length > 0
+  );
+
   return (
     <section id="faqs" className="px-4 py-16">
       <div className="mx-auto max-w-4xl">
@@ -70,7 +74,7 @@ export default function FaqSection() {
             collapsible
             className="ring-muted w-full rounded-2xl border px-8 py-3 shadow-sm ring-4 dark:ring-0"
           >
-            {faqItems.map((item) => (
+            {visibleFaqItems.map((item) => (
               <AccordionItem
                 key={item.id}
                 value={item.id}

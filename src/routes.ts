@@ -10,6 +10,7 @@ export enum Routes {
   FAQ = '/#faq',
   Features = '/#features',
   Download = '/#download',
+  Community = '/#call-to-action',
   Pricing = '/#pricing', // use the pricing section in homepage
   Blog = '/blog',
   Docs = '/docs',

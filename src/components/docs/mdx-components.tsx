@@ -1,3 +1,5 @@
+import { DocVideo } from '@/components/docs/doc-video';
+import { ImageCarousel } from '@/components/docs/image-carousel';
 import { ImageWrapper } from '@/components/docs/image-wrapper';
 import { Wrapper } from '@/components/docs/wrapper';
 import { YoutubeVideo } from '@/components/docs/youtube-video';
@@ -11,7 +13,6 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import * as LucideIcons from 'lucide-react';
 import type { MDXComponents } from 'mdx/types';
-import type { ComponentProps, FC } from 'react';
 import { XEmbedClient } from './xembed';
 
 /**
@@ -27,6 +28,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     XEmbedClient,
     YoutubeVideo,
     PremiumContent,
+    ImageCarousel,
+    DocVideo,
     Tabs,
     Tab,
     TypeTable,
@@ -38,7 +41,6 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     File,
     Folder,
     Files,
-    blockquote: Callout as unknown as FC<ComponentProps<'blockquote'>>,
     img: ImageWrapper,
   };
 

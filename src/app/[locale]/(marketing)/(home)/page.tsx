@@ -52,7 +52,8 @@ export default async function HomePage(props: HomePageProps) {
 
         <IntegrationSection />
 
-        <FeaturesSection />
+        {/* 原子化设计：零摩擦知识流转（暂时隐藏） */}
+        {/* <FeaturesSection /> */}
 
         <Features2Section />
 

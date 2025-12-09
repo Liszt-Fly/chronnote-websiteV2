@@ -68,45 +68,5 @@ export function useFooterLinks(): NestedMenuItem[] {
         // 路线图暂不展示，避免无效外链
       ],
     },
-    {
-      title: t('company.title'),
-      items: [
-        {
-          title: t('company.items.about'),
-          href: Routes.About,
-          external: false,
-        },
-        {
-          title: t('company.items.contact'),
-          href: Routes.Contact,
-          external: false,
-        },
-        {
-          title: t('company.items.waitlist'),
-          href: Routes.Waitlist,
-          external: false,
-        },
-      ],
-    },
-    {
-      title: t('legal.title'),
-      items: [
-        {
-          title: t('legal.items.cookiePolicy'),
-          href: Routes.CookiePolicy,
-          external: false,
-        },
-        {
-          title: t('legal.items.privacyPolicy'),
-          href: Routes.PrivacyPolicy,
-          external: false,
-        },
-        {
-          title: t('legal.items.termsOfService'),
-          href: Routes.TermsOfService,
-          external: false,
-        },
-      ],
-    },
   ];
 }

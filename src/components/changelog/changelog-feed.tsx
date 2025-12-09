@@ -45,7 +45,7 @@ interface ApiResponse {
   };
 }
 
-type Translate = ReturnType<typeof useTranslations>;
+type Translate = (key: string, values?: Record<string, unknown>) => string;
 
 interface Section {
   title: string;

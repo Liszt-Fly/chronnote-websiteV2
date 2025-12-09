@@ -1,253 +1,82 @@
 ---
-title: 快速入门
-description: Fumadocs 入门指南
-icon: Album
+title: 原子与引用
+description: '解释 Chronnote 中的原子、引用机制'
 ---
 
-## 简介
+![原子与引用的核心示意图](/images/docs/atom1.png)
 
-Fumadocs <span className='text-fd-muted-foreground text-sm'>(Foo-ma docs)</span> 是一个基于 Next.js 的**文档框架**，设计为快速、灵活，
-并无缝集成到 Next.js App Router 中。
+在 Chronnote 中，你可能经常听到「原子」这个词。它不仅仅是一个好听的名字，而是理解整个软件运作逻辑的钥匙。
 
-Fumadocs 由不同部分组成：
+## 1. 什么是原子？
 
-<Cards>
+原子是 Chronnote 中最基本的信息组成部分。你可以把它理解为传统软件中的「文件」，但它比文件更灵活。
+目前，Chronnote 支持以下几种类型的原子：
 
-<Card icon={<CpuIcon className="text-purple-300" />} title='Fumadocs Core'>
+- 📝 笔记（Note）：用于富文本编辑和记录
+- 📄 PDF：用于文档阅读和批注
+- 🧠 思维导图（Mind Map）：用于结构化思考
+- 🎨 无限白板（Infinite Whiteboard）：用于自由布局和创意拼接
+- ✅ 待办清单 & 待办事项：用于任务管理
 
-处理大部分逻辑，包括文档搜索、内容源适配器和 Markdown 扩展。
+## 2. 原子的核心逻辑：唯一实体，处处引用
 
-</Card>
+在 Chronnote 中，需要先建立一个非常重要的认知：实体 与 引用。
 
-<Card icon={<PanelsTopLeft className="text-blue-300" />} title='Fumadocs UI'>
+- 原子库（实体）：每一个原子都有且只有一个「真身」，它永远存放在你的原子库中。
+- 工作区（引用）：当你在白板、文件夹或文档中看到这个原子时，你看到的其实是它的「投影」或「引用」。
+- 页面视图侧边栏（引用）：在页面视图中无论是直接增加，还是通过从原子库中拖拽去添加都只是引用。
 
-Fumadocs 的默认主题为文档站点提供了美观的外观和交互式组件。
+这意味着，你并没有复制这个文件，你只是在不同的地方打开了通往这个文件的窗口。
 
-</Card>
+![Chronnote 原子库示意图](/images/docs/atom2.png)
 
-<Card icon={<Database />} title='Content Source'>
+> 一个验证的简单方法是，你在页面视图点击新增一个页面，仔细观察原子库的原子数量 +1 了！
 
-您内容的来源，可以是 CMS 或本地数据层，如 [Content Collections](https://www.content-collections.dev) 和 [Fumadocs MDX](/docs/mdx)，即官方内容源。
+## 3. 操作演示：如何使用原子？
 
-</Card>
+下面通过一个常见场景——**白板分屏协作**，来演示原子的基本工作流。
 
-<Card icon={<Terminal />} title='Fumadocs CLI'>
+<DocVideo
+  src="/movies/原子库拖拽高清.mp4"
+  poster="/images/docs/atom2.png"
+  caption="原子库拖拽到白板的分屏示例"
+/>
 
-一个命令行工具，用于安装 UI 组件和自动化操作，对于自定义布局非常有用。
+1. **开启分屏视图**：将界面设置为左右分屏，左侧显示原子库，右侧打开一个空白白板。
+2. **拖拽形成引用**：从左侧原子库中选中一个原子（例如一篇笔记或一个 PDF），按住并拖拽到右侧白板上。
+3. **自由布局**：松开鼠标后，这个原子会以卡片的形式出现在白板上，你可以自由调整它的大小和位置。
 
-</Card>
+## 4. 同步机制：改一处，处处更新
 
-</Cards>
+原子最大的优势在于它的同步机制。
 
-<Callout title="想了解更多？">
-  阅读我们深入的 [什么是 Fumadocs](/docs/what-is-fumadocs) 介绍。
-</Callout>
+当你把一篇笔记拖拽到白板上后，可以直接在白板卡片上修改内容（例如修改标题、增删段落）。
 
-### 术语
+<DocVideo
+  src="/movies/同步机制.mp4"
+  caption="同步示例：在白板上编辑，原子库实时更新"
+/>
 
-**Markdown/MDX:** Markdown 是一种用于创建格式化文本的标记语言。Fumadocs 默认支持 Markdown 和 MDX（Markdown 的超集）。
+你会发现，左侧原子库中的原始内容也会随之改变。
 
-虽然不是必需的，但对 Next.js App Router 的基本了解对于进一步的自定义会很有帮助。
+同样地，如果这篇笔记同时被引用在「白板 A」「白板 B」以及某个「项目文件夹」中，你在任何一个位置修改它，其他所有引用都会同步更新，再也不用担心版本不一致。
 
-## 自动安装
+## 5. 更多场景：页面视图
 
-需要 Node.js 18 或更高版本，请注意 Node.js 23.1 可能在 Next.js 生产构建中存在问题。
+除了在白板上自由拼贴之外，原子同样支持传统的层级化管理。
 
-<Tabs groupId='package-manager' persist items={['npm', 'pnpm', 'yarn', 'bun']}>
+在**页面视图**侧边栏中，你可以像管理文件夹一样整理你的知识树，逻辑仍然不变：
 
-```bash tab="npm"
-npm create fumadocs-app
-```
+1. 在原子库中找到需要的原子。
+2. 将它拖拽到侧边栏中的某个页面（或文件夹）上。
+3. 一个新的引用随即形成。
 
-```bash tab="pnpm"
-pnpm create fumadocs-app
-```
+这样，你既可以在白板上直观地关联它，又能在结构化目录中快速定位。
 
-```bash tab="yarn"
-yarn create fumadocs-app
-```
+## 总结
 
-```bash tab="bun"
-bun create fumadocs-app
-```
+- **原子是唯一的**：真正的实体统一存放在原子库中。
+- **引用是无限的**：可以出现在任何地方（白板、页面视图等）。
+- **同步是实时的**：编辑任意一个引用，就是在编辑这个原子本身。
 
-</Tabs>
-
-它会询问您要使用的框架和内容源，随后将初始化一个新的 fumadocs 应用程序。现在您可以开始动手了！
-
-<Callout title='从现有代码库开始？'>
-
-    您可以按照 [手动安装](/docs/manual-installation) 指南开始。
-
-</Callout>
-
-### 尽情使用！
-
-在 docs 文件夹中创建您的第一个 MDX 文件。
-
-```mdx title="content/docs/index.mdx"
----
-title: Hello World
----
-
-## Yo what's up
-```
-
-在开发模式下运行应用程序并查看 http://localhost:3000/docs。
-
-```mdx
-npm run dev
-```
-
-## 探索
-
-在项目中，您可以看到：
-
-- `lib/source.ts`：内容源适配器的代码，[`loader()`](/docs/headless/source-api) 提供了与内容源交互的接口，并为您的页面分配 URL。
-- `app/layout.config.tsx`：布局的共享选项，可选但建议保留。
-
-| 路由                      | 描述                                   |
-| ------------------------- | -------------------------------------- |
-| `app/(home)`              | 您的登陆页面和其他页面的路由组。      |
-| `app/docs`                | 文档布局和页面。                       |
-| `app/api/search/route.ts` | 搜索的路由处理器。                     |
-
-### 编写内容
-
-对于编写文档，请务必阅读：
-
-<Cards>
-  <Card href="/docs/markdown" title="Markdown">
-    Fumadocs 还有一些额外的内容创作功能。
-  </Card>
-  <Card href="/docs/navigation" title="Navigation">
-    了解如何自定义导航链接/侧边栏项目。
-  </Card>
-</Cards>
-
-### 内容源
-
-内容源处理您的所有内容，例如编译 Markdown 文件和验证前言。
-
-<Tabs items={['Fumadocs MDX', 'Custom Source']}>
-
-    <Tab value='Fumadocs MDX'>
-
-        阅读 [介绍](/docs/mdx) 了解它如何处理您的内容。
-
-        项目中已包含 `source.config.ts` 配置文件，您可以自定义不同的选项，如前言模式。
-
-    </Tab>
-
-    <Tab value='Custom Source'>
-
-        Fumadocs 不仅限于 Markdown。对于其他源（如 Sanity），您可以构建 [自定义内容源](/docs/headless/custom-source)。
-
-    </Tab>
-
-</Tabs>
-
-### 自定义 UI
-
-请参阅 [自定义指南](/docs/customisation)。
-
-## 常见问题
-
-您可能遇到的一些常见问题。
-
-<Accordions>
-    <Accordion id='fix-monorepo-styling' title="如何修复 Monorepo 中样式不应用的问题？">
-
-有时，`fumadocs-ui` 没有安装在您的 Tailwind CSS 配置文件的工作区中（例如，在 monorepo 设置中）。
-
-您必须确保 Tailwind CSS 扫描 `fumadocs-ui` 包，并为 `@source` 提供正确的相对路径。
-
-例如，添加 `../../` 指向根工作区中的 `node_modules` 文件夹。
-
-        ```css
-        @import 'tailwindcss';
-        @import 'fumadocs-ui/css/neutral.css';
-        @import 'fumadocs-ui/css/preset.css';
-
-        /* [!code --] */
-        @source '../node_modules/fumadocs-ui/dist/**/*.js';
-        /* [!code ++] */
-        @source '../../../node_modules/fumadocs-ui/dist/**/*.js';
-        ```
-
-    </Accordion>
-    <Accordion id='change-base-url' title="如何更改 /docs 的基本路由？">
-
-您可以更改文档的基本路由（例如，从 `/docs/page` 更改为 `/info/page`）。
-由于 Fumadocs 使用 Next.js App Router，您可以简单地重命名路由：
-
-<Files>
-  <Folder name="app/docs" defaultOpen className="opacity-50" disabled>
-    <File name="layout.tsx" />
-  </Folder>
-  <Folder name="app/info" defaultOpen>
-    <File name="layout.tsx" />
-  </Folder>
-</Files>
-
-并在 `source.ts` 中告诉 Fumadocs 使用新的路由：
-
-```ts title="lib/source.ts"
-import { loader } from 'fumadocs-core/source';
-
-export const source = loader({
-  baseUrl: '/info',
-  // other options
-});
-```
-
-    </Accordion>
-    <Accordion id='dynamic-route' title="它使用动态路由，性能会很差吗？">
-
-当配置了 `generateStaticParams` 时，Next.js 会将动态路由转换为静态路由。
-因此，它与静态页面一样快。
-
-您可以在 Next.js 上启用静态导出，获得静态构建输出。（请注意，路由处理器不适用于静态导出，您必须配置静态搜索）
-
-    </Accordion>
-    <Accordion id='custom-layout-docs-page' title='如何在 /docs 中创建没有文档布局的页面？'>
-
-与在 Next.js App Router 中管理布局相同，从内容目录（`/content/docs`）中删除原始 MDX 文件。
-这确保重复的页面不会导致错误。
-
-现在，您可以将页面添加到另一个路由组，该组不是文档布局的后代。
-
-例如，在您的 `app` 文件夹下：
-
-<Files>
-  <File name="(home)/docs/page.tsx" />
-  <Folder name="docs">
-    <File name="layout.tsx" />
-    <File name="[[...slug]]/page.tsx" />
-  </Folder>
-</Files>
-
-将用您的 `page.tsx` 替换 `/docs` 页面。
-
-    </Accordion>
-
-    <Accordion id='multi-versions' title="如何实现多版本文档？">
-        为每个版本使用单独的部署。
-
-        在 Vercel 上，可以通过在 GitHub 存储库中为特定版本创建另一个分支来实现。
-        要链接到其他版本的站点，请使用 Links API 或自定义导航组件。
-    </Accordion>
-
-    <Accordion id='multi-docs' title="如何实现多文档？">
-        我们建议使用 [侧边栏标签](/docs/navigation/sidebar#sidebar-tabs)。
-    </Accordion>
-
-</Accordions>
-
-## 视频教程
-
-<YoutubeVideo url="https://www.youtube.com/embed/BPnK-YbISHQ?si=TH_tI3e4MCgMHzGr" />
-
-## 了解更多
-
-刚来这里？别担心，我们欢迎您的问题。
+理解了 **「原子 + 引用」** 这个模型，你基本就掌握了 Chronnote 的核心思维方式。无论是搭建知识系统还是规划项目，都可以在这一统一逻辑之上无限扩展。

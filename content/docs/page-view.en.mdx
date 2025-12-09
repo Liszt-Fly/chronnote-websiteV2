@@ -1,0 +1,128 @@
+---
+title: What is Page View
+description: How Page View turns your Atom Library into a semantic structure that Chron Engine can understand
+---
+
+![Study room project and Page View metaphor](/images/docs/pageview1.png)
+
+In Chronnote, you live in two worlds:  
+one is the **Atom Library**, where all your raw materials live;  
+the other is **Page View**, the place where you assemble those atoms into a real structure of thinking.
+
+The Atom Library is like an infinite warehouse that can hold all your PDFs, notes, whiteboards and tasks.  
+But if everything just lies there flat, they are only **loose pieces of data**.  
+When you want to build a complex knowledge system—or let Chron Engine truly understand you—you need something stronger: **Page View**.
+
+## 1. Mindset shift: not “folders”, but “nested atoms”
+
+At first glance, Page View may remind you of a traditional “folders → files” hierarchy.  
+That mental model is actually misleading.
+
+- Traditional folders: a **rigid container** used only for classification.  
+  The folder itself carries no content, just a name.
+- Chronnote Page View: **atoms containing atoms**.  
+  Every atom can become the “parent node” of other atoms.
+
+The design is similar to nested pages in Notion, but Chronnote goes further:  
+we support **all atom types** as parents and children—notes, PDFs, whiteboards, todos, mind maps and more.
+
+Most importantly, these parent–child relationships carry strong **semantics**.
+
+Some examples:
+
+- When you drag a note under a PDF, you are telling the system:  
+  > This note is an annotation about this PDF.
+- When you drag a PDF under a to-do item, you are saying:  
+  > This PDF is the reference material for completing this task.
+
+In Page View, every time you “nest one atom under another”, you are effectively adding a **semantic edge** between them.  
+You are not just tidying up folders—you are defining how pieces of knowledge relate to each other.
+
+## 2. Why structure matters so much for Chron Engine
+
+You might ask: “As long as I can search, isn’t that enough?”
+
+In the AI era, **structure is context**.  
+Chron Engine—the heart of Chronnote—doesn’t just retrieve your content, it also reads your **structure**.
+
+When you carefully build a tree in Page View, you are effectively drawing a **knowledge map** for the AI.
+
+- Sharper understanding
+  - If Chron Engine only sees a **standalone note**, it can only guess based on the literal text.
+  - If it sees that this note sits under a mind map → under a whiteboard → under a project,  
+    it immediately understands:  
+    this is a concrete conclusion derived inside a larger thinking framework.
+
+- Natural contextual linking
+  - When you ask a question, Chron Engine can follow the tree **upwards and downwards**:  
+    parents become the **background** (context), children become the **details**.
+  - With this, answers are no longer stitched from random snippets; they are grounded in the structure you created.
+
+Put simply: **the clearer your structure, the more Chron Engine behaves like a collaborator who understands your project, not a generic chatbot.**
+
+## 3. Practical example: a simple “study room makeover”
+
+Imagine you want to turn a small room into a comfortable workspace.  
+Your Atom Library might already contain:
+
+- Screenshots and inspiration images  
+- A PDF manual for your standing desk  
+- A shopping list  
+- A few to-do items
+
+In Chronnote, you can use Page View to assemble these atoms into a semantic system.
+
+### 3.1 A possible page structure
+
+For example:
+
+- Note: My 2024 study room makeover (root – project overview)
+  - Whiteboard: Room layout sketch (child – space planning)
+    - Note: Power outlet is on the left wall, desk must be placed on the left (grandchild – constraints)
+  - PDF: Standing desk assembly manual (child – reference document)
+    - Todo: Buy a Phillips screwdriver from the hardware store (grandchild – derived action)
+  - Todo list: Double 11 shopping list (child – purchase plan)
+    - Link: Ergonomic chair review video (grandchild – decision evidence)
+
+Looked at individually, these atoms are “just files”.  
+Once you nest them like this, they form a clear **Goal → Constraints → Execution** chain.
+
+### 3.2 What Chron Engine understands from this
+
+Once the structure is in place, Chron Engine reads not only the content, but also the **relationships**.
+
+1. It can infer “why” (causal links)
+
+You ask: “Why do I need to buy a screwdriver?”
+
+- The engine sees the todo “buy screwdriver” hanging under the PDF “standing desk manual”.
+- It can answer:  
+  > Because you need it to assemble that standing desk.
+
+2. It can understand “spatial logic”
+
+You ask: “Why must the desk be placed on the left side?”
+
+- The engine sees the note about the power outlet nested under the whiteboard layout.
+- It can respond:  
+  > According to your layout sketch, the power outlet is on the left wall, so the desk needs to go on the left.
+
+3. It can see your “decision evidence”
+
+You ask: “Why did I pick this chair?”
+
+- The engine finds that, under your shopping list, there is a link to a specific review video.
+- It knows this video is the **reason** you added the chair, and can summarise its key points instead of answering in a vacuum.
+
+## Summary
+
+In Chronnote’s Page View, every drag-and-drop nesting operation is a tiny act of **semantic modeling**.
+
+- You are not just building a prettier tree view—you are building a **thinking model that AI can read**.
+- The clearer the structure:
+  - the **faster** Chron Engine can locate the right branch when searching, and  
+  - the **deeper** it can reason about your goals, constraints and decisions.
+
+So the next time you open a project, don’t just dump atoms into the library.  
+Drag them into Page View, nest a few layers, and let your knowledge start forming **real relationships**.  
+From that moment on, Chronnote stops being just a note-taking app—and starts acting as a partner that thinks with you.

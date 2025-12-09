@@ -1,278 +1,84 @@
 ---
-title: Quick Start
-description: Getting Started with Fumadocs
-icon: Album
+title: Atoms and References
+description: 'Explaining the mechanism of Atoms and References in Chronnote'
 ---
 
-## Introduction
+![Atoms and references illustration](/images/docs/atom1.png)
 
-Fumadocs <span className='text-fd-muted-foreground text-sm'>(Foo-ma docs)</span> is a **documentation framework** based on Next.js, designed to be fast, flexible,
-and composes seamlessly into Next.js App Router.
+In Chronnote, you will frequently encounter the term **"Atom"**. It is not just a fancy name; it is the key to understanding how the entire software operates.
 
-Fumadocs has different parts:
+## 1. What is an Atom?
 
-<Cards>
+An **Atom** is the most fundamental unit of information in Chronnote. You can think of it as a "file" in traditional software, but it is much more flexible.
 
-<Card icon={<CpuIcon className="text-purple-300" />} title='Fumadocs Core'>
+Currently, Chronnote supports the following types of Atoms:
 
-Handles most of the logic, including document search, content source adapters, and Markdown extensions.
+- 📝 **Note**: For rich text editing and recording.
+- 📄 **PDF**: For document reading and annotation.
+- 🧠 **Mind Map**: For structured thinking.
+- 🎨 **Infinite Whiteboard**: For free layout and creative collage.
+- ✅ **To-do List & To-do Item**: For task management.
 
-</Card>
+## 2. Core Logic: One Entity, Infinite References
 
-<Card icon={<PanelsTopLeft className="text-blue-300" />} title='Fumadocs UI'>
+In Chronnote, it is crucial to establish a key concept: **Entity vs. Reference**.
 
-The default theme of Fumadocs offers a beautiful look for documentation sites and interactive components.
+- **Atom Library (The Entity)**: Each Atom has one and only one "true self," which always resides in your **Atom Library**.
+- **Workspace (The Reference)**: When you view an Atom in a whiteboard, folder, or document, what you are actually seeing is a "projection" or "reference" of it.
+- **Sidebar Page View (The Reference)**: In the Page View sidebar, whether you create a new item directly or add it by dragging from the Atom Library, you are simply creating a reference.
 
-</Card>
+This means you haven't copied the file; you have merely opened a "window" to it in a different location.
 
-<Card icon={<Database />} title='Content Source'>
+![Chronnote Atom Library illustration](/images/docs/atom2.png)
 
-The source of your content, can be a CMS or local data layers like [Content Collections](https://www.content-collections.dev) and [Fumadocs MDX](/docs/mdx), the official content source.
+> **A simple way to verify this:**  
+> Click to add a new page in the Page View and observe carefully—the Atom count in the Atom Library increases by +1!
 
-</Card>
+## 3. Demonstration: How to Use Atoms?
 
-<Card icon={<Terminal />} title='Fumadocs CLI'>
+Let’s look at a common scenario—**Split-screen Collaboration on the Whiteboard**—to demonstrate the basic workflow of Atoms.
 
-A command line tool to install UI components and automate things, useful for customizing layouts.
+<DocVideo
+  src="/movies/原子库拖拽高清.mp4"
+  poster="/images/docs/atom2.png"
+  caption="Split-view example: dragging from the Atom Library onto the whiteboard"
+/>
 
-</Card>
+1. **Enable Split View**: Set the interface to split-screen mode. Display your **Atom Library** on the left and an empty **Infinite Whiteboard** on the right.
+2. **Drag and Drop to Reference**: Select an Atom (e.g., a Note or PDF) from the Library on the left, hold, and **drag** it onto the Whiteboard on the right.
+3. **Free Layout**: Release the mouse, and the Atom will appear as a card on the Whiteboard. You can freely adjust its size and position.
 
-</Cards>
+## 4. Synchronization: One Change, Updates Everywhere
 
-<Callout title="Want to learn more?">
-  Read our in-depth [What is Fumadocs](/docs/what-is-fumadocs) introduction.
-</Callout>
+The biggest advantage of Atoms is the synchronization mechanism.
 
-### Terminology
+After dragging a note onto the Whiteboard, you can modify the content directly within that card (e.g., changing the title or adding a paragraph).
 
-**Markdown/MDX:** Markdown is a markup language for creating formatted text. Fumadocs supports Markdown and MDX (superset of Markdown) out-of-the-box.
+<DocVideo
+  src="/movies/同步机制.mp4"
+  caption="Sync demo: editing on the whiteboard updates the Atom Library in real time"
+/>
 
-Although not required, some basic knowledge of Next.js App Router would be useful for further customisations.
+You will notice that the original content in the Atom Library on the left **changes accordingly**.
 
-## Automatic Installation
+Similarly, if this note is referenced in "Whiteboard A", "Whiteboard B", and a "Project Folder" simultaneously, modifying it in any one location updates it everywhere. You no longer need to worry about version conflicts.
 
-A minimum version of Node.js 18 required, note that Node.js 23.1 might have problems with Next.js production build.
+## 5. More Scenarios: Page View
 
-<Tabs groupId='package-manager' persist items={['npm', 'pnpm', 'yarn', 'bun']}>
+Besides free-form collage on the Whiteboard, Atoms fully support traditional hierarchical management.
 
-```bash tab="npm"
-npm create fumadocs-app
-```
+In the **Page View** sidebar, you can organize your knowledge tree just like managing traditional folders. The logic remains the same:
 
-```bash tab="pnpm"
-pnpm create fumadocs-app
-```
+1. Find the Atom you need in the Atom Library.
+2. Drag it into a specific page (or folder) in the sidebar.
+3. A new reference is formed instantly.
 
-```bash tab="yarn"
-yarn create fumadocs-app
-```
+This way, you can associate it visually on a Whiteboard while also locating it quickly in a structured directory.
 
-```bash tab="bun"
-bun create fumadocs-app
-```
+## Summary
 
-</Tabs>
+- **Atoms are unique**: The "true entity" resides centrally in the Atom Library.
+- **References are infinite**: They can appear anywhere (Whiteboards, Page Views, etc.).
+- **Sync is real-time**: Editing any reference means editing the Atom itself.
 
-It will ask you the framework and content source to use, a new fumadocs app should be initialized. Now you can start hacking!
-
-<Callout title='From Existing Codebase?'>
-
-    You can follow the [Manual Installation](/docs/manual-installation) guide to get started.
-
-</Callout>
-
-### Enjoy!
-
-Create your first MDX file in the docs folder.
-
-```mdx title="content/docs/index.mdx"
----
-title: Hello World
----
-
-## Yo what's up
-```
-
-Run the app in development mode and see http://localhost:3000/docs.
-
-```mdx
-npm run dev
-```
-
-## Explore
-
-In the project, you can see:
-
-- `lib/source.ts`: Code for content source adapter, [`loader()`](/docs/headless/source-api) provides an interface to interact with your content source, and assigns URL to your pages.
-- `app/layout.config.tsx`: Shared options for layouts, optional but preferred to keep.
-
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
-
-### Writing Content
-
-For authoring docs, make sure to read:
-
-<Cards>
-  <Card href="/docs/markdown" title="Markdown">
-    Fumadocs has some additional features for authoring content too.
-  </Card>
-  <Card href="/docs/navigation" title="Navigation">
-    Learn how to customise navigation links/sidebar items.
-  </Card>
-</Cards>
-
-### Content Source
-
-Content source handles all your content, like compiling Markdown files and validating frontmatter.
-
-<Tabs items={['Fumadocs MDX', 'Custom Source']}>
-
-    <Tab value='Fumadocs MDX'>
-
-        Read the [Introduction](/docs/mdx) to learn how it handles your content.
-
-        A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
-
-    </Tab>
-
-    <Tab value='Custom Source'>
-
-        Fumadocs is not Markdown-exclusive. For other sources like Sanity, you can build a [custom content source](/docs/headless/custom-source).
-
-    </Tab>
-
-</Tabs>
-
-### Customise UI
-
-See [Customisation Guide](/docs/customisation).
-
-## FAQ
-
-Some common questions you may encounter.
-
-<Accordions>
-    <Accordion id='fix-monorepo-styling' title="How to fix stylings not being applied in Monorepo?">
-
-Sometimes, `fumadocs-ui` is not installed in the workspace of your Tailwind CSS configuration file. (e.g. a monorepo setup).
-
-You have to ensure the `fumadocs-ui` package is scanned by Tailwind CSS, and give a correct relative path to `@source`.
-
-For example, add `../../` to point to the `node_modules` folder in root workspace.
-
-        ```css
-        @import 'tailwindcss';
-        @import 'fumadocs-ui/css/neutral.css';
-        @import 'fumadocs-ui/css/preset.css';
-
-        /* [!code --] */
-        @source '../node_modules/fumadocs-ui/dist/**/*.js';
-        /* [!code ++] */
-        @source '../../../node_modules/fumadocs-ui/dist/**/*.js';
-        ```
-
-    </Accordion>
-    <Accordion id='change-base-url' title="How to change the base route of /docs?">
-
-You can change the base route of docs (e.g. from `/docs/page` to `/info/page`).
-Since Fumadocs uses Next.js App Router, you can simply rename the route:
-
-<Files>
-  <Folder name="app/docs" defaultOpen className="opacity-50" disabled>
-    <File name="layout.tsx" />
-  </Folder>
-  <Folder name="app/info" defaultOpen>
-    <File name="layout.tsx" />
-  </Folder>
-</Files>
-
-And tell Fumadocs to use the new route in `source.ts`:
-
-```ts title="lib/source.ts"
-import { loader } from 'fumadocs-core/source';
-
-export const source = loader({
-  baseUrl: '/info',
-  // other options
-});
-```
-
-    </Accordion>
-    <Accordion id='dynamic-route' title="It uses Dynamic Route, will it be poor in performance?">
-
-Next.js turns dynamic route into static routes when `generateStaticParams` is configured.
-Hence, it is as fast as static pages.
-
-You can enable Static Exports on Next.js to get a static build output. (Notice that Route Handler doesn't work with static export, you have to configure static search)
-
-    </Accordion>
-    <Accordion id='custom-layout-docs-page' title='How to create a page in /docs without docs layout?'>
-
-Same as managing layouts in Next.js App Router, remove the original MDX file from content directory (`/content/docs`).
-This ensures duplicated pages will not cause errors.
-
-Now, You can add the page to another route group, which isn't a descendant of docs layout.
-
-For example, under your `app` folder:
-
-<Files>
-  <File name="(home)/docs/page.tsx" />
-  <Folder name="docs">
-    <File name="layout.tsx" />
-    <File name="[[...slug]]/page.tsx" />
-  </Folder>
-</Files>
-
-will replace the `/docs` page with your `page.tsx`.
-
-    </Accordion>
-
-    <Accordion id='multi-versions' title="How to implement docs with multi-version?">
-        Use a separate deployment for each version.
-
-        On Vercel, this can be done by creating another branch for a specific version on your GitHub repository.
-        To link to the sites of other versions, use the Links API or a custom navigation component.
-    </Accordion>
-
-    <Accordion id='multi-docs' title="How to implement multi-docs?">
-        We recommend to use [Sidebar Tabs](/docs/navigation/sidebar#sidebar-tabs).
-    </Accordion>
-
-</Accordions>
-
-## Video Tutorials
-
-<YoutubeVideo url="https://www.youtube.com/embed/BPnK-YbISHQ?si=TH_tI3e4MCgMHzGr" />
-
-## Learn More
-
-New to here? Don't worry, we are welcome for your questions.
-
-If you find anything confusing, please give your feedback on [Github Discussion](https://github.com/fuma-nama/fumadocs/discussions)!
-
-<Cards>
-  <Card
-    href="/docs/static-export"
-    title="Configure Static Export"
-    description="Learn how to enable static export on your docs"
-  />
-  <Card
-    href="/docs/search"
-    title="Customise Search"
-    description="Learn how to customise document search"
-  />
-  <Card
-    href="/docs/theme"
-    title="Theming"
-    description="Add themes to Fumadocs UI"
-  />
-  <Card
-    href="/docs/components"
-    title="Components"
-    description="See all available components to enhance your docs"
-  />
-</Cards>
+Once you understand the **"Atom + Reference"** model, you have mastered the core mindset of Chronnote. Whether you are building a knowledge system or planning a project, you can expand endlessly upon this unified logic.

@@ -1,0 +1,84 @@
+---
+title: Atoms and References
+description: 'Explaining the mechanism of Atoms and References in Chronnote'
+---
+
+![Atoms and references illustration](/images/docs/atom1.png)
+
+In Chronnote, you will frequently encounter the term **"Atom"**. It is not just a fancy name; it is the key to understanding how the entire software operates.
+
+## 1. What is an Atom?
+
+An **Atom** is the most fundamental unit of information in Chronnote. You can think of it as a "file" in traditional software, but it is much more flexible.
+
+Currently, Chronnote supports the following types of Atoms:
+
+- 📝 **Note**: For rich text editing and recording.
+- 📄 **PDF**: For document reading and annotation.
+- 🧠 **Mind Map**: For structured thinking.
+- 🎨 **Infinite Whiteboard**: For free layout and creative collage.
+- ✅ **To-do List & To-do Item**: For task management.
+
+## 2. Core Logic: One Entity, Infinite References
+
+In Chronnote, it is crucial to establish a key concept: **Entity vs. Reference**.
+
+- **Atom Library (The Entity)**: Each Atom has one and only one "true self," which always resides in your **Atom Library**.
+- **Workspace (The Reference)**: When you view an Atom in a whiteboard, folder, or document, what you are actually seeing is a "projection" or "reference" of it.
+- **Sidebar Page View (The Reference)**: In the Page View sidebar, whether you create a new item directly or add it by dragging from the Atom Library, you are simply creating a reference.
+
+This means you haven't copied the file; you have merely opened a "window" to it in a different location.
+
+![Chronnote Atom Library illustration](/images/docs/atom2.png)
+
+> **A simple way to verify this:**  
+> Click to add a new page in the Page View and observe carefully—the Atom count in the Atom Library increases by +1!
+
+## 3. Demonstration: How to Use Atoms?
+
+Let’s look at a common scenario—**Split-screen Collaboration on the Whiteboard**—to demonstrate the basic workflow of Atoms.
+
+<DocVideo
+  src="/movies/原子库拖拽高清.mp4"
+  poster="/images/docs/atom2.png"
+  caption="Split-view example: dragging from the Atom Library onto the whiteboard"
+/>
+
+1. **Enable Split View**: Set the interface to split-screen mode. Display your **Atom Library** on the left and an empty **Infinite Whiteboard** on the right.
+2. **Drag and Drop to Reference**: Select an Atom (e.g., a Note or PDF) from the Library on the left, hold, and **drag** it onto the Whiteboard on the right.
+3. **Free Layout**: Release the mouse, and the Atom will appear as a card on the Whiteboard. You can freely adjust its size and position.
+
+## 4. Synchronization: One Change, Updates Everywhere
+
+The biggest advantage of Atoms is the synchronization mechanism.
+
+After dragging a note onto the Whiteboard, you can modify the content directly within that card (e.g., changing the title or adding a paragraph).
+
+<DocVideo
+  src="/movies/同步机制.mp4"
+  caption="Sync demo: editing on the whiteboard updates the Atom Library in real time"
+/>
+
+You will notice that the original content in the Atom Library on the left **changes accordingly**.
+
+Similarly, if this note is referenced in "Whiteboard A", "Whiteboard B", and a "Project Folder" simultaneously, modifying it in any one location updates it everywhere. You no longer need to worry about version conflicts.
+
+## 5. More Scenarios: Page View
+
+Besides free-form collage on the Whiteboard, Atoms fully support traditional hierarchical management.
+
+In the **Page View** sidebar, you can organize your knowledge tree just like managing traditional folders. The logic remains the same:
+
+1. Find the Atom you need in the Atom Library.
+2. Drag it into a specific page (or folder) in the sidebar.
+3. A new reference is formed instantly.
+
+This way, you can associate it visually on a Whiteboard while also locating it quickly in a structured directory.
+
+## Summary
+
+- **Atoms are unique**: The "true entity" resides centrally in the Atom Library.
+- **References are infinite**: They can appear anywhere (Whiteboards, Page Views, etc.).
+- **Sync is real-time**: Editing any reference means editing the Atom itself.
+
+Once you understand the **"Atom + Reference"** model, you have mastered the core mindset of Chronnote. Whether you are building a knowledge system or planning a project, you can expand endlessly upon this unified logic.

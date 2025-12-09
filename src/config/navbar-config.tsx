@@ -61,15 +61,11 @@ export function useNavbarLinks(): NestedMenuItem[] {
       href: Routes.Download,
       external: false,
     },
-    ...(websiteConfig.blog.enable
-      ? [
-          {
-            title: t('blog.title'),
-            href: Routes.Blog,
-            external: false,
-          },
-        ]
-      : []),
+    {
+      title: t('community.title'),
+      href: Routes.Community,
+      external: false,
+    },
     ...(websiteConfig.docs.enable
       ? [
           {
@@ -79,6 +75,16 @@ export function useNavbarLinks(): NestedMenuItem[] {
           },
         ]
       : []),
+    // 暂时隐藏博客入口
+    // ...(websiteConfig.blog.enable
+    //   ? [
+    //       {
+    //         title: t('blog.title'),
+    //         href: Routes.Blog,
+    //         external: false,
+    //       },
+    //     ]
+    //   : []),
     {
       // Replace AI Tools & Pages dropdown with a direct changelog entry for now
       title: t('pages.items.changelog.title'),

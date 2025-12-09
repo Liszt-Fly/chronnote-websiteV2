@@ -326,6 +326,9 @@
       "download": {
         "title": "Download"
       },
+      "community": {
+        "title": "Community"
+      },
       "pricing": {
         "title": "Pricing"
       },
@@ -779,7 +782,7 @@
     "description": "Build your second brain",
     "hero": {
       "title": "All-in-one atomic knowledge workspace",
-      "description": "Chronnote is an atomic knowledge OS where every note can also be a mind-map node, to-do item, or PDF highlight. Chron Engine threads those atoms together so two months of learning compress into two weeks.",
+      "description": "Break the boundaries of format. In this atom-based Knowledge OS, notes, maps, and document clips are no longer separate entities but malleable Knowledge Atoms. The Chron Engine allows you to seamlessly shift forms and weave connections in one boundless workspace.",
       "introduction": "AI-era learning accelerator",
       "primary": "Download now",
       "secondary": "Watch demo"
@@ -792,12 +795,12 @@
       "learnMore": "Learn More",
       "items": {
         "item-1": {
-          "title": "Chron Engine",
-          "description": "A Gemini 2.5 Pro-powered dispatcher that understands context, notebooks, PDFs and to-dos, surfacing links and suggesting the very next action."
+          "title": "Chron Mindmap",
+          "description": "Chron Mindmap turns atoms into draggable nodes on a canvas so you can sketch branching structures while staying in sync with the Atom Library and pages."
         },
         "item-2": {
           "title": "Chron Editor",
-          "description": "WYSIWYG + Markdown with tables, formulas and tags. Drag any PDF segment in to create a bi-directional reference that stays clickable."
+          "description": "A two-sided editor you can flip with one click: sketch structure and brainstorm on the whiteboard side, then flip back to the editor side to focus on writing while both stay in sync."
         },
         "item-3": {
           "title": "Chron Reader",
@@ -808,12 +811,12 @@
           "description": "Notes, PDFs, tasks, mind maps and boards all exist as atoms. Drop them into any page and every representation stays perfectly in sync."
         },
         "item-5": {
-          "title": "Page View",
-          "description": "Pages are pure reference graphs—nest them to express intent, delete a reference without touching the original, and keep narratives semantic."
+          "title": "Chron Whiteboard",
+          "description": "Chron Whiteboard is an infinite canvas where you can drop atoms, images and map nodes, rearrange them freely, and connect ideas with lines and clusters."
         },
         "item-6": {
-          "title": "Intelligent Workflows",
-          "description": "Nested to-do stacks that double as notes, with Chron Engine auto-generating review tasks or practice prompts when knowledge gaps appear."
+          "title": "Chron TodoList",
+          "description": "Chron TodoList pairs nested tasks with notes, while the Chron Engine auto-generates review or practice items whenever it spots gaps in your knowledge."
         }
       }
     },
@@ -892,8 +895,8 @@
     },
     "features3": {
       "title": "Chron Engine: your AI learning accelerator",
-      "subtitle": "The secret to compressing two months into two weeks",
-      "description": "Chron Engine isn’t just a chatbot—it’s the dispatcher for your second brain. It understands context, links atoms, and even predicts what you should tackle next so AI truly works on your knowledge.",
+      "subtitle": "Let AI truly work on your knowledge",
+      "description": "Chron Engine isn’t just a chatbot—it’s the dispatcher for your second brain. It understands context, links atoms, and even predicts what you should tackle next so every study session compounds.",
       "items": {
         "item-1": {
           "title": "Context-aware linking",
@@ -935,20 +938,20 @@
           "answer": "Every piece of knowledge is an atom. Notes, mind-map nodes, tasks and PDFs are all the same entity, just viewed differently—so you never duplicate or copy/paste."
         },
         "item-2": {
-          "question": "How does the Chron Engine work?",
-          "answer": "It’s the dispatcher for your knowledge base. The engine links related atoms, suggests where they belong, schedules reviews, and records your reasoning path so you learn faster."
+          "question": "",
+          "answer": ""
         },
         "item-3": {
-          "question": "How does Chronnote “reinforce future me”?",
-          "answer": "By logging thinking trails, scheduling spaced repetition, and surfacing related knowledge every time you review. Future-you immediately sees past context and decisions."
+          "question": "How can I get help or send feedback?",
+          "answer": "At the bottom of the website you’ll find links to our Xiaohongshu, WeChat, and QQ communities—join any group to ask questions or share feedback, or email us directly at 1155181470@link.cuhk.edu.hk."
         },
         "item-4": {
-          "question": "Which learning scenarios are supported?",
-          "answer": "Chronnote shines in deep-learning journeys—technical books, research papers, online courses—because PDF and note atoms keep the source and your thoughts tightly linked."
+          "question": "Will there be a mobile and tablet version?",
+          "answer": "Yes. We plan to ship a minimal mobile experience starting in Q1 2026. Dedicated tablet support will be evaluated and rolled out later based on real usage and feedback."
         },
         "item-5": {
-          "question": "How is Chronnote different from other tools?",
-          "answer": "Single source, multi-form display. The same atom can be a note, task, or map node. Edit once and every view updates, so silos and redundant copies disappear."
+          "question": "Why choose Chronnote over other note or knowledge tools?",
+          "answer": "Chronnote blends the strengths of an AI-native knowledge base with a powerful note system, unifying notes, mind-maps, PDFs, tasks, and boards as the same atoms in one all-in-one workspace. Instead of scattering your life across separate apps, Chronnote sees your full context, so the AI is no longer guessing from fragments but responding to a much more complete picture of you."
         }
       }
     },

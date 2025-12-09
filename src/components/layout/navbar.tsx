@@ -205,7 +205,16 @@ export function Navbar({ scroll }: NavBarProps) {
                             item.external ? 'noopener noreferrer' : undefined
                           }
                         >
-                          {item.title}
+                          {item.href === Routes.Community ? (
+                            <span className="relative inline-flex items-center gap-1">
+                              <span>{item.title}</span>
+                              <span className="mt-[-10px] rounded-full border border-primary/30 bg-primary/10 px-1.5 py-[1px] text-[9px] font-medium text-primary">
+                                NEW
+                              </span>
+                            </span>
+                          ) : (
+                            item.title
+                          )}
                         </LocaleLink>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
