@@ -67,9 +67,6 @@ export function usePricePlans(): Record<string, PricePlan> {
         t('lifetime.features.feature-2'),
         t('lifetime.features.feature-3'),
         t('lifetime.features.feature-4'),
-        t('lifetime.features.feature-5'),
-        t('lifetime.features.feature-6'),
-        t('lifetime.features.feature-7'),
       ],
       limits: [],
     };

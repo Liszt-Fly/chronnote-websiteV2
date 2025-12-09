@@ -45,8 +45,6 @@ interface ApiResponse {
   };
 }
 
-type Translate = (key: string, values?: Record<string, unknown>) => string;
-
 interface Section {
   title: string;
   items: string[];
@@ -202,7 +200,7 @@ function VersionCard({ item }: { item: VersionItem }) {
   );
 }
 
-function buildSections(payload: FeaturePayload, t: Translate) {
+function buildSections(payload: FeaturePayload, t: any) {
   if (!payload) return [];
 
   if (Array.isArray(payload)) {
