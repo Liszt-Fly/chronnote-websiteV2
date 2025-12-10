@@ -2,9 +2,9 @@ import { XTwitterIcon } from '@/components/icons/x';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcher } from '@/components/layout/mode-switcher';
 import { websiteConfig } from '@/config/website';
+import { getLocalePathname } from '@/i18n/navigation';
 import { docsI18nConfig } from '@/lib/docs/i18n';
 import { source } from '@/lib/source';
-import { getUrlWithLocale } from '@/lib/urls/urls';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { HomeIcon } from 'lucide-react';
@@ -40,13 +40,16 @@ export default async function DocsRootLayout({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'DocsPage' });
 
+  const docsPath = getLocalePathname({ locale, href: '/docs' });
+  const homePath = getLocalePathname({ locale, href: '/' });
+
   // Docs layout configurations
   const showLocaleSwitch = Object.keys(websiteConfig.i18n.locales).length > 1;
   const docsOptions: BaseLayoutProps = {
     i18n: showLocaleSwitch ? docsI18nConfig : undefined,
     githubUrl: websiteConfig.metadata.social?.github ?? undefined,
     nav: {
-      url: getUrlWithLocale('/docs', locale),
+      url: docsPath,
       title: (
         <>
           <Logo className="size-6" />
@@ -57,7 +60,7 @@ export default async function DocsRootLayout({
     links: [
       {
         text: t('homepage'),
-        url: getUrlWithLocale('/', locale),
+        url: homePath,
         icon: <HomeIcon />,
         active: 'none',
         external: false,
