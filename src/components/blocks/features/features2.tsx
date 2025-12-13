@@ -56,14 +56,14 @@ export default function Features2Section() {
           <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
             <div className="bg-linear-to-b relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
               <Image
-                src="/images/img1.png"
+                src="/images/img1.webp"
                 className="hidden w-full rounded-[15px] dark:block"
                 alt="Chronnote page view dark"
                 width={1207}
                 height={929}
               />
               <Image
-                src="/images/img1.png"
+                src="/images/img1.webp"
                 className="w-full rounded-[15px] shadow dark:hidden"
                 alt="Chronnote page view light"
                 width={1207}

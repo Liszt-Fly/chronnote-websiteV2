@@ -19,7 +19,7 @@ interface DocVideoProps {
  *
  * <DocVideo
  *   src="/movies/原子库拖拽高清.mp4"
- *   poster="/images/docs/atom2.png"
+ *   poster="/images/docs/atom2.webp"
  *   caption="原子库拖拽到白板的分屏示例"
  * />
  */

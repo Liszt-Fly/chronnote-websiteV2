@@ -164,14 +164,14 @@ export default function HeroSection() {
                 <div className="inset-shadow-2xs ring-muted/50 dark:inset-shadow-white/20 bg-muted/50 relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
                     className="bg-muted/50 relative hidden rounded-2xl dark:block"
-                    src="/images/media/title.png"
+                    src="/images/media/title.webp"
                     alt="Chronnote app workspace"
                     width={3528}
                     height={2240}
                   />
                   <Image
                     className="z-2 border-border/25 relative rounded-2xl border dark:hidden"
-                    src="/images/media/title.png"
+                    src="/images/media/title.webp"
                     alt="Chronnote app workspace"
                     width={3528}
                     height={2240}
