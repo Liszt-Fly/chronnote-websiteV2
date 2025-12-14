@@ -92,12 +92,15 @@ export default async function DocPage({ params }: DocPageProps) {
   const preview = page.data.preview;
   const { premium } = page.data;
 
-  // Check premium access for premium docs
-  const session = await getSession();
-  const hasPremiumAccess =
-    premium && session?.user?.id
+  // Only check session/premium status when needed.
+  // Avoid doing auth work for non-premium docs to keep them fast and cache-friendly.
+  let hasPremiumAccess = true;
+  if (premium) {
+    const session = await getSession();
+    hasPremiumAccess = session?.user?.id
       ? await checkPremiumAccess(session.user.id)
-      : !premium; // Non-premium docs are always accessible
+      : false;
+  }
 
   const MDX = page.data.body;
 

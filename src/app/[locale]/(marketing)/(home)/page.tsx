@@ -10,7 +10,6 @@ import Integration2Section from '@/components/blocks/integration/integration2';
 import LogoCloud from '@/components/blocks/logo-cloud/logo-cloud';
 import StatsSection from '@/components/blocks/stats/stats';
 import TestimonialsSection from '@/components/blocks/testimonials/testimonials';
-import CrispChat from '@/components/layout/crisp-chat';
 import { NewsletterCard } from '@/components/newsletter/newsletter-card';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
@@ -71,8 +70,6 @@ export default async function HomePage(props: HomePageProps) {
         {/* <TestimonialsSection /> */}
 
         {/* <NewsletterCard /> */}
-
-        <CrispChat />
       </div>
     </>
   );

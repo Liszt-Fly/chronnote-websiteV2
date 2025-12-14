@@ -117,11 +117,18 @@ export default function IntegrationSection() {
           className="w-full"
         >
           <CarouselContent>
-            {cards.map((card) => (
+            {cards.map((card, index) => {
+              const isActive = index === currentIndex;
+
+              return (
               <CarouselItem key={card.id} className="flex justify-center">
-                <IntegrationCarouselCard card={card} />
+                <IntegrationCarouselCard
+                  card={card}
+                  isActive={isActive}
+                />
               </CarouselItem>
-            ))}
+              );
+            })}
           </CarouselContent>
 
           <CarouselPrevious className="-left-14 md:-left-16 size-7 bg-background/80 border border-border/60 shadow-sm backdrop-blur-sm" />
@@ -263,9 +270,13 @@ function WorkflowIcon(props: React.SVGProps<SVGSVGElement>) {
 
 interface IntegrationCarouselCardProps {
   card: IntegrationFeatureCard;
+  isActive: boolean;
 }
 
-function IntegrationCarouselCard({ card }: IntegrationCarouselCardProps) {
+function IntegrationCarouselCard({
+  card,
+  isActive,
+}: IntegrationCarouselCardProps) {
   const videoSrc =
     card.id === 'item-4'
       ? '/movies/原子库轮播.mp4'
@@ -280,6 +291,8 @@ function IntegrationCarouselCard({ card }: IntegrationCarouselCardProps) {
               : card.id === 'item-6'
                 ? '/movies/待办清单.mp4'
                 : '/movies/Chronnote新闻实事.mp4';
+
+  const shouldRenderVideo = isActive;
 
   return (
     <div
@@ -309,15 +322,19 @@ function IntegrationCarouselCard({ card }: IntegrationCarouselCardProps) {
         {/* Video */}
         <div className="mt-3 w-full">
           <div className="w-full overflow-hidden rounded-xl">
-            <video
-              src={videoSrc}
-              className="h-auto w-full max-h-[360px] rounded-xl pointer-events-none"
-              autoPlay
-              muted
-              playsInline
-              loop
-              preload="metadata"
-            />
+            {shouldRenderVideo ? (
+              <video
+                src={videoSrc}
+                className="h-auto w-full max-h-[360px] rounded-xl pointer-events-none"
+                autoPlay
+                muted
+                playsInline
+                loop
+                preload="metadata"
+              />
+            ) : (
+              <div className="w-full max-h-[360px] aspect-video rounded-xl bg-muted/30" />
+            )}
           </div>
         </div>
       </div>
