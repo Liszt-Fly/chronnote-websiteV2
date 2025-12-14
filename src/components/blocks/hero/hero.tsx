@@ -19,9 +19,11 @@ const transitionVariants = {
       filter: 'blur(0px)',
       y: 0,
       transition: {
-        type: 'spring',
-        bounce: 0.3,
-        duration: 1.5,
+        // Don't use a spring on `filter` — it can overshoot below 0px and spam
+        // "Invalid keyframe value ... blur(-0.xxxpx)" warnings in Chromium.
+        y: { type: 'spring', bounce: 0.3, duration: 1.5 },
+        opacity: { duration: 0.4, ease: 'easeOut' },
+        filter: { duration: 0.4, ease: 'easeOut' },
       },
     },
   },
