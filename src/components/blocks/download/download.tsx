@@ -17,6 +17,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const WINDOWS_RELEASE_URL = 'https://api.chronnote.top/release/latest.yml';
 const MAC_RELEASE_URL = 'https://api.chronnote.top/release/latest-mac.yml';
+const FEISHU_FALLBACK_URL =
+  'https://gcne267coy02.feishu.cn/docx/JA1ndaZ2ZosjTmxz4fIc4AqtnCb';
 
 interface BuildTarget {
   version?: string;
@@ -227,38 +229,61 @@ function DownloadRow({
           <p className="text-sm text-muted-foreground">{versionLabel}</p>
         )}
       </div>
-      <DownloadButton
-        href={info.url}
-        disabled={!info.url || loading}
-        label={buttonLabel}
+      <DownloadButtonGroup
+        primaryHref={info.url}
+        primaryLabel={buttonLabel}
+        fallbackHref={FEISHU_FALLBACK_URL}
+        fallbackLabel={t('fallbackDownload')}
+        disabled={loading}
       />
     </div>
   );
 }
 
-function DownloadButton({
-  href,
-  label,
+function DownloadButtonGroup({
+  primaryHref,
+  primaryLabel,
+  fallbackHref,
+  fallbackLabel,
   disabled,
 }: {
-  href?: string;
-  label: string;
+  primaryHref?: string;
+  primaryLabel: string;
+  fallbackHref: string;
+  fallbackLabel: string;
   disabled: boolean;
 }) {
-  if (disabled || !href) {
-    return (
-      <Button size="lg" className="w-full sm:w-auto" disabled>
-        {label}
-      </Button>
-    );
-  }
-
   return (
-    <Button asChild size="lg" className="w-full sm:w-auto">
-      <a href={href} target="_blank" rel="noreferrer">
-        {label}
-      </a>
-    </Button>
+    <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+      {disabled || !primaryHref ? (
+        <Button size="lg" className="w-full sm:w-auto" disabled>
+          {primaryLabel}
+        </Button>
+      ) : (
+        <Button asChild size="lg" className="w-full sm:w-auto">
+          <a href={primaryHref} target="_blank" rel="noreferrer">
+            {primaryLabel}
+          </a>
+        </Button>
+      )}
+
+      {disabled ? (
+        <Button
+          size="lg"
+          variant="outline"
+          className="w-full sm:w-auto"
+          disabled
+        >
+          {fallbackLabel}
+        </Button>
+      ) : (
+        <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+          <a href={fallbackHref} target="_blank" rel="noreferrer">
+            {fallbackLabel}
+          </a>
+        </Button>
+      )}
+    </div>
   );
 }
 
@@ -307,7 +332,7 @@ async function fetchWindowsRelease(): Promise<BuildTarget> {
 
   return {
     version: parsed.version,
-    url: executable,
+    url: executable ? resolveManifestUrl(executable, response.url) : undefined,
   };
 }
 
@@ -338,11 +363,20 @@ async function fetchMacRelease(): Promise<{
   return {
     intel: {
       version: parsed.version,
-      url: universal ?? fallbackDmg,
+      url:
+        universal || fallbackDmg
+          ? resolveManifestUrl(universal ?? fallbackDmg!, response.url)
+          : undefined,
     },
     apple: {
       version: parsed.version,
-      url: appleSilicon ?? universal ?? fallbackDmg,
+      url:
+        appleSilicon || universal || fallbackDmg
+          ? resolveManifestUrl(
+              (appleSilicon ?? universal ?? fallbackDmg)!,
+              response.url
+            )
+          : undefined,
     },
   };
 }
@@ -352,9 +386,17 @@ function parseYamlManifest(manifest: string): {
   urls: string[];
 } {
   const version = manifest.match(/version:\s*([^\n]+)/)?.[1]?.trim();
-  const urls = Array.from(manifest.matchAll(/url:\s*(.+)/g)).map((match) =>
-    match[1].trim()
-  );
+  const urls = Array.from(
+    manifest.matchAll(/^(?:\s*-\s*)?(?:url|path):\s*(.+)\s*$/gm)
+  ).map((match) => match[1].trim());
 
   return { version, urls };
+}
+
+function resolveManifestUrl(url: string, manifestUrl: string) {
+  try {
+    return new URL(url, manifestUrl).toString();
+  } catch {
+    return url;
+  }
 }

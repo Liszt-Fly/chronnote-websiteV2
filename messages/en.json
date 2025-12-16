@@ -825,6 +825,7 @@
       "title": "Download Chronnote",
       "description": "Pick your platform and start exploring the Chronnote atomic workspace on your device.",
       "downloadNow": "Download",
+      "fallbackDownload": "Open Feishu download page",
       "comingSoon": "Coming soon",
       "versionLabel": "Version {version}",
       "unknownVersion": "Version info coming soon",

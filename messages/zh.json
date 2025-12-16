@@ -828,6 +828,7 @@
       "title": "下载 Chronnote",
       "description": "选择你的平台，把原子化知识空间带到本地设备。",
       "downloadNow": "立即下载",
+      "fallbackDownload": "去飞书下载",
       "comingSoon": "敬请期待",
       "versionLabel": "版本 {version}",
       "unknownVersion": "正在获取版本信息",
