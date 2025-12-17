@@ -10,6 +10,8 @@ import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import type React from 'react';
 
+const ICP_BEIAN_URL = 'https://beian.miit.gov.cn/';
+
 export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const t = useTranslations();
   const footerLinks = useFooterLinks();
@@ -88,10 +90,20 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
 
       <div className="border-t py-8">
         <Container className="px-4 flex items-center justify-between gap-x-4">
-          <span className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} {t('Metadata.name')} All Rights
-            Reserved.
-          </span>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-x-4">
+            <span className="text-muted-foreground text-sm">
+              &copy; {new Date().getFullYear()} {t('Metadata.name')} All Rights
+              Reserved.
+            </span>
+            <a
+              href={ICP_BEIAN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground text-sm hover:text-primary"
+            >
+              {t('Marketing.footer.icp')}
+            </a>
+          </div>
 
           <div className="flex items-center gap-x-4">
             <ModeSwitcherHorizontal />
