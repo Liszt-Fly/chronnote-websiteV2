@@ -28,6 +28,7 @@ import { Badge } from '../ui/badge';
 import { CheckoutButton } from './create-checkout-button';
 
 const LIFETIME_EARLY_BIRD_SLOTS = 699;
+const PRICING_CTA_DISABLED = true;
 
 interface PricingCardProps {
   plan: PricePlan;
@@ -147,6 +148,11 @@ export function PricingCard({
   const isPaidPlan = !plan.isFree && !!price;
   // check if plan has a trial period, period is greater than 0
   const hasTrialPeriod = price?.trialPeriodDays && price.trialPeriodDays > 0;
+  const actionLabel = plan.isFree
+    ? t('getStartedForFree')
+    : plan.isLifetime
+      ? t('getLifetimeAccess')
+      : t('getStarted');
 
   return (
     <Card
@@ -226,7 +232,15 @@ export function PricingCard({
         </CardDescription>
 
         {/* show action buttons based on plans */}
-        {plan.isFree ? (
+        {PRICING_CTA_DISABLED ? (
+          <Button
+            disabled
+            variant={plan.isFree ? 'outline' : 'default'}
+            className="mt-4 w-full"
+          >
+            {actionLabel}
+          </Button>
+        ) : plan.isFree ? (
           mounted && currentUser ? (
             <Button variant="outline" className="mt-4 w-full disabled">
               {t('getStartedForFree')}
