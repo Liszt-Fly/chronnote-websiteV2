@@ -51,10 +51,27 @@
     "subtitle": "Choose the plan that works best for you",
     "monthly": "Monthly",
     "yearly": "Yearly",
+    "lifetime": "Lifetime",
+    "aiCredits": {
+      "title": "Credits Pricing",
+      "description": "Buy credits on demand. Unit pricing may move up or down with model costs, compute costs, and API usage fees.",
+      "tag": "Credit Rate",
+      "ratioLabel": "Conversion Ratio",
+      "ratio": "CNY 1 = 1,000 credits",
+      "examplePrefix": "Example {index}",
+      "example1": "CNY 1 = 1,000 credits",
+      "example2": "CNY 5 = 5,000 credits",
+      "example3": "CNY 10 = 10,000 credits",
+      "trendTitle": "Price Volatility Illustration",
+      "trendAriaLabel": "Simulated dynamic price trend curve",
+      "trendNotice": "Note: Credit unit pricing is not permanently fixed and may increase or decrease with changes in model costs, compute costs, and API usage fees."
+    },
     "PricingCard": {
       "freePrice": "$0",
       "perMonth": "/month",
       "perYear": "/year",
+      "savePercent": "Save {percent}%",
+      "earlyBirdPrice": "Early bird price",
       "popular": "Popular",
       "currentPlan": "Current Plan",
       "yourCurrentPlan": "Your Current Plan",
@@ -62,7 +79,10 @@
       "getLifetimeAccess": "Get Lifetime Access",
       "getStarted": "Get Started",
       "notAvailable": "Not Available",
-      "daysTrial": "{days}-day free trial"
+      "daysTrial": "{days}-day free trial",
+      "limitedSlots": "Limited to {count} spots",
+      "proCreditBenefitMonthly": "20,000 bonus AI credits (equivalent to CNY 5) (Early Bird)",
+      "proCreditBenefitYearly": "Additional 30,000 credits on top of the Free plan (equivalent to CNY 30)"
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -75,9 +95,10 @@
       "description": "Start your personal knowledge base",
       "features": {
         "feature-1": "Local storage & basic editing",
-        "feature-2": "Tags and full-text search",
+        "feature-2": "Daily AI credits refill (base quota)",
         "feature-3": "Command palette & shortcuts",
-        "feature-4": "AI with your own API key"
+        "feature-4": "AI with your own API key",
+        "feature-5": "Ongoing updates & maintenance"
       },
       "limits": {
         "limit-1": "No cloud sync",
@@ -92,8 +113,10 @@
         "feature-1": "Everything in Free",
         "feature-2": "Advanced search & bulk ops",
         "feature-3": "Auto backup & history",
-        "feature-4": "Priority support",
-        "feature-5": "Upcoming pro-only enhancements"
+        "feature-4": "Daily AI credits refill (4× Free plan quota)",
+        "feature-5": "",
+        "feature-6": "",
+        "feature-7": "Cloud sync (coming soon), 5GB storage"
       },
       "limits": {
         "limit-1": "—",
@@ -102,12 +125,12 @@
     },
     "lifetime": {
       "name": "Lifetime",
-      "description": "One-time purchase, long-term updates",
+      "description": "One-time purchase for all advanced features",
       "features": {
         "feature-1": "All Pro features",
-        "feature-2": "Early access to new features",
-        "feature-3": "Ongoing maintenance & updates",
-        "feature-4": "Dedicated support"
+        "feature-2": "100GB storage",
+        "feature-3": "Additional 100,000 credits on top of the Free plan (equivalent to CNY 100)",
+        "feature-4": "Cloud sync (coming soon), 5GB storage"
       }
     }
   },
@@ -788,7 +811,9 @@
       "primary": "Download now",
       "secondary": "Watch demo"
     },
-    "logocloud": { "title": "Trusted by creators and developers" },
+    "logocloud": {
+      "title": "Trusted by creators and developers"
+    },
     "integration": {
       "title": "Chronnote System Pillars",
       "subtitle": "Atomic knowledge meets the Chron Engine",
@@ -929,7 +954,11 @@
     "pricing": {
       "title": "Choose your acceleration level",
       "subtitle": "Invest in becoming a super-learner",
-      "description": "Whether you are a student, researcher, or lifelong learner, pick the plan that helps you build a resilient second brain."
+      "description": "Whether you are a student, researcher, or lifelong learner, pick the plan that helps you build a resilient second brain.",
+      "earlyBird": {
+        "title": "Early-bird pricing",
+        "description": "Early-bird pricing is for early beta users as a thank-you."
+      }
     },
     "faqs": {
       "title": "FAQ",

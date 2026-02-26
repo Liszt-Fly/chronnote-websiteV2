@@ -2,10 +2,15 @@
  * Format a price for display
  * @param price Price amount in currency units (dollars, euros, etc.)
  * @param currency Currency code
+ * @param locale Locale string (e.g., "zh", "en-US")
  * @returns Formatted price string
  */
-export function formatPrice(price: number, currency: string): string {
-  const formatter = new Intl.NumberFormat('en-US', {
+export function formatPrice(
+  price: number,
+  currency: string,
+  locale = 'en-US'
+): string {
+  const formatter = new Intl.NumberFormat(locale, {
     style: 'currency',
     currency,
     minimumFractionDigits: 0,

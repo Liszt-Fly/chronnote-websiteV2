@@ -15,7 +15,7 @@ import { useCurrentPlan } from '@/hooks/use-payment';
 import { formatPrice } from '@/lib/formatter';
 import { cn } from '@/lib/utils';
 import { CircleCheckBigIcon, CoinsIcon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { CreditCheckoutButton } from './credit-checkout-button';
 
 /**
@@ -28,6 +28,7 @@ export function CreditPackages() {
   }
 
   const t = useTranslations('Dashboard.settings.credits.packages');
+  const locale = useLocale();
 
   // Get current user and payment info
   const currentUser = useCurrentUser();
@@ -102,7 +103,8 @@ export function CreditPackages() {
                     <div className="text-3xl font-bold text-primary">
                       {formatPrice(
                         creditPackage.price.amount,
-                        creditPackage.price.currency
+                        creditPackage.price.currency,
+                        locale
                       )}
                     </div>
                   </div>

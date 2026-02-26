@@ -22,10 +22,12 @@ import {
   type PricePlan,
 } from '@/payment/types';
 import { CheckCircleIcon, XCircleIcon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { LoginWrapper } from '../auth/login-wrapper';
 import { Badge } from '../ui/badge';
 import { CheckoutButton } from './create-checkout-button';
+
+const LIFETIME_EARLY_BIRD_SLOTS = 699;
 
 interface PricingCardProps {
   plan: PricePlan;
@@ -55,6 +57,7 @@ function getPriceForPlan(
 
   // non-free plans must have a price
   return plan.prices.find((price) => {
+    if (price.disabled) return false;
     if (paymentType === PaymentTypes.ONE_TIME) {
       return price.type === PaymentTypes.ONE_TIME;
     }
@@ -62,6 +65,41 @@ function getPriceForPlan(
       price.type === PaymentTypes.SUBSCRIPTION && price.interval === interval
     );
   });
+}
+
+function parseFeatureTag(feature: string): { text: string; tag?: string } {
+  const earlyBirdMatch = feature.match(
+    /^(.*?)(?:（(早鸟权益|Early Bird)）|\((早鸟权益|Early Bird)\))$/
+  );
+  if (!earlyBirdMatch) return { text: feature };
+
+  const text = (earlyBirdMatch[1] ?? '').trim();
+  const tag = (earlyBirdMatch[2] ?? earlyBirdMatch[3] ?? '').trim();
+  return { text: text || feature, tag: tag || undefined };
+}
+
+function getYearlyDiscountPercent(plan: PricePlan): number | null {
+  if (plan.isFree) return null;
+
+  const monthly = plan.prices.find(
+    (p) =>
+      !p.disabled &&
+      p.type === PaymentTypes.SUBSCRIPTION &&
+      p.interval === PlanIntervals.MONTH
+  );
+  const yearly = plan.prices.find(
+    (p) =>
+      !p.disabled &&
+      p.type === PaymentTypes.SUBSCRIPTION &&
+      p.interval === PlanIntervals.YEAR
+  );
+
+  if (!monthly?.amount || !yearly?.amount) return null;
+
+  const fullYearAmount = monthly.amount * 12;
+  if (fullYearAmount <= 0 || yearly.amount >= fullYearAmount) return null;
+
+  return Math.round((1 - yearly.amount / fullYearAmount) * 100);
 }
 
 /**
@@ -78,20 +116,24 @@ export function PricingCard({
   isCurrentPlan = false,
 }: PricingCardProps) {
   const t = useTranslations('PricingPage.PricingCard');
+  const locale = useLocale();
   const price = getPriceForPlan(plan, interval, paymentType);
   const currentUser = useCurrentUser();
   const currentPath = useLocalePathname();
   const mounted = useMounted();
   // console.log('pricing card, currentPath', currentPath);
 
+  const isEarlyBirdPlan = plan.id === 'pro' || plan.id === 'lifetime';
+
   // generate formatted price and price label
   let formattedPrice = '';
   let priceLabel = '';
+  const savePercent = getYearlyDiscountPercent(plan);
   if (plan.isFree) {
     formattedPrice = t('freePrice');
   } else if (price && price.amount > 0) {
     // price is available
-    formattedPrice = formatPrice(price.amount, price.currency);
+    formattedPrice = formatPrice(price.amount, price.currency, locale);
     if (interval === PlanIntervals.MONTH) {
       priceLabel = t('perMonth');
     } else if (interval === PlanIntervals.YEAR) {
@@ -151,6 +193,32 @@ export function PricingCard({
             {formattedPrice}
           </span>
           {priceLabel && <span className="text-2xl">{priceLabel}</span>}
+          {!plan.isFree && isEarlyBirdPlan && (
+            <Badge
+              variant="secondary"
+              className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+            >
+              {t('earlyBirdPrice')}
+            </Badge>
+          )}
+          {plan.id === 'lifetime' && (
+            <Badge
+              variant="secondary"
+              className="ml-1 border-red-200 bg-red-50 text-red-800 dark:border-red-900/50 dark:bg-red-950/40 dark:text-red-200"
+            >
+              {t('limitedSlots', { count: LIFETIME_EARLY_BIRD_SLOTS })}
+            </Badge>
+          )}
+          {paymentType === PaymentTypes.SUBSCRIPTION &&
+            interval === PlanIntervals.YEAR &&
+            savePercent && (
+              <Badge
+                variant="secondary"
+                className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+              >
+                {t('savePercent', { percent: savePercent })}
+              </Badge>
+            )}
         </div>
 
         <CardDescription>
@@ -220,22 +288,49 @@ export function PricingCard({
 
         {/* show features of this plan */}
         <ul className="list-outside space-y-4 text-sm">
-          {plan.features?.map((feature, i) => (
-            <li key={i} className="flex items-center gap-2">
-              <CheckCircleIcon className="size-4 text-green-500 dark:text-green-400" />
-              <span>{feature}</span>
-            </li>
-          ))}
+          {plan.features
+            ?.filter((feature) => feature?.trim())
+            .map((feature, i) => (
+              <li key={i} className="flex items-center gap-2">
+                <CheckCircleIcon className="size-4 text-green-500 dark:text-green-400" />
+                {(() => {
+                  const displayFeature =
+                    plan.id === 'pro' &&
+                    paymentType === PaymentTypes.SUBSCRIPTION &&
+                    i === 2
+                      ? interval === PlanIntervals.YEAR
+                        ? t('proCreditBenefitYearly')
+                        : t('proCreditBenefitMonthly')
+                      : feature;
+                  const { text, tag } = parseFeatureTag(displayFeature);
+                  return (
+                    <>
+                      <span>{text}</span>
+                      {tag && (
+                        <Badge
+                          variant="secondary"
+                          className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+                        >
+                          {tag}
+                        </Badge>
+                      )}
+                    </>
+                  );
+                })()}
+              </li>
+            ))}
         </ul>
 
         {/* show limits of this plan */}
         <ul className="list-outside space-y-4 text-sm">
-          {plan.limits?.map((limit, i) => (
-            <li key={i} className="flex items-center gap-2">
-              <XCircleIcon className="size-4 text-gray-500 dark:text-gray-400" />
-              <span>{limit}</span>
-            </li>
-          ))}
+          {plan.limits
+            ?.filter((limit) => limit?.trim())
+            .map((limit, i) => (
+              <li key={i} className="flex items-center gap-2">
+                <XCircleIcon className="size-4 text-gray-500 dark:text-gray-400" />
+                <span>{limit}</span>
+              </li>
+            ))}
         </ul>
       </CardContent>
     </Card>

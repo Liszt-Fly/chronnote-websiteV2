@@ -51,10 +51,27 @@
     "subtitle": "选择最适合您的付费计划",
     "monthly": "月付",
     "yearly": "年付",
+    "lifetime": "永久版",
+    "aiCredits": {
+      "title": "积分价格模块",
+      "description": "按需购买积分，价格可能会随着模型成本、算力成本与 API 调用费用上下波动。",
+      "tag": "积分换算",
+      "ratioLabel": "兑换比例",
+      "ratio": "1元 = 1000积分",
+      "examplePrefix": "示例 {index}",
+      "example1": "1元 = 1000积分",
+      "example2": "5元 = 5000积分",
+      "example3": "10元 = 10000积分",
+      "trendTitle": "价格波动示意",
+      "trendAriaLabel": "模拟价格动态波动曲线",
+      "trendNotice": "说明：积分单价并非长期固定，可能随模型成本、算力成本与 API 调用费用变化而上调或下调。"
+    },
     "PricingCard": {
-      "freePrice": "$0",
+      "freePrice": "¥0",
       "perMonth": "/月",
       "perYear": "/年",
+      "savePercent": "省{percent}%",
+      "earlyBirdPrice": "早鸟价",
       "popular": "热门",
       "currentPlan": "当前方案",
       "yourCurrentPlan": "您的当前方案",
@@ -62,7 +79,10 @@
       "getLifetimeAccess": "开启终身会员",
       "getStarted": "开始免费试用",
       "notAvailable": "不可用",
-      "daysTrial": "{days} 天试用期"
+      "daysTrial": "{days} 天试用期",
+      "limitedSlots": "限量 {count} 个名额",
+      "proCreditBenefitMonthly": "在免费用户的基础上额外赠送3000积分（对应3元额度）",
+      "proCreditBenefitYearly": "在免费用户的基础上额外赠送30000积分（对应30元额度）"
     },
     "CheckoutButton": {
       "loading": "加载中...",
@@ -71,46 +91,46 @@
   },
   "PricePlans": {
     "free": {
-      "name": "免费版",
-      "description": "适用于个人使用的基本功能",
+      "name": "Free",
+      "description": "知识较少，轻度记录和存储",
       "features": {
-        "feature-1": "最多3个项目",
-        "feature-2": "1GB存储空间",
-        "feature-3": "基础分析功能",
-        "feature-4": "社区支持"
+        "feature-1": "最多100个原子",
+        "feature-2": "赠送1500初始额度积分",
+        "feature-3": "无限制批量导出",
+        "feature-4": "",
+        "feature-5": "永久更新"
       },
       "limits": {
-        "limit-1": "不支持自定义域名",
-        "limit-2": "不支持自定义品牌",
-        "limit-3": "不支持终身更新"
+        "limit-1": "",
+        "limit-2": "",
+        "limit-3": ""
       }
     },
     "pro": {
-      "name": "专业版",
+      "name": "Pro",
       "description": "专业人士的高级功能",
       "features": {
-        "feature-1": "无限项目",
-        "feature-2": "10GB存储空间",
-        "feature-3": "高级分析功能",
-        "feature-4": "优先支持",
-        "feature-5": "自定义域名"
+        "feature-1": "免费版的所有权益",
+        "feature-2": "无限制数量的原子",
+        "feature-3": "在免费用户的基础上额外赠送3000积分（对应3元额度）",
+        "feature-4": "",
+        "feature-5": "",
+        "feature-6": "",
+        "feature-7": "云同步（后续上线），支持 5GB 存储空间"
       },
       "limits": {
-        "limit-1": "不支持自定义品牌",
-        "limit-2": "不支持终身更新"
+        "limit-1": "",
+        "limit-2": ""
       }
     },
     "lifetime": {
-      "name": "终身版",
+      "name": "永久版",
       "description": "一次性付款获得所有高级功能",
       "features": {
         "feature-1": "所有专业版功能",
         "feature-2": "100GB存储空间",
-        "feature-3": "专属支持",
-        "feature-4": "企业级安全",
-        "feature-5": "高级集成",
-        "feature-6": "自定义品牌",
-        "feature-7": "终身更新"
+        "feature-3": "在免费用户的基础上额外赠送100000积分（对应100元额度）",
+        "feature-4": "云同步（后续上线），支持 5GB 存储空间"
       }
     }
   },
@@ -791,7 +811,9 @@
       "primary": "立即下载",
       "secondary": "观看演示"
     },
-    "logocloud": { "title": "深受创作者与开发者信赖" },
+    "logocloud": {
+      "title": "深受创作者与开发者信赖"
+    },
     "integration": {
       "title": "Chronnote 的基本架构",
       "subtitle": "原子化知识 + Chron 智能引擎",
@@ -932,7 +954,11 @@
     "pricing": {
       "title": "选择你的学习加速级别",
       "subtitle": "成为超级个体的投资",
-      "description": "无论你是学生、研究者还是终身学习者，选择最适合你的计划，开始构建第二大脑的旅程。"
+      "description": "无论你是学生、研究者还是终身学习者，选择最适合你的计划，开始构建第二大脑的旅程。",
+      "earlyBird": {
+        "title": "早鸟价说明",
+        "description": "早鸟价面向初期参与内测的用户，用于回馈支持\n持续时间至少一个月，超过一个月后看情况结束\n在早鸟价期间以早鸟价购买过的用户可以永久锁定当前价格\n- 示例：小明按月以24元订阅了Chronnote，随着Chronnote持续更新，月付价格涨到26元后，小明依然永久享受24元月付价格，不受影响\n- 示例：小明在早鸟期购买了24元月付；之后官方把月付上调到26元、年付从199元上调到229元。小明仍永久按24元/月续费；如果改订年付，则按当时年付价229元/年结算"
+      }
     },
     "faqs": {
       "title": "常见问题",
