@@ -55,13 +55,18 @@
     "aiCredits": {
       "title": "Credits Pricing",
       "description": "Buy credits on demand. Unit pricing may move up or down with model costs, compute costs, and API usage fees.",
-      "tag": "Credit Rate",
+      "tag": "Limited-time 50% off",
+      "discountBadge": "50% OFF",
       "ratioLabel": "Conversion Ratio",
-      "ratio": "CNY 1 = 1,000 credits",
+      "ratio": "CNY 0.5 = 1,000 credits",
+      "oldPrice": "CNY 1",
+      "newPrice": "CNY 0.5",
+      "perCredits": "/1,000 credits",
+      "discountHint": "Was CNY 1 / 1,000 credits, now CNY 0.5 / 1,000 credits.",
       "examplePrefix": "Example {index}",
-      "example1": "CNY 1 = 1,000 credits",
-      "example2": "CNY 5 = 5,000 credits",
-      "example3": "CNY 10 = 10,000 credits",
+      "example1": "CNY 0.5 = 1,000 credits",
+      "example2": "CNY 1 = 2,000 credits",
+      "example3": "CNY 10 = 20,000 credits",
       "trendTitle": "Price Volatility Illustration",
       "trendAriaLabel": "Simulated dynamic price trend curve",
       "trendNotice": "Note: Credit unit pricing is not permanently fixed and may increase or decrease with changes in model costs, compute costs, and API usage fees."
@@ -81,8 +86,8 @@
       "notAvailable": "Not Available",
       "daysTrial": "{days}-day free trial",
       "limitedSlots": "Limited to {count} spots",
-      "proCreditBenefitMonthly": "20,000 bonus AI credits (equivalent to CNY 5) (Early Bird)",
-      "proCreditBenefitYearly": "Additional 30,000 credits on top of the Free plan (equivalent to CNY 30)"
+      "proCreditBenefitMonthly": "20,000 bonus AI credits (equivalent to CNY 10) (Early Bird)",
+      "proCreditBenefitYearly": "Additional 30,000 credits on top of the Free plan (equivalent to CNY 15)"
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -129,7 +134,7 @@
       "features": {
         "feature-1": "All Pro features",
         "feature-2": "100GB storage",
-        "feature-3": "Additional 100,000 credits on top of the Free plan (equivalent to CNY 100)",
+        "feature-3": "Additional 100,000 credits on top of the Free plan (equivalent to CNY 50)",
         "feature-4": "Cloud sync (coming soon), 5GB storage"
       }
     }
@@ -957,6 +962,10 @@
       "description": "Whether you are a student, researcher, or lifelong learner, pick the plan that helps you build a resilient second brain.",
       "earlyBird": {
         "title": "Early-bird pricing",
+        "lead": "Buy during the early-bird window to lock your current rate. Future price increases will not change your renewal unit price.",
+        "lockTitle": "Buy early, keep your rate",
+        "lockDescription": "If you purchased at the early-bird rate, renewals continue at your original transaction price.",
+        "casesTitle": "Example scenarios",
         "description": "Early-bird pricing is for early beta users as a thank-you."
       }
     },

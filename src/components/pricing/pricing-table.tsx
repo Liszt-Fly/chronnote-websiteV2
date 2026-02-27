@@ -10,7 +10,7 @@ import {
   PlanIntervals,
   type PricePlan,
 } from '@/payment/types';
-import { ArrowRight, Coins, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { PricingCard } from './pricing-card';
@@ -313,13 +313,30 @@ export function PricingTable({
               </p>
             </div>
 
-            <div className="rounded-2xl border border-emerald-200/70 bg-background/80 px-5 py-4 backdrop-blur dark:border-emerald-900/50 dark:bg-background/60">
-              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                {t('aiCredits.ratioLabel')}
-              </p>
-              <div className="mt-2 flex items-center gap-2 text-xl font-bold">
-                <Coins className="size-5 text-emerald-600 dark:text-emerald-400" />
-                <span>{t('aiCredits.ratio')}</span>
+            <div className="relative overflow-hidden rounded-2xl border border-rose-200/80 bg-gradient-to-br from-rose-50 via-amber-50 to-background px-5 py-4 shadow-[0_14px_36px_-20px_rgba(244,63,94,0.7)] dark:border-rose-900/50 dark:from-rose-950/35 dark:via-amber-950/20 dark:to-background/70">
+              <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-rose-300/30 blur-2xl dark:bg-rose-600/20" />
+              <div className="relative">
+                <div className="inline-flex items-center rounded-full border border-rose-300/60 bg-rose-100/70 px-2 py-0.5 text-[11px] font-semibold text-rose-700 dark:border-rose-700/60 dark:bg-rose-900/50 dark:text-rose-200">
+                  {t('aiCredits.discountBadge')}
+                </div>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-wider text-rose-700/80 dark:text-rose-200/85">
+                  {t('aiCredits.ratioLabel')}
+                </p>
+                <div className="mt-2 flex flex-wrap items-end gap-2">
+                  <span className="text-lg font-semibold text-muted-foreground/75 line-through decoration-2 decoration-rose-400/90 dark:decoration-rose-500/80">
+                    {t('aiCredits.oldPrice')}
+                  </span>
+                  <ArrowRight className="mb-1 size-4 text-rose-500 dark:text-rose-300" />
+                  <span className="bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-4xl font-black leading-none tracking-tight text-transparent">
+                    {t('aiCredits.newPrice')}
+                  </span>
+                  <span className="mb-1 text-sm font-semibold text-foreground/85">
+                    {t('aiCredits.perCredits')}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  {t('aiCredits.discountHint')}
+                </p>
               </div>
             </div>
           </div>
