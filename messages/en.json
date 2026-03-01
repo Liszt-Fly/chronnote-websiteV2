@@ -121,7 +121,7 @@
         "feature-4": "Daily AI credits refill (4× Free plan quota)",
         "feature-5": "",
         "feature-6": "",
-        "feature-7": "Cloud sync (coming soon), 5GB storage"
+        "feature-7": "Cloud sync (coming soon), 10GB storage"
       },
       "limits": {
         "limit-1": "—",
@@ -133,9 +133,9 @@
       "description": "One-time purchase for all advanced features",
       "features": {
         "feature-1": "All Pro features",
-        "feature-2": "100GB storage",
+        "feature-2": "10GB storage",
         "feature-3": "Additional 100,000 credits on top of the Free plan (equivalent to CNY 50)",
-        "feature-4": "Cloud sync (coming soon), 5GB storage"
+        "feature-4": "Cloud sync (coming soon), 10GB storage"
       }
     }
   },
