@@ -1,162 +1,104 @@
 'use client';
 
 import { HeaderSection } from '@/components/layout/header-section';
-import { BorderBeam } from '@/components/magicui/border-beam';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import {
-  ChartBarIncreasingIcon,
-  Database,
-  Fingerprint,
-  IdCard,
-} from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useState } from 'react';
 
-/**
- * https://nsui.irung.me/features
- * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-12.json
- */
+const featureItems = [
+  {
+    titleKey: 'items.item-1.title',
+    descriptionKey: 'items.item-1.description',
+  },
+  {
+    titleKey: 'items.item-2.title',
+    descriptionKey: 'items.item-2.description',
+  },
+] as const;
+
 export default function FeaturesSection() {
   const t = useTranslations('HomePage.features');
-  type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4';
-  const [activeItem, setActiveItem] = useState<ImageKey>('item-1');
-
-  const images = {
-    'item-1': {
-      image: '/blocks/charts-light.png',
-      darkImage: '/blocks/charts.png',
-      alt: 'Product Feature One',
-    },
-    'item-2': {
-      image: '/blocks/music-light.png',
-      darkImage: '/blocks/music.png',
-      alt: 'Product Feature Two',
-    },
-    'item-3': {
-      image: '/blocks/mail2-light.png',
-      darkImage: '/blocks/mail2.png',
-      alt: 'Product Feature Three',
-    },
-    'item-4': {
-      image: '/blocks/payments-light.png',
-      darkImage: '/blocks/payments.png',
-      alt: 'Product Feature Four',
-    },
-  };
 
   return (
-    <section id="features" className="px-4 py-16">
-      {/* <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]" /> */}
-      <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
+    <section id="features" className="temple-section px-4">
+      <div className="temple-page-width space-y-10">
         <HeaderSection
           title={t('title')}
           subtitle={t('subtitle')}
           subtitleAs="h2"
           description={t('description')}
-          descriptionAs="p"
+          className="items-start text-left"
+          subtitleClassName="temple-measure-wide text-[1.34rem] text-foreground/80 md:text-[1.6rem]"
+          descriptionClassName="temple-measure leading-8"
         />
 
-        <div className="grid gap-12 sm:px-12 lg:grid-cols-12 lg:gap-24 lg:px-0">
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            <div className="lg:pr-0 text-left">
-              <h3 className="text-3xl font-semibold lg:text-4xl text-foreground leading-normal py-1">
-                {t('title')}
-              </h3>
-              <p className="mt-4 text-muted-foreground">{t('description')}</p>
+        <div className="grid gap-14 border-t border-border/40 pt-10 lg:grid-cols-[0.5fr_0.5fr]">
+          <div className="space-y-7">
+            <div className="space-y-7">
+              {featureItems.map((item, index) => (
+                <article
+                  key={item.titleKey}
+                  className="border-b border-border/55 pb-7 last:border-b-0 last:pb-0"
+                >
+                  <p className="temple-kicker">
+                    {t('chamberLabel', { index: index + 1 })}
+                  </p>
+                  <h3 className="mt-2 text-[0.95rem] font-medium text-foreground/84">
+                    {t(item.titleKey)}
+                  </h3>
+                  <p className="temple-measure mt-3 text-sm leading-8 text-muted-foreground">
+                    {t(item.descriptionKey)}
+                  </p>
+                </article>
+              ))}
             </div>
-            <Accordion
-              type="single"
-              value={activeItem}
-              onValueChange={(value) => setActiveItem(value as ImageKey)}
-              className="w-full"
-            >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Database className="size-4" />
-                    {t('items.item-1.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-1.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Fingerprint className="size-4" />
-                    {t('items.item-2.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-2.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <IdCard className="size-4" />
-                    {t('items.item-3.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-3.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <ChartBarIncreasingIcon className="size-4" />
-                    {t('items.item-4.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-4.description')}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
           </div>
 
-          <div className="bg-background w-full relative flex overflow-hidden rounded-2xl border p-2 lg:h-auto lg:col-span-7">
-            <div className="aspect-76/59 bg-background relative w-full rounded-2xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${activeItem}-id`}
-                  initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  className="size-full overflow-hidden rounded-2xl border bg-zinc-900 shadow-md"
-                >
+          <div className="space-y-5">
+            <span className="temple-bookmark">{t('panelKicker')}</span>
+            <h3 className="temple-measure font-serif text-[1.08rem] font-medium leading-[1.7] text-foreground/74">
+              {t('panelTitle')}
+            </h3>
+            <p className="temple-measure text-sm leading-8 text-muted-foreground">
+              {t('panelDescription')}
+            </p>
+            <div className="grid gap-4 lg:grid-cols-[0.58fr_0.42fr]">
+              <div className="overflow-hidden border border-border/45">
+                <Image
+                  src="/blocks/charts-light.png"
+                  alt="Chronnote feature overview"
+                  width={1207}
+                  height={929}
+                  className="h-auto w-full object-cover dark:hidden"
+                />
+                <Image
+                  src="/blocks/charts.png"
+                  alt="Chronnote feature overview"
+                  width={1207}
+                  height={929}
+                  className="hidden h-auto w-full object-cover dark:block"
+                />
+              </div>
+              <div className="grid gap-4">
+                <div className="overflow-hidden border border-border/45">
                   <Image
-                    src={images[activeItem].image}
-                    className="size-full object-cover object-left-top dark:hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
+                    src="/images/docs/pageview.webp"
+                    alt="Chronnote page view"
+                    width={1356}
+                    height={934}
+                    className="h-full w-full object-cover"
                   />
+                </div>
+                <div className="overflow-hidden border border-border/45">
                   <Image
-                    src={images[activeItem].darkImage}
-                    className="size-full object-cover object-left-top dark:block hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
+                    src="/images/docs/notebook.webp"
+                    alt="Chronnote notebook view"
+                    width={1356}
+                    height={934}
+                    className="h-full w-full object-cover"
                   />
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              </div>
             </div>
-            <BorderBeam
-              duration={6}
-              size={200}
-              className="from-transparent via-violet-700 to-transparent dark:via-white/50"
-            />
           </div>
         </div>
       </div>

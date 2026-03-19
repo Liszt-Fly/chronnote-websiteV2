@@ -38,22 +38,17 @@ export function HeaderSection({
   return (
     <div
       id={id}
-      className={cn('flex flex-col items-center text-center gap-4', className)}
+      className={cn('flex flex-col items-center gap-4 text-center', className)}
     >
       {title ? (
-        <TitleComponent
-          className={cn(
-            'uppercase tracking-wider text-primary font-semibold font-mono',
-            titleClassName
-          )}
-        >
+        <TitleComponent className={cn('temple-kicker', titleClassName)}>
           {title}
         </TitleComponent>
       ) : null}
       {subtitle ? (
         <SubtitleComponent
           className={cn(
-            'text-balance text-2xl text-foreground',
+            'temple-seraph max-w-3xl text-[1.85rem] text-foreground md:text-[2.2rem]',
             subtitleClassName
           )}
         >
@@ -63,7 +58,7 @@ export function HeaderSection({
       {description ? (
         <DescriptionComponent
           className={cn(
-            'text-balance text-lg text-muted-foreground',
+            'max-w-2xl text-sm leading-7 text-muted-foreground',
             descriptionClassName
           )}
         >

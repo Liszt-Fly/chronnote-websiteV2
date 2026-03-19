@@ -1,17 +1,7 @@
 import CallToActionSection from '@/components/blocks/calltoaction/calltoaction';
-import DownloadSection from '@/components/blocks/download/download';
-import FaqSection from '@/components/blocks/faqs/faqs';
 import FeaturesSection from '@/components/blocks/features/features';
-import Features2Section from '@/components/blocks/features/features2';
-import Features3Section from '@/components/blocks/features/features3';
 import HeroSection from '@/components/blocks/hero/hero';
-import IntegrationSection from '@/components/blocks/integration/integration';
-import Integration2Section from '@/components/blocks/integration/integration2';
-import LogoCloud from '@/components/blocks/logo-cloud/logo-cloud';
-import PricingSection from '@/components/blocks/pricing/pricing';
-import StatsSection from '@/components/blocks/stats/stats';
-import TestimonialsSection from '@/components/blocks/testimonials/testimonials';
-import { NewsletterCard } from '@/components/newsletter/newsletter-card';
+import PricingEntrySection from '@/components/blocks/pricing/pricing-entry';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { Metadata } from 'next';
@@ -41,39 +31,14 @@ interface HomePageProps {
 }
 
 export default async function HomePage(props: HomePageProps) {
-  const params = await props.params;
-  const { locale } = params;
-  const t = await getTranslations('HomePage');
+  await props.params;
 
   return (
-    <>
-      <div className="flex flex-col">
-        <HeroSection />
-
-        <IntegrationSection />
-
-        {/* 原子化设计：零摩擦知识流转（暂时隐藏） */}
-        {/* <FeaturesSection /> */}
-
-        <Features2Section />
-
-        <Features3Section />
-
-        <DownloadSection />
-
-        <PricingSection />
-
-        <FaqSection />
-
-        <CallToActionSection />
-
-        {/* 保留实验性模块：如需展示真实用户与伙伴后再开启 */}
-        {/* <Integration2Section /> */}
-
-        {/* <TestimonialsSection /> */}
-
-        {/* <NewsletterCard /> */}
-      </div>
-    </>
+    <div className="flex flex-col">
+      <HeroSection />
+      <FeaturesSection />
+      <PricingEntrySection />
+      <CallToActionSection />
+    </div>
   );
 }

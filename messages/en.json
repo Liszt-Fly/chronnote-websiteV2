@@ -349,16 +349,16 @@
   "Marketing": {
     "navbar": {
       "features": {
-        "title": "Features"
+        "title": "Chambers"
       },
       "download": {
-        "title": "Download"
+        "title": "Entry"
       },
       "community": {
-        "title": "Community"
+        "title": "Correspondence"
       },
       "pricing": {
-        "title": "Pricing"
+        "title": "Covenant"
       },
       "blog": {
         "title": "Blog"
@@ -489,19 +489,19 @@
       }
     },
     "footer": {
-      "tagline": "Local-first, AI-powered knowledge notes",
+      "tagline": "Let recording, reading, and reflection return to the same line of thought.",
       "icp": "蜀ICP备2021012546号-2",
       "product": {
-        "title": "Product",
+        "title": "Main Hall",
         "items": {
-          "features": "Features",
-          "download": "Download",
-          "pricing": "Pricing",
-          "faq": "FAQ"
+          "features": "Chambers",
+          "download": "Entry",
+          "pricing": "Covenant",
+          "faq": "Appendix"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "Marginalia",
         "items": {
           "blog": "Blog",
           "docs": "Documentation",
@@ -810,11 +810,20 @@
     "title": "Chronnote",
     "description": "Build your second brain",
     "hero": {
-      "title": "All-in-one atomic knowledge workspace",
-      "description": "Break the boundaries of format. In this atom-based Knowledge OS, notes, maps, and document clips are no longer separate entities but malleable Knowledge Atoms. The Chron Engine allows you to seamlessly shift forms and weave connections in one boundless workspace.",
-      "introduction": "AI-era learning accelerator",
-      "primary": "Download now",
-      "secondary": "Watch demo"
+      "title": "Let knowledge return to an order that is truly yours",
+      "description": "Chronnote is not a tool that thinks for you. It is a place where notes, reading, tasks, and reflection can return to the same line of thought, so you no longer move yourself between containers just to keep thinking.",
+      "introduction": "Know thyself",
+      "maxim": "Know thyself.",
+      "primary": "View plans",
+      "secondary": "Read the chambers",
+      "pillar-1": "Atoms",
+      "pillar-2": "Context",
+      "pillar-3": "Memory",
+      "panelKicker": "Main Hall",
+      "panelTitle": "A place where a question can slowly take shape",
+      "panelBadge": "Delphi",
+      "panelNote1": "Notes, PDF fragments, whiteboards, and tasks are no longer separate territories. They return to the same material.",
+      "panelNote2": "Chron Engine reads context before it participates. What it offers is not a slogan, but the next step adjacent to your present understanding."
     },
     "logocloud": {
       "title": "Trusted by creators and developers"
@@ -894,9 +903,13 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "Atomic design: frictionless knowledge flow",
-      "subtitle": "One atom, many representations",
-      "description": "Inside Chronnote everything is an atom—notes, mind maps, tasks and PDF snippets. Mention it with @ or drag it anywhere and the same piece of knowledge flows between every view.",
+      "title": "Chamber I",
+      "subtitle": "Let the same knowledge remain itself across forms",
+      "description": "What matters is not how many tools you have, but whether one understanding can remain continuous across recording, organizing, questioning, and acting.",
+      "chamberLabel": "Chamber 0{index}",
+      "panelKicker": "Single source",
+      "panelTitle": "Not duplication, but appearance",
+      "panelDescription": "Notes, maps, tasks, and references are only different appearances of the same material.",
       "items": {
         "item-1": {
           "title": "Note atoms ⇄ mind-map nodes",
@@ -917,61 +930,64 @@
       }
     },
     "features2": {
-      "title": "Page View: Atomic References at Work",
-      "subtitle": "Nest pages while every block still lives in the atom library",
-      "description": "Chronnote keeps the familiar page layout, but each page is only a reference to atoms. Open the atom library in the sidebar, drag anything into the page to create a reference, and double-click to jump back to the source atom—edits stay perfectly in sync.",
-      "feature-1": "Pages mirror atoms: a page never stores data itself, it reflects what sits in the atom library.",
-      "feature-2": "Drag-and-drop mounting: choose an atom in the library and drop it into the page view to reuse it instantly.",
-      "feature-3": "Safe deletion: removing a reference leaves the atom intact; deleting the atom removes every reference across pages.",
-      "feature-4": "Semantic nesting: mix PDFs, notes, to-dos or boards as parent/child nodes to express precise context."
+      "title": "Chamber II",
+      "subtitle": "Let a page become context rather than storage",
+      "description": "A page should not hoard content. It should arrange sequence, establish context, and bring materials into meaningful proximity.",
+      "panelKicker": "Page View",
+      "panelTitle": "Place first, write after",
+      "feature-1": "A page is an order of references, not another copy.",
+      "feature-2": "Dragging is not transport; it is the act of placing a material into a new context.",
+      "feature-3": "Removing one appearance does not erase its source.",
+      "feature-4": "Hierarchy is not decoration. It helps the surrounding context become visible."
     },
     "features3": {
-      "title": "Chron Engine: your AI learning accelerator",
-      "subtitle": "Let AI truly work on your knowledge",
-      "description": "Chron Engine isn’t just a chatbot—it’s the dispatcher for your second brain. It understands context, links atoms, and even predicts what you should tackle next so every study session compounds.",
+      "title": "Chamber III",
+      "subtitle": "Let AI participate in understanding without taking it away",
+      "description": "Chron Engine is not there to produce quick answers on your behalf. Its value is to help relations become visible, so your own judgment can deepen.",
       "items": {
         "item-1": {
-          "title": "Context-aware linking",
-          "description": "While you review, Chron Engine surfaces related atoms, PDF fragments, and past thoughts—whether it’s grammar notes or algorithm drafts—so your knowledge graph grows automatically."
+          "title": "Context before reply",
+          "description": "When you pause on a page, Chron Engine brings back related atoms, PDF fragments, and earlier thoughts, so a reply never appears without ground."
         },
         "item-2": {
-          "title": "Smart placement suggestions",
-          "description": "After you create a note atom, the engine analyses it and recommends where it should live—“attach this to the LR-parsing branch”—guiding you like a domain expert."
+          "title": "Explanation is not repetition",
+          "description": "When a passage resists understanding, it can restate the matter from another angle or another level, instead of merely paraphrasing the same sentence."
         },
         "item-3": {
-          "title": "Spaced repetition scheduling",
-          "description": "Chron Engine tracks forgetting curves and time, then schedules reviews—“you haven’t revisited LR parsing in three days, bring it back tomorrow”—so future-you always gets support."
+          "title": "A follow-up can continue",
+          "description": "Whether you ask inside Reader, notes, or the whiteboard, the next question can continue along the same context instead of starting over."
         },
         "item-4": {
-          "title": "Thinking trail capture",
-          "description": "Every insight shift is logged—from “A=B” to “A=C.” Ask months later why LR parsing felt hard and Chron Engine can replay the exact confusion and resolution."
+          "title": "Structure before style",
+          "description": "When you prepare to write a summary or an essay, it can first shape a skeleton of arguments and points, so writing begins from form rather than from blankness."
         },
         "item-5": {
-          "title": "Auto-generated action items",
-          "description": "Hit a tough PDF passage? The engine spins up a task like “implement a quick proof-of-concept” so theory immediately meets practice."
+          "title": "Fragments may grow into a tree",
+          "description": "When a conversation or note begins to gather into a subject, you can turn it into a map and finally see branches where before there were only pieces."
         },
         "item-6": {
-          "title": "Knowledge fusion",
-          "description": "Drop atoms from three different domains onto the whiteboard and Chron Engine discovers the links—or proposes an entirely new idea born from the overlap."
+          "title": "Insight comes from adjacency",
+          "description": "When atoms from different domains are placed together, Chron Engine helps uncover relations that had not yet been said aloud."
         }
       }
     },
     "pricing": {
-      "title": "Choose your acceleration level",
-      "subtitle": "Invest in becoming a super-learner",
-      "description": "Whether you are a student, researcher, or lifelong learner, pick the plan that helps you build a resilient second brain.",
+      "title": "Covenant",
+      "subtitle": "Choose the layer of the hall you wish to enter",
+      "description": "Price should not function as a sales trigger. It should clarify the form of commitment through which you want to inhabit this order over time.",
+      "entryLabel": "Read the covenant",
       "earlyBird": {
-        "title": "Early-bird pricing",
-        "lead": "Buy during the early-bird window to lock your current rate. Future price increases will not change your renewal unit price.",
-        "lockTitle": "Buy early, keep your rate",
-        "lockDescription": "If you purchased at the early-bird rate, renewals continue at your original transaction price.",
-        "casesTitle": "Example scenarios",
+        "title": "Early entry",
+        "lead": "Those who enter during the early period keep the price of their first entry.",
+        "lockTitle": "The earlier covenant remains in force",
+        "lockDescription": "If you subscribe during the early-entry period, renewals continue at that original transaction price even if the list price changes later.",
+        "casesTitle": "Notes",
         "description": "Early-bird pricing is for early beta users as a thank-you."
       }
     },
     "faqs": {
-      "title": "FAQ",
-      "subtitle": "Key questions about Chronnote",
+      "title": "Appendix",
+      "subtitle": "A few recurring questions",
       "items": {
         "item-1": {
           "question": "What is “atomic design”?",
@@ -1090,9 +1106,9 @@
       }
     },
     "calltoaction": {
-      "badge": "Community",
-      "title": "Join the Chronnote crew",
-      "description": "Get release drops first and ping us anytime you have ideas or problems. Choose a channel and we’ll respond quickly.",
+      "badge": "Endnote",
+      "title": "If you want to keep walking inward",
+      "description": "These are the paths through which you can reach us. Not to be surrounded by marketing, but to return with questions, suggestions, and the texture of actual use.",
       "wechatModal": {
         "title": "Scan our WeChat QR code",
         "description": "Scan or long-press the code to join the Chronnote community group."
@@ -1104,17 +1120,17 @@
       "channels": {
         "wechat": {
           "title": "WeChat Group",
-          "description": "Join the WeChat chat to discuss product roadmap, testing, and study methods in real time.",
+          "description": "For ongoing conversation, version changes, and bringing live questions back into the room.",
           "action": "Show QR code"
         },
         "qq": {
           "title": "QQ group",
-          "description": "Tap to open the Chronnote QQ community, share workflows, and get instant feedback.",
+          "description": "For more immediate discussion, sharing workflows, and reporting concrete situations as they happen.",
           "action": "Join QQ group"
         },
         "xiaohongshu": {
           "title": "Xiaohongshu · Chronnote",
-          "description": "Scan the Xiaohongshu code to follow us and unlock curated atomic-learning examples.",
+          "description": "For entering through examples and fragments, and seeing how others arrange their own materials and thinking.",
           "action": "Show QR code"
         }
       }

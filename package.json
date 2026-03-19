@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "node -e \"require('fs').rmSync('.next',{ recursive: true, force: true })\"",
     "dev": "next dev -p 8888",
+    "dev:clean": "npm run clean && next dev -p 8888",
     "build": "next build",
     "start": "next start",
     "postinstall": "fumadocs-mdx",

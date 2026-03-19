@@ -48,9 +48,12 @@ export default function DownloadSection() {
       setLoading(true);
 
       try {
-        const response = await fetch(`${INTERNAL_RELEASE_API}?t=${Date.now()}`, {
-          cache: 'no-store',
-        });
+        const response = await fetch(
+          `${INTERNAL_RELEASE_API}?t=${Date.now()}`,
+          {
+            cache: 'no-store',
+          }
+        );
 
         if (!response.ok) {
           throw new Error('Failed to fetch release info');
@@ -272,7 +275,12 @@ function DownloadButtonGroup({
           {fallbackLabel}
         </Button>
       ) : (
-        <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="w-full sm:w-auto"
+        >
           <a href={fallbackHref} target="_blank" rel="noreferrer">
             {fallbackLabel}
           </a>

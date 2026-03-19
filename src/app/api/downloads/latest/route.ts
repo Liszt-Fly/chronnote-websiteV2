@@ -24,7 +24,9 @@ export async function GET() {
     ]);
 
     const windows =
-      windowsResult.status === 'fulfilled' ? windowsResult.value : EMPTY.windows;
+      windowsResult.status === 'fulfilled'
+        ? windowsResult.value
+        : EMPTY.windows;
     const macIntel =
       macResult.status === 'fulfilled' ? macResult.value.intel : EMPTY.macIntel;
     const macApple =

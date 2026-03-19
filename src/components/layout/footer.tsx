@@ -18,21 +18,21 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const socialLinks = useSocialLinks();
 
   return (
-    <footer className={cn('border-t', className)}>
-      <Container className="px-4">
-        <div className="grid grid-cols-2 gap-8 py-16 md:grid-cols-6">
-          <div className="flex flex-col items-start col-span-full md:col-span-2">
-            <div className="space-y-4">
+    <footer className={cn('border-t border-border/70', className)}>
+      <Container className="max-w-5xl px-4">
+        <div className="grid grid-cols-1 gap-10 py-16 md:grid-cols-[1.3fr_1fr]">
+          <div className="flex flex-col items-start">
+            <div className="space-y-5">
               {/* logo and name */}
-              <div className="items-center space-x-2 flex">
+              <div className="flex items-center space-x-3">
                 <Logo />
-                <span className="text-xl font-semibold">
+                <span className="font-serif text-2xl font-medium">
                   {t('Metadata.name')}
                 </span>
               </div>
 
               {/* tagline */}
-              <p className="text-muted-foreground text-base py-2 md:pr-12">
+              <p className="max-w-xl py-2 text-base leading-7 text-muted-foreground md:pr-12">
                 {t('Marketing.footer.tagline')}
               </p>
 
@@ -46,8 +46,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={link.title}
-                      className="border border-border inline-flex h-8 w-8 items-center
-                          justify-center rounded-full hover:bg-accent hover:text-accent-foreground"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card/65 hover:bg-accent hover:text-accent-foreground"
                     >
                       <span className="sr-only">{link.title}</span>
                       {link.icon ? link.icon : null}
@@ -59,37 +58,36 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
           </div>
 
           {/* footer links */}
-          {footerLinks?.map((section) => (
-            <div
-              key={section.title}
-              className="col-span-1 md:col-span-1 items-start"
-            >
-              <span className="text-sm font-semibold uppercase">
-                {section.title}
-              </span>
-              <ul className="mt-4 list-inside space-y-3">
-                {section.items?.map(
-                  (item) =>
-                    item.href && (
-                      <li key={item.title}>
-                        <LocaleLink
-                          href={item.href || '#'}
-                          target={item.external ? '_blank' : undefined}
-                          className="text-sm text-muted-foreground hover:text-primary"
-                        >
-                          {item.title}
-                        </LocaleLink>
-                      </li>
-                    )
-                )}
-              </ul>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {footerLinks?.map((section) => (
+              <div key={section.title} className="items-start">
+                <span className="temple-kicker text-[0.68rem]">
+                  {section.title}
+                </span>
+                <ul className="mt-4 list-inside space-y-3">
+                  {section.items?.map(
+                    (item) =>
+                      item.href && (
+                        <li key={item.title}>
+                          <LocaleLink
+                            href={item.href || '#'}
+                            target={item.external ? '_blank' : undefined}
+                            className="text-sm text-muted-foreground hover:text-foreground"
+                          >
+                            {item.title}
+                          </LocaleLink>
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
 
-      <div className="border-t py-8">
-        <Container className="px-4 flex items-center justify-between gap-x-4">
+      <div className="border-t border-border/70 py-8">
+        <Container className="max-w-5xl px-4 flex items-center justify-between gap-x-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-x-4">
             <span className="text-muted-foreground text-sm">
               &copy; {new Date().getFullYear()} {t('Metadata.name')} All Rights
@@ -99,7 +97,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
               href={ICP_BEIAN_URL}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground text-sm hover:text-primary"
+              className="text-muted-foreground text-sm hover:text-foreground"
             >
               {t('Marketing.footer.icp')}
             </a>

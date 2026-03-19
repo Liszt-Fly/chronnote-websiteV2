@@ -94,7 +94,10 @@ function walkFiles(dir) {
 }
 
 function getMaxWidthForImage(filePath) {
-  const rel = path.relative(publicImagesDir, filePath).split(path.sep).join('/');
+  const rel = path
+    .relative(publicImagesDir, filePath)
+    .split(path.sep)
+    .join('/');
   if (rel.startsWith('docs/')) return 1400;
   if (rel.startsWith('blog/')) return 1400;
   if (rel.startsWith('media/')) return 2000;
@@ -301,15 +304,26 @@ async function main() {
 
     const oldPublicRel = path.relative(publicDir, filePath);
     const oldPublicRelPosix = toPosix(oldPublicRel);
-    const newPublicRelPosix = oldPublicRelPosix.replace(/\.(png|jpe?g)$/i, '.webp');
-    const outputPath = path.join(publicDir, newPublicRelPosix.split('/').join(path.sep));
+    const newPublicRelPosix = oldPublicRelPosix.replace(
+      /\.(png|jpe?g)$/i,
+      '.webp'
+    );
+    const outputPath = path.join(
+      publicDir,
+      newPublicRelPosix.split('/').join(path.sep)
+    );
 
     const gen = await generateWebp(filePath, outputPath, options);
-    const outSize = fs.existsSync(outputPath) ? fs.statSync(outputPath).size : 0;
+    const outSize = fs.existsSync(outputPath)
+      ? fs.statSync(outputPath).size
+      : 0;
     optimizedBytes += outSize;
     convertedCount += 1;
 
-    const replacements = buildReplacementPairs(oldPublicRelPosix, newPublicRelPosix);
+    const replacements = buildReplacementPairs(
+      oldPublicRelPosix,
+      newPublicRelPosix
+    );
     const changedPaths = new Set();
 
     for (const tf of textFiles) {

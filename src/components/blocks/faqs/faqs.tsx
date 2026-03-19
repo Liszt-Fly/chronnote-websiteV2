@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import type { IconName } from 'lucide-react/dynamic';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 type FAQItem = {
   id: string;
@@ -18,7 +18,6 @@ type FAQItem = {
 };
 
 export default function FaqSection() {
-  const locale = useLocale();
   const t = useTranslations('HomePage.faqs');
 
   const faqItems: FAQItem[] = [
@@ -59,8 +58,8 @@ export default function FaqSection() {
   );
 
   return (
-    <section id="faqs" className="px-4 py-16">
-      <div className="mx-auto max-w-4xl">
+    <section id="faqs" className="temple-section px-4">
+      <div className="mx-auto max-w-5xl space-y-12">
         <HeaderSection
           title={t('title')}
           titleAs="h2"
@@ -68,25 +67,37 @@ export default function FaqSection() {
           subtitleAs="p"
         />
 
-        <div className="mx-auto max-w-4xl mt-12">
+        <div className="grid gap-10 md:grid-cols-[0.24fr_0.76fr]">
+          <div className="border-t border-border/70 pt-6">
+            <span className="temple-bookmark">{t('title')}</span>
+          </div>
+
           <Accordion
             type="single"
             collapsible
-            className="ring-muted w-full rounded-2xl border px-8 py-3 shadow-sm ring-4 dark:ring-0"
+            className="border-t border-border/70"
           >
-            {visibleFaqItems.map((item) => (
+            {visibleFaqItems.map((item, index) => (
               <AccordionItem
                 key={item.id}
                 value={item.id}
-                className="border-dashed"
+                className="border-border/70"
               >
-                <AccordionTrigger className="cursor-pointer text-base hover:no-underline">
-                  {item.question}
+                <AccordionTrigger className="cursor-pointer py-5 text-left text-base hover:no-underline">
+                  <span className="grid w-full gap-2 md:grid-cols-[0.1fr_0.9fr]">
+                    <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                      0{index + 1}
+                    </span>
+                    <span>{item.question}</span>
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-base text-muted-foreground">
-                    {item.answer}
-                  </p>
+                  <div className="grid gap-2 pb-5 md:grid-cols-[0.1fr_0.9fr]">
+                    <span />
+                    <p className="text-base leading-7 text-muted-foreground">
+                      {item.answer}
+                    </p>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}

@@ -1,75 +1,60 @@
 import { HeaderSection } from '@/components/layout/header-section';
-import {
-  ActivityIcon,
-  DraftingCompassIcon,
-  MailIcon,
-  ZapIcon,
-} from 'lucide-react';
+import { MailIcon, ScrollTextIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-/**
- * https://nsui.irung.me/features
- * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-5.json
- */
+const featureIcons = [MailIcon, ScrollTextIcon];
+const featureKeys = ['feature-1', 'feature-3'] as const;
+
 export default function Features2Section() {
   const t = useTranslations('HomePage.features2');
 
   return (
-    <section id="features2" className="px-4 py-16">
-      <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20">
+    <section id="features2" className="temple-section px-4">
+      <div className="mx-auto max-w-5xl space-y-8">
         <HeaderSection
           title={t('title')}
           subtitle={t('subtitle')}
           subtitleAs="h2"
           description={t('description')}
-          descriptionAs="p"
         />
 
-        <div className="grid items-center gap-12 lg:grid-cols-5 lg:gap-24">
-          <div className="lg:col-span-2">
-            <div className="lg:pr-0">
-              <h2 className="text-4xl font-semibold">{t('title')}</h2>
-              <p className="mt-6">{t('description')}</p>
+        <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+          <div className="space-y-5 border-t border-border/70 pt-5">
+            <span className="temple-bookmark">{t('panelKicker')}</span>
+            <h3 className="max-w-sm font-serif text-[1.35rem] font-medium leading-snug text-foreground">
+              {t('panelTitle')}
+            </h3>
+            <p className="max-w-sm text-sm leading-7 text-muted-foreground">
+              {t('description')}
+            </p>
+            <div className="space-y-6">
+              {featureIcons.map((Icon, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 border-b border-border/70 pb-5 last:border-b-0 last:pb-0"
+                >
+                  <div className="flex size-8 shrink-0 items-center justify-center border-l-2 border-primary/60 pl-3">
+                    <Icon className="size-3.5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">
+                      {t(featureKeys[index])}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
-              <li>
-                <MailIcon className="size-5" />
-                {t('feature-1')}
-              </li>
-              <li>
-                <ZapIcon className="size-5" />
-                {t('feature-2')}
-              </li>
-              <li>
-                <ActivityIcon className="size-5" />
-                {t('feature-3')}
-              </li>
-              <li>
-                <DraftingCompassIcon className="size-5" />
-                {t('feature-4')}
-              </li>
-            </ul>
           </div>
 
-          <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
-            <div className="bg-linear-to-b relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-              <Image
-                src="/images/img1.webp"
-                className="hidden w-full rounded-[15px] dark:block"
-                alt="Chronnote page view dark"
-                width={1207}
-                height={929}
-              />
-              <Image
-                src="/images/img1.webp"
-                className="w-full rounded-[15px] shadow dark:hidden"
-                alt="Chronnote page view light"
-                width={1207}
-                height={929}
-              />
-            </div>
+          <div className="border-t border-border/70 pt-5">
+            <Image
+              src="/images/img1.webp"
+              alt="Chronnote page view"
+              width={1207}
+              height={929}
+              className="h-auto w-full border border-border/60 object-cover"
+            />
           </div>
         </div>
       </div>

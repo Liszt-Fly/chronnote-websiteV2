@@ -85,7 +85,9 @@ export function NavbarMobile({
         {/* navbar left shows logo */}
         <LocaleLink href={Routes.Root} className="flex items-center gap-2">
           <Logo />
-          <span className="text-xl font-semibold">{t('Metadata.name')}</span>
+          <span className="font-serif text-2xl font-medium">
+            {t('Metadata.name')}
+          </span>
         </LocaleLink>
 
         {/* navbar right shows menu icon and user button */}
@@ -106,8 +108,7 @@ export function NavbarMobile({
             aria-expanded={open}
             aria-label="Toggle Mobile Menu"
             onClick={handleToggleMobileMenu}
-            className="size-8 flex aspect-square h-fit select-none items-center
-              justify-center rounded-md border cursor-pointer"
+            className="flex size-9 aspect-square h-fit cursor-pointer items-center justify-center rounded-md border border-border bg-card/70 select-none"
           >
             {open ? (
               <XIcon className="size-4" />
@@ -150,15 +151,12 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
   const localePathname = useLocalePathname();
 
   return (
-    <div
-      className="fixed w-full inset-0 z-50 mt-[64px] overflow-y-auto
-      bg-background backdrop-blur-md animate-in fade-in-0"
-    >
-      <div className="size-full flex flex-col items-start space-y-4">
+    <div className="fixed inset-0 z-50 mt-[64px] w-full overflow-y-auto bg-background/96 backdrop-blur-md animate-in fade-in-0">
+      <div className="flex size-full flex-col items-start space-y-4">
         {/* auth buttons hidden on marketing site until login/register are ready */}
 
         {/* main menu */}
-        <ul className="w-full px-4">
+        <ul className="w-full px-4 py-4">
           {menuLinks?.map((item) => {
             const isActive = item.href
               ? item.href === '/'
@@ -189,10 +187,10 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                         type="button"
                         variant="ghost"
                         className={cn(
-                          'flex w-full !pl-2 items-center justify-between text-left',
+                          'flex w-full items-center justify-between rounded-md !pl-2 text-left',
                           'bg-transparent text-muted-foreground cursor-pointer',
-                          'hover:bg-transparent hover:text-foreground',
-                          'focus:bg-transparent focus:text-foreground',
+                          'hover:bg-accent hover:text-foreground',
+                          'focus:bg-accent focus:text-foreground',
                           isActive &&
                             'font-semibold bg-transparent text-foreground'
                         )}
@@ -224,10 +222,10 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                                 }
                                 className={cn(
                                   buttonVariants({ variant: 'ghost' }),
-                                  'group h-auto w-full justify-start gap-4 p-1 !pl-0 !pr-3',
+                                  'group h-auto w-full justify-start gap-4 rounded-md p-2 !pl-2 !pr-3',
                                   'bg-transparent text-muted-foreground cursor-pointer',
-                                  'hover:bg-transparent hover:text-foreground',
-                                  'focus:bg-transparent focus:text-foreground',
+                                  'hover:bg-accent hover:text-foreground',
+                                  'focus:bg-accent focus:text-foreground',
                                   isSubItemActive &&
                                     'font-semibold bg-transparent text-foreground'
                                 )}
@@ -297,10 +295,10 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
                     rel={item.external ? 'noopener noreferrer' : undefined}
                     className={cn(
                       buttonVariants({ variant: 'ghost' }),
-                      'w-full !pl-2 justify-start cursor-pointer group',
+                      'group w-full justify-start rounded-md !pl-2 cursor-pointer',
                       'bg-transparent text-muted-foreground',
-                      'hover:bg-transparent hover:text-foreground',
-                      'focus:bg-transparent focus:text-foreground',
+                      'hover:bg-accent hover:text-foreground',
+                      'focus:bg-accent focus:text-foreground',
                       isActive && 'font-semibold bg-transparent text-foreground'
                     )}
                     onClick={onLinkClicked}
