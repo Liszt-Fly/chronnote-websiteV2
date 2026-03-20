@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { LocaleLink } from '@/i18n/navigation';
 import { Download } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
@@ -11,14 +12,14 @@ export default function HeroSection() {
       id="hero"
       className="temple-section overflow-hidden px-4 pb-8 pt-10 md:pt-14"
     >
-      <div className="temple-page-width">
-        <div className="temple-measure-wide space-y-7">
+      <div className="temple-page-width space-y-10">
+        <div className="temple-measure-wide space-y-8">
           <div className="flex items-center gap-3">
             <span className="temple-kicker">{t('introduction')}</span>
             <div className="h-px flex-1 bg-border/55" />
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-6">
             <p className="temple-measure text-[0.94rem] tracking-[0.015em] text-foreground/52 temple-seraph md:text-[1rem]">
               {t('maxim')}
             </p>
@@ -30,7 +31,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-1">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
             <Button
               asChild
               variant="ghost"
@@ -41,6 +42,18 @@ export default function HeroSection() {
                 {t('primary')}
               </LocaleLink>
             </Button>
+          </div>
+        </div>
+
+        <div className="temple-gallery-block">
+          <div className="temple-plate temple-plate-wide temple-plate-shot">
+            <Image
+              src="/images/media/title.webp"
+              alt="Chronnote title workspace"
+              width={3528}
+              height={2240}
+              className="h-full w-full"
+            />
           </div>
         </div>
       </div>

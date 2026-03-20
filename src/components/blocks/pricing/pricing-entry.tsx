@@ -3,14 +3,13 @@ import { Button } from '@/components/ui/button';
 import { LocaleLink } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 
 export default function PricingEntrySection() {
   const t = useTranslations('HomePage.pricing');
 
   return (
     <section id="pricing" className="temple-section px-4">
-      <div className="temple-page-width space-y-10 border-t border-border/50 pt-8">
+      <div className="temple-page-width space-y-12 border-t border-border/50 pt-8">
         <HeaderSection
           title={t('title')}
           subtitle={t('subtitle')}
@@ -21,8 +20,8 @@ export default function PricingEntrySection() {
           descriptionClassName="temple-measure leading-8"
         />
 
-        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="space-y-4">
+        <div className="temple-section-grid">
+          <div className="temple-rail space-y-5">
             <span className="temple-bookmark">{t('earlyBird.title')}</span>
             <h3 className="temple-measure font-serif text-[1.08rem] font-medium leading-[1.7] text-foreground/72">
               {t('earlyBird.lockTitle')}
@@ -32,20 +31,11 @@ export default function PricingEntrySection() {
             </p>
           </div>
 
-          <div className="space-y-4 border-l border-border/50 pl-6">
+          <div className="space-y-5 border-l border-border/42 pl-7">
             <p className="temple-kicker">{t('earlyBird.casesTitle')}</p>
             <p className="temple-measure text-sm leading-8 text-muted-foreground">
               {t('earlyBird.lockDescription')}
             </p>
-            <div className="overflow-hidden border border-border/45">
-              <Image
-                src="/images/docs/pageview1.webp"
-                alt="Chronnote pricing related workspace"
-                width={1356}
-                height={934}
-                className="h-auto w-full object-cover"
-              />
-            </div>
             <Button
               asChild
               variant="ghost"

@@ -59,48 +59,18 @@ export default function CallToActionSection() {
   return (
     <section id="call-to-action" className="temple-section px-4 pt-0">
       <div className="temple-page-width border-t border-border/70 pt-8">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
-          <div className="space-y-3">
+        <div className="temple-section-grid">
+          <div className="temple-rail space-y-4">
             <span className="temple-bookmark">{t('badge')}</span>
             <h2 className="temple-measure font-serif text-[1.55rem] text-foreground/86 temple-seraph md:text-[1.9rem]">
               {t('title')}
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-7">
             <p className="temple-measure text-sm leading-8 text-muted-foreground">
               {t('description')}
             </p>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="overflow-hidden border border-border/45">
-                <Image
-                  src="/images/docs/atom2.webp"
-                  alt="Chronnote atom view"
-                  width={1356}
-                  height={934}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="overflow-hidden border border-border/45">
-                <Image
-                  src="/images/img1.webp"
-                  alt="Chronnote room view"
-                  width={1207}
-                  height={929}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="overflow-hidden border border-border/45">
-                <Image
-                  src="/images/media/title.webp"
-                  alt="Chronnote workspace board"
-                  width={3528}
-                  height={2240}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
 
             <div className="space-y-0 border-t border-border/70">
               {channels.map((channel, index) => (

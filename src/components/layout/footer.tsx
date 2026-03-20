@@ -19,8 +19,8 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
 
   return (
     <footer className={cn('border-t border-border/70', className)}>
-      <Container className="max-w-5xl px-4">
-        <div className="grid grid-cols-1 gap-10 py-16 md:grid-cols-[1.3fr_1fr]">
+      <Container className="max-w-[72rem] px-4">
+        <div className="temple-section-grid py-16">
           <div className="flex flex-col items-start">
             <div className="space-y-5">
               {/* logo and name */}
@@ -87,7 +87,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
       </Container>
 
       <div className="border-t border-border/70 py-8">
-        <Container className="max-w-5xl px-4 flex items-center justify-between gap-x-4">
+        <Container className="max-w-[72rem] px-4 flex items-center justify-between gap-x-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-x-4">
             <span className="text-muted-foreground text-sm">
               &copy; {new Date().getFullYear()} {t('Metadata.name')} All Rights

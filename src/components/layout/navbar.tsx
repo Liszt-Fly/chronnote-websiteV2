@@ -52,7 +52,7 @@ export function Navbar({ scroll }: NavBarProps) {
           : 'bg-background/92'
       )}
     >
-      <Container className="px-4">
+      <Container className="max-w-[72rem] px-4">
         {/* desktop navbar */}
         <nav className="hidden h-15 lg:flex lg:items-center">
           {/* logo and name */}
