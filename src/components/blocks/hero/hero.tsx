@@ -10,23 +10,23 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="temple-section overflow-hidden px-4 pb-10 pt-8 md:pt-12"
+      className="temple-section overflow-hidden px-4 pb-8 pt-8 md:pt-10"
     >
-      <div className="temple-page-width space-y-8 md:space-y-10">
-        <div className="space-y-5">
+      <div className="temple-page-width space-y-6 md:space-y-7">
+        <div className="space-y-4">
           <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55">
             {t('eyebrow')}
           </p>
-          <div className="space-y-4">
-            <h1 className="max-w-4xl text-balance text-[2.5rem] font-medium leading-[1.02] tracking-[-0.045em] text-foreground/92 md:text-[4.8rem]">
+          <div className="space-y-3">
+            <h1 className="max-w-5xl text-[2.15rem] font-medium leading-[1.06] tracking-[-0.04em] text-foreground/92 md:text-[3.5rem] lg:text-[4rem]">
               {t('title')}
             </h1>
-            <p className="max-w-2xl text-[0.98rem] leading-7 text-muted-foreground md:text-[1.02rem]">
+            <p className="max-w-xl text-[0.96rem] leading-7 text-muted-foreground md:text-[1rem]">
               {t('description')}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-3 pt-1">
             <Button
               asChild
               className="h-10 rounded-md px-4 text-sm font-medium"

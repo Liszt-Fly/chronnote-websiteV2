@@ -57,13 +57,13 @@ export default function FeaturesSection() {
       title: t('proof.cards.todo.title'),
       description: t('proof.cards.todo.description'),
       imageSrc: '/images/docs/notebook.webp',
-      imageAlt: 'Chronnote task and notebook workspace',
+      imageAlt: 'Chronnote notebook workspace',
     },
   ];
 
   return (
-    <section id="features" className="temple-section px-4 pt-6">
-      <div className="temple-page-width space-y-14">
+    <section id="features" className="temple-section px-4 pt-4">
+      <div className="temple-page-width space-y-12">
         <HeaderSection
           title={t('eyebrow')}
           titleClassName="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55"
@@ -75,26 +75,26 @@ export default function FeaturesSection() {
           className="items-start gap-3 text-left"
         />
 
-        <div className="temple-section-grid gap-y-10 border-t border-border/40 pt-8">
-          <div className="temple-rail space-y-4">
+        <div className="temple-section-grid gap-y-8 border-t border-border/40 pt-7">
+          <div className="temple-rail space-y-3">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55">
               {t('workflow.eyebrow')}
             </p>
-            <h3 className="max-w-xs text-[1.2rem] font-medium leading-[1.3] text-foreground/82 md:text-[1.5rem]">
+            <h3 className="max-w-[15rem] text-[1.32rem] font-medium leading-[1.22] tracking-[-0.02em] text-foreground/86 md:text-[1.7rem]">
               {t('workflow.title')}
             </h3>
-            <p className="max-w-sm text-sm leading-7 text-muted-foreground">
+            <p className="max-w-[15rem] text-[0.95rem] leading-7 text-muted-foreground">
               {t('workflow.description')}
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {workflowSteps.map((step, index) => (
               <article
                 key={step.id}
-                className="grid gap-3 border-b border-border/45 py-5 last:border-b-0 md:grid-cols-[72px_minmax(0,1fr)] md:gap-5"
+                className="grid gap-3 border-b border-border/45 py-4 last:border-b-0 md:grid-cols-[84px_minmax(0,1fr)] md:gap-5"
               >
-                <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-foreground/42">
+                <span className="text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-foreground/50">
                   0{index + 1}
                 </span>
                 <div className="space-y-2">
@@ -110,8 +110,8 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-        <div className="space-y-6 border-t border-border/40 pt-8">
-          <div className="space-y-3">
+        <div className="space-y-5 border-t border-border/40 pt-7">
+          <div className="space-y-2">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55">
               {t('proof.eyebrow')}
             </p>
@@ -125,7 +125,7 @@ export default function FeaturesSection() {
 
           <div className="grid gap-5 md:grid-cols-3">
             {workspaceCards.map((card) => (
-              <article key={card.id} className="space-y-4">
+              <article key={card.id} className="space-y-3">
                 <div className="temple-workspace-frame temple-workspace-frame-card">
                   <Image
                     src={card.imageSrc}

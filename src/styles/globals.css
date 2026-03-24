@@ -433,14 +433,14 @@ body {
 
 .temple-workspace-frame {
   overflow: hidden;
-  border: 1px solid color-mix(in oklab, var(--border) 38%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border) 30%, transparent);
   background: color-mix(in oklab, var(--card) 24%, transparent);
-  box-shadow: 0 18px 48px -36px
-    color-mix(in oklab, var(--foreground) 24%, transparent);
+  box-shadow: 0 14px 38px -34px
+    color-mix(in oklab, var(--foreground) 18%, transparent);
 }
 
 .temple-workspace-frame-hero {
-  aspect-ratio: 1.86 / 1;
+  aspect-ratio: 1.94 / 1;
 }
 
 .temple-workspace-frame-card {

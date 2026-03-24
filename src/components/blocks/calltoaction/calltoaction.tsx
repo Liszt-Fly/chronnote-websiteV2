@@ -60,16 +60,16 @@ export default function CallToActionSection() {
     <section id="call-to-action" className="temple-section px-4 pt-0">
       <div className="temple-page-width border-t border-border/70 pt-8">
         <div className="temple-section-grid">
-          <div className="temple-rail space-y-4">
+          <div className="temple-rail space-y-3">
             <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/50">
               {t('badge')}
             </span>
-            <h2 className="temple-measure text-[1.45rem] font-medium leading-[1.18] tracking-[-0.02em] text-foreground/86 md:text-[1.85rem]">
+            <h2 className="max-w-[14rem] text-[1.45rem] font-medium leading-[1.18] tracking-[-0.02em] text-foreground/86 md:text-[1.8rem]">
               {t('title')}
             </h2>
           </div>
 
-          <div className="space-y-7">
+          <div className="space-y-5">
             <p className="temple-measure text-sm leading-8 text-muted-foreground">
               {t('description')}
             </p>
