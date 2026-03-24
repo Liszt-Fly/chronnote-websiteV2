@@ -810,20 +810,11 @@
     "title": "Chronnote",
     "description": "Build your second brain",
     "hero": {
-      "title": "Let knowledge return to an order that is truly yours",
-      "description": "Chronnote is not a tool that thinks for you. It is a place where notes, reading, tasks, and reflection can return to the same line of thought, so you no longer move yourself between containers just to keep thinking.",
-      "introduction": "Know thyself",
-      "maxim": "Know thyself.",
+      "eyebrow": "A structured workspace for thought",
+      "title": "Thinking should not be scattered across tools.",
+      "description": "Chronnote brings notes, reading, tasks, whiteboards, and AI back into one workspace so you can keep judging, organizing, and moving forward inside the same context.",
       "primary": "View plans",
-      "secondary": "Read the chambers",
-      "pillar-1": "Atoms",
-      "pillar-2": "Context",
-      "pillar-3": "Memory",
-      "panelKicker": "Main Hall",
-      "panelTitle": "A place where a question can slowly take shape",
-      "panelBadge": "Delphi",
-      "panelNote1": "Notes, PDF fragments, whiteboards, and tasks are no longer separate territories. They return to the same material.",
-      "panelNote2": "Chron Engine reads context before it participates. What it offers is not a slogan, but the next step adjacent to your present understanding."
+      "secondary": "Desktop beta is open with the full workspace experience."
     },
     "logocloud": {
       "title": "Trusted by creators and developers"
@@ -903,29 +894,45 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "Chamber I",
-      "subtitle": "Let the same knowledge remain itself across forms",
-      "description": "What matters is not how many tools you have, but whether one understanding can remain continuous across recording, organizing, questioning, and acting.",
-      "chamberLabel": "Chamber 0{index}",
-      "panelKicker": "Single source",
-      "panelTitle": "Not duplication, but appearance",
-      "panelDescription": "Notes, maps, tasks, and references are only different appearances of the same material.",
-      "items": {
-        "item-1": {
-          "title": "Note atoms ⇄ mind-map nodes",
-          "description": "Pick a PDF highlight to spawn a note atom. Drop it into a mind map and it instantly becomes a structured node. Double-click to expand the entire note and every edit stays synced."
-        },
-        "item-2": {
-          "title": "Note atoms ⇄ to-do items",
-          "description": "Not confident about a concept? Flag that atom as a task. It shows up in your to-do stack with full context and in-place references. Check it off and the note captures your latest understanding."
-        },
-        "item-3": {
-          "title": "PDF atoms ⇄ note atoms",
-          "description": "Annotate directly inside the PDF and get a standalone note atom. Wherever you reference it—mind map, task list, whiteboard—a double-click jumps back to the exact spot in the document."
-        },
-        "item-4": {
-          "title": "Single source of truth",
-          "description": "Change an atom once and every view updates instantly. No duplicate pages, no copy-and-paste islands—the same knowledge powers every action."
+      "eyebrow": "Core workflow",
+      "title": "Start from a question. Keep moving inside one thread.",
+      "description": "The homepage no longer opens by explaining philosophy first. It proves something practical first: reading, writing, structuring, and next actions can all happen on the same desk.",
+      "workflow": {
+        "eyebrow": "Workflow",
+        "title": "Ask, organize, and synthesize without leaving the workspace.",
+        "description": "Right after the hero, the page shows the path that matters most instead of a feature catalog. Each step inherits the previous context, so you do not have to keep restarting in a different tool.",
+        "steps": {
+          "capture": {
+            "title": "When you ask a question, the material is already there",
+            "description": "Whether you begin from a PDF, note, or whiteboard, Chronnote keeps the relevant material inside the current workspace so the question lands on real context."
+          },
+          "organize": {
+            "title": "When you organize, you do not duplicate yourself",
+            "description": "The same knowledge can appear in pages, maps, tasks, and references while remaining the same atom. Structure can change without splitting the source."
+          },
+          "synthesize": {
+            "title": "When you move forward, AI keeps working along the thread",
+            "description": "Chron Engine participates in the process of understanding instead of dropping disconnected answers into blank space. It reads what is already on your desk, then helps you continue."
+          }
+        }
+      },
+      "proof": {
+        "eyebrow": "Workspace proof",
+        "title": "Not more modules. One workspace that can keep unfolding.",
+        "description": "These interfaces are not separate feature demos. They are the same way of working expressed through different tasks. The point is not faster switching, but keeping context intact.",
+        "cards": {
+          "editor": {
+            "title": "Writing and page structure stay on the same desk",
+            "description": "A page is not another copy. It is where you place materials, shape structure, and continue writing."
+          },
+          "mindmap": {
+            "title": "A map is not a side view, but a surface for understanding",
+            "description": "When a problem needs visible relationships, atoms can move directly into a map and become an editable, traceable structure."
+          },
+          "todo": {
+            "title": "Tasks stay connected to the content that produced them",
+            "description": "To-dos preserve their original context, making it easier to reconnect review, practice, and next actions to the understanding you already built."
+          }
         }
       }
     },
@@ -972,16 +979,16 @@
       }
     },
     "pricing": {
-      "title": "Covenant",
-      "subtitle": "Choose the layer of the hall you wish to enter",
-      "description": "Price should not function as a sales trigger. It should clarify the form of commitment through which you want to inhabit this order over time.",
-      "entryLabel": "Read the covenant",
+      "title": "Access",
+      "subtitle": "Choose the way you want to get in",
+      "description": "Pricing comes later because the homepage should prove the product first. Once the workflow makes sense, then decide how you want to start.",
+      "entryLabel": "View plans",
       "earlyBird": {
-        "title": "Early entry",
-        "lead": "Those who enter during the early period keep the price of their first entry.",
-        "lockTitle": "The earlier covenant remains in force",
+        "title": "Early access",
+        "lead": "Those who join during the early period keep the price of their first entry.",
+        "lockTitle": "Early arrivals keep their original price",
         "lockDescription": "If you subscribe during the early-entry period, renewals continue at that original transaction price even if the list price changes later.",
-        "casesTitle": "Notes",
+        "casesTitle": "Pricing note",
         "description": "Early-bird pricing is for early beta users as a thank-you."
       }
     },
@@ -1106,9 +1113,9 @@
       }
     },
     "calltoaction": {
-      "badge": "Endnote",
-      "title": "If you want to keep walking inward",
-      "description": "These are the paths through which you can reach us. Not to be surrounded by marketing, but to return with questions, suggestions, and the texture of actual use.",
+      "badge": "Get in early",
+      "title": "If you want to enter Chronnote earlier",
+      "description": "Use these channels to get beta updates, report real workflow problems, or watch the product evolve in public.",
       "wechatModal": {
         "title": "Scan our WeChat QR code",
         "description": "Scan or long-press the code to join the Chronnote community group."

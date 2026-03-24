@@ -9,21 +9,24 @@ export default function PricingEntrySection() {
 
   return (
     <section id="pricing" className="temple-section px-4">
-      <div className="temple-page-width space-y-12 border-t border-border/50 pt-8">
+      <div className="temple-page-width space-y-10 border-t border-border/50 pt-8">
         <HeaderSection
           title={t('title')}
           subtitle={t('subtitle')}
           subtitleAs="h2"
           description={t('description')}
           className="items-start text-left"
-          subtitleClassName="temple-measure-wide text-[1.34rem] text-foreground/78 md:text-[1.6rem]"
-          descriptionClassName="temple-measure leading-8"
+          titleClassName="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/50"
+          subtitleClassName="temple-measure-wide text-[1.2rem] font-medium leading-[1.25] text-foreground/82 md:text-[1.5rem]"
+          descriptionClassName="temple-measure leading-7"
         />
 
         <div className="temple-section-grid">
           <div className="temple-rail space-y-5">
-            <span className="temple-bookmark">{t('earlyBird.title')}</span>
-            <h3 className="temple-measure font-serif text-[1.08rem] font-medium leading-[1.7] text-foreground/72">
+            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/50">
+              {t('earlyBird.title')}
+            </span>
+            <h3 className="temple-measure text-[1.05rem] font-medium leading-[1.55] text-foreground/78">
               {t('earlyBird.lockTitle')}
             </h3>
             <p className="temple-measure text-sm leading-8 text-muted-foreground">

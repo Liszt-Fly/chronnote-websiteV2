@@ -41,7 +41,12 @@ export function HeaderSection({
       className={cn('flex flex-col items-center gap-4 text-center', className)}
     >
       {title ? (
-        <TitleComponent className={cn('temple-kicker', titleClassName)}>
+        <TitleComponent
+          className={cn(
+            'text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55',
+            titleClassName
+          )}
+        >
           {title}
         </TitleComponent>
       ) : null}

@@ -61,8 +61,10 @@ export default function CallToActionSection() {
       <div className="temple-page-width border-t border-border/70 pt-8">
         <div className="temple-section-grid">
           <div className="temple-rail space-y-4">
-            <span className="temple-bookmark">{t('badge')}</span>
-            <h2 className="temple-measure font-serif text-[1.55rem] text-foreground/86 temple-seraph md:text-[1.9rem]">
+            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/50">
+              {t('badge')}
+            </span>
+            <h2 className="temple-measure text-[1.45rem] font-medium leading-[1.18] tracking-[-0.02em] text-foreground/86 md:text-[1.85rem]">
               {t('title')}
             </h2>
           </div>
