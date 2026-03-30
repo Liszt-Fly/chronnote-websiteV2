@@ -1,4 +1,5 @@
 import CallToActionSection from '@/components/blocks/calltoaction/calltoaction';
+import DownloadSection from '@/components/blocks/download/download';
 import FeaturesSection from '@/components/blocks/features/features';
 import HeroSection from '@/components/blocks/hero/hero';
 import PricingEntrySection from '@/components/blocks/pricing/pricing-entry';
@@ -37,6 +38,7 @@ export default async function HomePage(props: HomePageProps) {
     <div className="flex flex-col">
       <HeroSection />
       <FeaturesSection />
+      <DownloadSection />
       <PricingEntrySection />
       <CallToActionSection />
     </div>
