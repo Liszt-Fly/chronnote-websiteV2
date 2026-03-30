@@ -308,15 +308,7 @@ export function PricingCard({
               <li key={i} className="flex items-center gap-2">
                 <CheckCircleIcon className="size-4 text-green-500 dark:text-green-400" />
                 {(() => {
-                  const displayFeature =
-                    plan.id === 'pro' &&
-                    paymentType === PaymentTypes.SUBSCRIPTION &&
-                    i === 2
-                      ? interval === PlanIntervals.YEAR
-                        ? t('proCreditBenefitYearly')
-                        : t('proCreditBenefitMonthly')
-                      : feature;
-                  const { text, tag } = parseFeatureTag(displayFeature);
+                  const { text, tag } = parseFeatureTag(feature);
                   return (
                     <>
                       <span>{text}</span>

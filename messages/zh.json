@@ -85,9 +85,7 @@
       "getStarted": "开始免费试用",
       "notAvailable": "不可用",
       "daysTrial": "{days} 天试用期",
-      "limitedSlots": "限量 {count} 个名额",
-      "proCreditBenefitMonthly": "每月赠送 1500 积分（对应 1.5 元额度）",
-      "proCreditBenefitYearly": "每月赠送 1500 积分（对应 1.5 元额度）"
+      "limitedSlots": "限量 {count} 个名额"
     },
     "CheckoutButton": {
       "loading": "加载中...",

@@ -85,9 +85,7 @@
       "getStarted": "Get Started",
       "notAvailable": "Not Available",
       "daysTrial": "{days}-day free trial",
-      "limitedSlots": "Limited to {count} spots",
-      "proCreditBenefitMonthly": "1,500 credits per month (about CNY 1.5 value)",
-      "proCreditBenefitYearly": "1,500 credits per month (about CNY 1.5 value)"
+      "limitedSlots": "Limited to {count} spots"
     },
     "CheckoutButton": {
       "loading": "Loading...",
