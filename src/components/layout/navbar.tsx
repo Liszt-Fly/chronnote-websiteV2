@@ -1,12 +1,9 @@
 'use client';
 
-import { LoginWrapper } from '@/components/auth/login-wrapper';
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcher } from '@/components/layout/mode-switcher';
 import { NavbarMobile } from '@/components/layout/navbar-mobile';
-import { UserButton } from '@/components/layout/user-button';
-import { Button, buttonVariants } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,13 +16,10 @@ import {
 import { useNavbarLinks } from '@/config/navbar-config';
 import { useScroll } from '@/hooks/use-scroll';
 import { LocaleLink, useLocalePathname } from '@/i18n/navigation';
-import { authClient } from '@/lib/auth-client';
 import { cn } from '@/lib/utils';
 import { Routes } from '@/routes';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
-import { Skeleton } from '../ui/skeleton';
 import LocaleSwitcher from './locale-switcher';
 
 interface NavBarProps {
@@ -34,11 +28,11 @@ interface NavBarProps {
 
 const customNavigationMenuTriggerStyle = cn(
   navigationMenuTriggerStyle(),
-  'relative bg-transparent text-muted-foreground cursor-pointer',
-  'hover:bg-accent hover:text-accent-foreground',
-  'focus:bg-accent focus:text-accent-foreground',
-  'data-active:font-semibold data-active:bg-transparent data-active:text-accent-foreground',
-  'data-[state=open]:bg-transparent data-[state=open]:text-accent-foreground'
+  'relative h-8 rounded-md bg-transparent px-2 text-[0.8rem] text-muted-foreground/88',
+  'hover:bg-transparent hover:text-foreground/78',
+  'focus:bg-transparent focus:text-foreground/78',
+  'data-active:font-normal data-active:bg-transparent data-active:text-foreground/78',
+  'data-[state=open]:bg-transparent data-[state=open]:text-foreground/78'
 );
 
 export function Navbar({ scroll }: NavBarProps) {
@@ -46,43 +40,35 @@ export function Navbar({ scroll }: NavBarProps) {
   const scrolled = useScroll(50);
   const menuLinks = useNavbarLinks();
   const localePathname = useLocalePathname();
-  const [mounted, setMounted] = useState(false);
-  const { data: session, isPending } = authClient.useSession();
-  const currentUser = session?.user;
-  // console.log(`Navbar, user:`, user);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <section
       className={cn(
-        'sticky inset-x-0 top-0 z-40 py-4 transition-all duration-300',
+        'sticky inset-x-0 top-0 z-40 border-b border-border/70 transition-all duration-200',
         scroll
           ? scrolled
-            ? 'bg-muted/50 backdrop-blur-md border-b supports-backdrop-filter:bg-muted/50'
-            : 'bg-transparent'
-          : 'border-b bg-muted/50'
+            ? 'bg-background/92 backdrop-blur-sm'
+            : 'bg-background/80'
+          : 'bg-background/92'
       )}
     >
-      <Container className="px-4">
+      <Container className="max-w-[72rem] px-4">
         {/* desktop navbar */}
-        <nav className="hidden lg:flex">
+        <nav className="hidden h-15 lg:flex lg:items-center">
           {/* logo and name */}
           <div className="flex items-center">
-            <LocaleLink href="/" className="flex items-center space-x-2">
+            <LocaleLink href="/" className="flex items-center gap-3">
               <Logo />
-              <span className="text-xl font-semibold">
+              <span className="font-serif text-[1.56rem] font-medium tracking-[0.01em] text-foreground/84">
                 {t('Metadata.name')}
               </span>
             </LocaleLink>
           </div>
 
           {/* menu links */}
-          <div className="flex-1 flex items-center justify-center space-x-2">
+          <div className="flex flex-1 items-center justify-center">
             <NavigationMenu className="relative">
-              <NavigationMenuList className="flex items-center">
+              <NavigationMenuList className="flex items-center gap-0">
                 {menuLinks?.map((item, index) =>
                   item.items ? (
                     <NavigationMenuItem key={index} className="relative">
@@ -101,7 +87,7 @@ export function Navbar({ scroll }: NavBarProps) {
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-4 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <ul className="temple-paper grid w-[420px] gap-4 rounded-lg p-4 md:w-[520px] md:grid-cols-2 lg:w-[620px]">
                           {item.items?.map((subItem, subIndex) => {
                             const isSubItemActive =
                               subItem.href &&
@@ -143,7 +129,7 @@ export function Navbar({ scroll }: NavBarProps) {
                                     <div className="flex-1">
                                       <div
                                         className={cn(
-                                          'text-sm font-medium text-muted-foreground',
+                                          'text-sm font-medium text-foreground',
                                           'group-hover:bg-transparent group-hover:text-accent-foreground',
                                           'group-focus:bg-transparent group-focus:text-accent-foreground',
                                           isSubItemActive &&
@@ -208,7 +194,7 @@ export function Navbar({ scroll }: NavBarProps) {
                           {item.href === Routes.Community ? (
                             <span className="relative inline-flex items-center gap-1">
                               <span>{item.title}</span>
-                              <span className="mt-[-10px] rounded-full border border-primary/30 bg-primary/10 px-1.5 py-[1px] text-[9px] font-medium text-primary">
+                              <span className="rounded-full border border-primary/30 bg-primary/10 px-1.5 py-[1px] text-[9px] font-medium text-primary">
                                 NEW
                               </span>
                             </span>
@@ -225,7 +211,7 @@ export function Navbar({ scroll }: NavBarProps) {
           </div>
 
           {/* navbar right: only theme & locale switchers for now; auth entry hidden until ready */}
-          <div className="flex items-center gap-x-4">
+          <div className="flex items-center gap-x-3">
             <ModeSwitcher />
             <LocaleSwitcher />
           </div>

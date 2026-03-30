@@ -1,12 +1,14 @@
 import { XTwitterIcon } from '@/components/icons/x';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcher } from '@/components/layout/mode-switcher';
+import { DocsRootProvider } from '@/components/providers/docs-root-provider';
 import { websiteConfig } from '@/config/website';
 import { getLocalePathname } from '@/i18n/navigation';
 import { docsI18nConfig } from '@/lib/docs/i18n';
 import { source } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { Translations } from 'fumadocs-ui/i18n';
 import { HomeIcon } from 'lucide-react';
 import type { Locale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -39,6 +41,21 @@ export default async function DocsRootLayout({
 }: DocsLayoutProps) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'DocsPage' });
+  const locales = Object.entries(websiteConfig.i18n.locales).map(
+    ([localeKey, data]) => ({
+      name: data.name,
+      locale: localeKey,
+    })
+  );
+  const translations: Partial<Translations> = {
+    toc: t('toc'),
+    search: t('search'),
+    lastUpdate: t('lastUpdate'),
+    searchNoResult: t('searchNoResult'),
+    previousPage: t('previousPage'),
+    nextPage: t('nextPage'),
+    chooseLanguage: t('chooseLanguage'),
+  };
 
   const docsPath = getLocalePathname({ locale, href: '/docs' });
   const homePath = getLocalePathname({ locale, href: '/' });
@@ -85,8 +102,14 @@ export default async function DocsRootLayout({
   };
 
   return (
-    <DocsLayout tree={source.pageTree[locale]} {...docsOptions}>
-      {children}
-    </DocsLayout>
+    <DocsRootProvider
+      locale={locale}
+      locales={locales}
+      translations={translations}
+    >
+      <DocsLayout tree={source.pageTree[locale]} {...docsOptions}>
+        {children}
+      </DocsLayout>
+    </DocsRootProvider>
   );
 }

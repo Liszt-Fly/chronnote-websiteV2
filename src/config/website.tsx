@@ -11,7 +11,7 @@ export const websiteConfig: WebsiteConfig = {
   ui: {
     theme: {
       defaultTheme: 'default',
-      enableSwitch: true,
+      enableSwitch: false,
     },
     mode: {
       defaultMode: 'dark',

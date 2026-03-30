@@ -1,162 +1,150 @@
-'use client';
-
 import { HeaderSection } from '@/components/layout/header-section';
-import { BorderBeam } from '@/components/magicui/border-beam';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import {
-  ChartBarIncreasingIcon,
-  Database,
-  Fingerprint,
-  IdCard,
-} from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useState } from 'react';
 
-/**
- * https://nsui.irung.me/features
- * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-12.json
- */
+interface WorkflowStep {
+  id: string;
+  title: string;
+  description: string;
+}
+
+interface WorkspaceCard {
+  id: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
 export default function FeaturesSection() {
   const t = useTranslations('HomePage.features');
-  type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4';
-  const [activeItem, setActiveItem] = useState<ImageKey>('item-1');
 
-  const images = {
-    'item-1': {
-      image: '/blocks/charts-light.png',
-      darkImage: '/blocks/charts.png',
-      alt: 'Product Feature One',
+  const workflowSteps: WorkflowStep[] = [
+    {
+      id: 'capture',
+      title: t('workflow.steps.capture.title'),
+      description: t('workflow.steps.capture.description'),
     },
-    'item-2': {
-      image: '/blocks/music-light.png',
-      darkImage: '/blocks/music.png',
-      alt: 'Product Feature Two',
+    {
+      id: 'organize',
+      title: t('workflow.steps.organize.title'),
+      description: t('workflow.steps.organize.description'),
     },
-    'item-3': {
-      image: '/blocks/mail2-light.png',
-      darkImage: '/blocks/mail2.png',
-      alt: 'Product Feature Three',
+    {
+      id: 'synthesize',
+      title: t('workflow.steps.synthesize.title'),
+      description: t('workflow.steps.synthesize.description'),
     },
-    'item-4': {
-      image: '/blocks/payments-light.png',
-      darkImage: '/blocks/payments.png',
-      alt: 'Product Feature Four',
+  ];
+
+  const workspaceCards: WorkspaceCard[] = [
+    {
+      id: 'editor',
+      title: t('proof.cards.editor.title'),
+      description: t('proof.cards.editor.description'),
+      imageSrc: '/images/docs/pageview1.webp',
+      imageAlt: 'Chronnote workspace editor',
     },
-  };
+    {
+      id: 'mindmap',
+      title: t('proof.cards.mindmap.title'),
+      description: t('proof.cards.mindmap.description'),
+      imageSrc: '/images/docs/atom2.webp',
+      imageAlt: 'Chronnote mindmap workspace',
+    },
+    {
+      id: 'todo',
+      title: t('proof.cards.todo.title'),
+      description: t('proof.cards.todo.description'),
+      imageSrc: '/images/docs/notebook.webp',
+      imageAlt: 'Chronnote notebook workspace',
+    },
+  ];
 
   return (
-    <section id="features" className="px-4 py-16">
-      {/* <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]" /> */}
-      <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
+    <section id="features" className="temple-section px-4 pt-4">
+      <div className="temple-page-width space-y-12">
         <HeaderSection
-          title={t('title')}
-          subtitle={t('subtitle')}
+          title={t('eyebrow')}
+          titleClassName="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55"
+          subtitle={t('title')}
           subtitleAs="h2"
+          subtitleClassName="max-w-4xl text-left text-[1.8rem] font-medium leading-[1.08] tracking-[-0.035em] text-foreground/88 md:text-[3rem]"
           description={t('description')}
-          descriptionAs="p"
+          descriptionClassName="max-w-2xl text-left text-[0.96rem] leading-7 text-muted-foreground"
+          className="items-start gap-3 text-left"
         />
 
-        <div className="grid gap-12 sm:px-12 lg:grid-cols-12 lg:gap-24 lg:px-0">
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            <div className="lg:pr-0 text-left">
-              <h3 className="text-3xl font-semibold lg:text-4xl text-foreground leading-normal py-1">
-                {t('title')}
-              </h3>
-              <p className="mt-4 text-muted-foreground">{t('description')}</p>
-            </div>
-            <Accordion
-              type="single"
-              value={activeItem}
-              onValueChange={(value) => setActiveItem(value as ImageKey)}
-              className="w-full"
-            >
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Database className="size-4" />
-                    {t('items.item-1.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-1.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <Fingerprint className="size-4" />
-                    {t('items.item-2.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-2.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <IdCard className="size-4" />
-                    {t('items.item-3.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-3.description')}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  <div className="flex items-center gap-2 text-base">
-                    <ChartBarIncreasingIcon className="size-4" />
-                    {t('items.item-4.title')}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {t('items.item-4.description')}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+        <div className="temple-section-grid gap-y-8 border-t border-border/40 pt-7">
+          <div className="temple-rail space-y-3">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55">
+              {t('workflow.eyebrow')}
+            </p>
+            <h3 className="max-w-[15rem] text-[1.32rem] font-medium leading-[1.22] tracking-[-0.02em] text-foreground/86 md:text-[1.7rem]">
+              {t('workflow.title')}
+            </h3>
+            <p className="max-w-[15rem] text-[0.95rem] leading-7 text-muted-foreground">
+              {t('workflow.description')}
+            </p>
           </div>
 
-          <div className="bg-background w-full relative flex overflow-hidden rounded-2xl border p-2 lg:h-auto lg:col-span-7">
-            <div className="aspect-76/59 bg-background relative w-full rounded-2xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${activeItem}-id`}
-                  initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  className="size-full overflow-hidden rounded-2xl border bg-zinc-900 shadow-md"
-                >
+          <div className="space-y-3">
+            {workflowSteps.map((step, index) => (
+              <article
+                key={step.id}
+                className="grid gap-3 border-b border-border/45 py-4 last:border-b-0 md:grid-cols-[84px_minmax(0,1fr)] md:gap-5"
+              >
+                <span className="text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-foreground/50">
+                  0{index + 1}
+                </span>
+                <div className="space-y-2">
+                  <h4 className="text-[1rem] font-medium text-foreground/86 md:text-[1.08rem]">
+                    {step.title}
+                  </h4>
+                  <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-5 border-t border-border/40 pt-7">
+          <div className="space-y-2">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground/55">
+              {t('proof.eyebrow')}
+            </p>
+            <h3 className="max-w-3xl text-[1.35rem] font-medium leading-[1.22] tracking-[-0.02em] text-foreground/84 md:text-[2rem]">
+              {t('proof.title')}
+            </h3>
+            <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+              {t('proof.description')}
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {workspaceCards.map((card) => (
+              <article key={card.id} className="space-y-3">
+                <div className="temple-workspace-frame temple-workspace-frame-card">
                   <Image
-                    src={images[activeItem].image}
-                    className="size-full object-cover object-left-top dark:hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
+                    src={card.imageSrc}
+                    alt={card.imageAlt}
+                    width={1600}
+                    height={1000}
+                    className="h-full w-full object-cover object-top"
                   />
-                  <Image
-                    src={images[activeItem].darkImage}
-                    className="size-full object-cover object-left-top dark:block hidden"
-                    alt={images[activeItem].alt}
-                    width={1207}
-                    height={929}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            <BorderBeam
-              duration={6}
-              size={200}
-              className="from-transparent via-violet-700 to-transparent dark:via-white/50"
-            />
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-base font-medium text-foreground/86">
+                    {card.title}
+                  </h4>
+                  <p className="text-sm leading-7 text-muted-foreground">
+                    {card.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

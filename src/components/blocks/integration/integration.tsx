@@ -121,12 +121,9 @@ export default function IntegrationSection() {
               const isActive = index === currentIndex;
 
               return (
-              <CarouselItem key={card.id} className="flex justify-center">
-                <IntegrationCarouselCard
-                  card={card}
-                  isActive={isActive}
-                />
-              </CarouselItem>
+                <CarouselItem key={card.id} className="flex justify-center">
+                  <IntegrationCarouselCard card={card} isActive={isActive} />
+                </CarouselItem>
               );
             })}
           </CarouselContent>
@@ -158,12 +155,7 @@ export default function IntegrationSection() {
 
 function EditorIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      focusable="false"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" {...props}>
       {/* outer frame */}
       <rect
         x="3.5"
@@ -231,12 +223,7 @@ function EditorIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function WorkflowIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      focusable="false"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" {...props}>
       {/* outer soft square */}
       <rect
         x="3.5"

@@ -157,10 +157,9 @@ export function PricingCard({
   return (
     <Card
       className={cn(
-        'flex flex-col h-full',
+        'flex h-full flex-col rounded-none border-x-0 border-y border-border/80 bg-transparent shadow-none',
         plan.popular && 'relative',
-        isCurrentPlan &&
-          'border-blue-500 shadow-lg shadow-blue-100 dark:shadow-blue-900/20',
+        isCurrentPlan && 'border-primary/60',
         className
       )}
     >
@@ -181,7 +180,7 @@ export function PricingCard({
         <div className="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
           <Badge
             variant="default"
-            className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 border-blue-200 dark:border-blue-800"
+            className="border-primary/25 bg-primary/10 text-primary"
           >
             {t('currentPlan')}
           </Badge>
@@ -190,7 +189,7 @@ export function PricingCard({
 
       <CardHeader>
         <CardTitle>
-          <h3 className="font-medium">{plan.name}</h3>
+          <h3 className="font-serif text-2xl font-medium">{plan.name}</h3>
         </CardTitle>
 
         {/* show price and price label */}
@@ -202,7 +201,7 @@ export function PricingCard({
           {!plan.isFree && isEarlyBirdPlan && (
             <Badge
               variant="secondary"
-              className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+              className="ml-1 border-border bg-transparent text-foreground"
             >
               {t('earlyBirdPrice')}
             </Badge>
@@ -210,7 +209,7 @@ export function PricingCard({
           {plan.id === 'lifetime' && (
             <Badge
               variant="secondary"
-              className="ml-1 border-red-200 bg-red-50 text-red-800 dark:border-red-900/50 dark:bg-red-950/40 dark:text-red-200"
+              className="ml-1 border-destructive/20 bg-transparent text-destructive"
             >
               {t('limitedSlots', { count: LIFETIME_EARLY_BIRD_SLOTS })}
             </Badge>
@@ -220,7 +219,7 @@ export function PricingCard({
             savePercent && (
               <Badge
                 variant="secondary"
-                className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+                className="ml-1 border-border bg-transparent text-foreground"
               >
                 {t('savePercent', { percent: savePercent })}
               </Badge>
@@ -291,10 +290,7 @@ export function PricingCard({
         {/* show trial period if it exists */}
         {hasTrialPeriod && (
           <div className="my-4">
-            <span
-              className="inline-block px-2.5 py-1.5 text-xs font-medium rounded-md
-            bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800 shadow-sm"
-            >
+            <span className="inline-block rounded-md border border-primary/20 bg-primary/10 px-2.5 py-1.5 text-xs font-medium text-primary shadow-sm">
               {t('daysTrial', { days: price.trialPeriodDays as number })}
             </span>
           </div>
@@ -315,7 +311,7 @@ export function PricingCard({
                       {tag && (
                         <Badge
                           variant="secondary"
-                          className="ml-1 border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/40 dark:text-amber-200"
+                          className="ml-1 border-border bg-transparent text-foreground"
                         >
                           {tag}
                         </Badge>

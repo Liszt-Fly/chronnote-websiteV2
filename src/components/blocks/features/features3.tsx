@@ -1,103 +1,60 @@
 import { HeaderSection } from '@/components/layout/header-section';
-import {
-  CpuIcon,
-  FingerprintIcon,
-  PencilIcon,
-  Settings2Icon,
-  SparklesIcon,
-  ZapIcon,
-} from 'lucide-react';
+import { CpuIcon, FingerprintIcon, ZapIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-/**
- * https://nsui.irung.me/features
- * pnpm dlx shadcn@canary add https://nsui.irung.me/r/features-4.json
- */
+const icons = [ZapIcon, CpuIcon, FingerprintIcon];
+const featureRows = [
+  {
+    titleKey: 'items.item-1.title',
+    descriptionKey: 'items.item-1.description',
+  },
+  {
+    titleKey: 'items.item-2.title',
+    descriptionKey: 'items.item-2.description',
+  },
+  {
+    titleKey: 'items.item-3.title',
+    descriptionKey: 'items.item-3.description',
+  },
+] as const;
+
 export default function Features3Section() {
   const t = useTranslations('HomePage.features3');
 
   return (
-    <section id="features3" className="px-4 py-16">
-      <div className="mx-auto max-w-6xl space-y-8 lg:space-y-20">
+    <section id="features3" className="temple-section px-4">
+      <div className="mx-auto max-w-5xl space-y-8">
         <HeaderSection
           title={t('title')}
           subtitle={t('subtitle')}
           subtitleAs="h2"
           description={t('description')}
-          descriptionAs="p"
         />
 
-        <div className="relative mx-auto grid divide-x divide-y border *:p-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <ZapIcon className="size-4" />
-              <h3 className="text-base font-medium">
-                {t('items.item-1.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-1.description')}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <CpuIcon className="size-4" />
-              <h3 className="text-base font-medium">
-                {t('items.item-2.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-2.description')}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <FingerprintIcon className="size-4" />
-
-              <h3 className="text-base font-medium">
-                {t('items.item-3.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-3.description')}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <PencilIcon className="size-4" />
-
-              <h3 className="text-base font-medium">
-                {t('items.item-4.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-4.description')}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Settings2Icon className="size-4" />
-
-              <h3 className="text-base font-medium">
-                {t('items.item-5.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-5.description')}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <SparklesIcon className="size-4" />
-
-              <h3 className="text-base font-medium">
-                {t('items.item-6.title')}
-              </h3>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              {t('items.item-6.description')}
-            </p>
-          </div>
+        <div className="space-y-0 border-t border-border/70">
+          {icons.map((Icon, index) => (
+            <article
+              key={index}
+              className="grid gap-3 border-b border-border/70 py-5 md:grid-cols-[0.12fr_0.28fr_1fr]"
+            >
+              <div className="flex items-start">
+                <div className="flex size-8 items-center justify-center border-l-2 border-primary/60 pl-3">
+                  <Icon className="size-3.5 text-primary" />
+                </div>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-2 text-[1rem] font-medium text-foreground">
+                  {t(featureRows[index].titleKey)}
+                </h3>
+              </div>
+              <p className="text-sm leading-7 text-muted-foreground">
+                {t(featureRows[index].descriptionKey)}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
