@@ -347,16 +347,16 @@
   "Marketing": {
     "navbar": {
       "features": {
-        "title": "分廊"
+        "title": "功能"
       },
       "download": {
-        "title": "入藏"
+        "title": "下载"
       },
       "community": {
-        "title": "往来"
+        "title": "社区"
       },
       "pricing": {
-        "title": "誓约"
+        "title": "价格"
       },
       "blog": {
         "title": "博客"
@@ -492,9 +492,9 @@
       "product": {
         "title": "主殿",
         "items": {
-          "features": "分廊",
-          "download": "入藏",
-          "pricing": "誓约",
+          "features": "功能",
+          "download": "下载",
+          "pricing": "价格",
           "faq": "附录"
         }
       },

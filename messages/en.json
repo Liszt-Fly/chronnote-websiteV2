@@ -347,16 +347,16 @@
   "Marketing": {
     "navbar": {
       "features": {
-        "title": "Chambers"
+        "title": "Features"
       },
       "download": {
-        "title": "Entry"
+        "title": "Download"
       },
       "community": {
-        "title": "Correspondence"
+        "title": "Community"
       },
       "pricing": {
-        "title": "Covenant"
+        "title": "Pricing"
       },
       "blog": {
         "title": "Blog"
@@ -492,9 +492,9 @@
       "product": {
         "title": "Main Hall",
         "items": {
-          "features": "Chambers",
-          "download": "Entry",
-          "pricing": "Covenant",
+          "features": "Features",
+          "download": "Download",
+          "pricing": "Pricing",
           "faq": "Appendix"
         }
       },
