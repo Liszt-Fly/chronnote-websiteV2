@@ -86,8 +86,8 @@
       "notAvailable": "不可用",
       "daysTrial": "{days} 天试用期",
       "limitedSlots": "限量 {count} 个名额",
-      "proCreditBenefitMonthly": "在免费用户的基础上额外赠送3000积分（对应1.5元额度）",
-      "proCreditBenefitYearly": "在免费用户的基础上额外赠送30000积分（对应15元额度）"
+      "proCreditBenefitMonthly": "每月赠送 1500 积分（对应 1.5 元额度）",
+      "proCreditBenefitYearly": "每年共赠送 18000 积分（每月 1500 积分，对应 18 元额度）"
     },
     "CheckoutButton": {
       "loading": "加载中...",
@@ -97,31 +97,31 @@
   "PricePlans": {
     "free": {
       "name": "Free",
-      "description": "知识较少，轻度记录和存储",
+      "description": "适合轻度记录与本地知识管理",
       "features": {
         "feature-1": "最多100个原子",
-        "feature-2": "赠送1500初始额度积分",
-        "feature-3": "无限制批量导出",
-        "feature-4": "",
-        "feature-5": "永久更新"
+        "feature-2": "初始赠送 1500 积分（对应 1.5 元额度）",
+        "feature-3": "本地存储与基础编辑",
+        "feature-4": "无限批量导出",
+        "feature-5": ""
       },
       "limits": {
-        "limit-1": "",
-        "limit-2": "",
-        "limit-3": ""
+        "limit-1": "不支持云同步",
+        "limit-2": "不支持高级自动化",
+        "limit-3": "社区支持"
       }
     },
     "pro": {
       "name": "Pro",
-      "description": "专业人士的高级功能",
+      "description": "适合重度写作者与知识工作者",
       "features": {
-        "feature-1": "免费版的所有权益",
-        "feature-2": "无限制数量的原子",
-        "feature-3": "在免费用户的基础上额外赠送3000积分（对应1.5元额度）",
-        "feature-4": "",
-        "feature-5": "",
+        "feature-1": "无限原子数量",
+        "feature-2": "每月赠送 1500 积分（对应 1.5 元额度）",
+        "feature-3": "本地存储与基础编辑",
+        "feature-4": "无限批量导出",
+        "feature-5": "10GB 存储空间",
         "feature-6": "",
-        "feature-7": "云同步（后续上线），支持 5GB 存储空间"
+        "feature-7": ""
       },
       "limits": {
         "limit-1": "",
@@ -130,12 +130,12 @@
     },
     "lifetime": {
       "name": "永久版",
-      "description": "一次性付款获得所有高级功能",
+      "description": "一次性付费，长期使用全部高级功能",
       "features": {
-        "feature-1": "所有专业版功能",
-        "feature-2": "5GB存储空间",
-        "feature-3": "在免费用户的基础上额外赠送100000积分（对应50元额度）",
-        "feature-4": "云同步（后续上线），支持 5GB 存储空间"
+        "feature-1": "无限原子数量",
+        "feature-2": "一次性赠送 100000 积分（对应 100 元额度）",
+        "feature-3": "无限批量导出",
+        "feature-4": "10GB 存储空间"
       }
     }
   },

@@ -43,7 +43,7 @@ export default function Pricing() {
               <ul className="list-outside space-y-3 text-sm">
                 {[
                   'Basic Analytics Dashboard',
-                  '5GB Cloud Storage',
+                  '10GB Cloud Storage',
                   'Email and Chat Support',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function Pricing() {
               <ul className="list-outside space-y-3 text-sm">
                 {[
                   'Everything in Free Plan',
-                  '5GB Cloud Storage',
+                  '10GB Cloud Storage',
                   'Email and Chat Support',
                   'Access to Community Forum',
                   'Single User Access',
@@ -120,7 +120,7 @@ export default function Pricing() {
               <ul className="list-outside space-y-3 text-sm">
                 {[
                   'Everything in Pro Plan',
-                  '5GB Cloud Storage',
+                  '10GB Cloud Storage',
                   'Email and Chat Support',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2">

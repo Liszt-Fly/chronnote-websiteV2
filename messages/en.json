@@ -86,8 +86,8 @@
       "notAvailable": "Not Available",
       "daysTrial": "{days}-day free trial",
       "limitedSlots": "Limited to {count} spots",
-      "proCreditBenefitMonthly": "20,000 bonus AI credits (equivalent to CNY 10) (Early Bird)",
-      "proCreditBenefitYearly": "Additional 30,000 credits on top of the Free plan (equivalent to CNY 15)"
+      "proCreditBenefitMonthly": "1,500 credits per month (about CNY 1.5 value)",
+      "proCreditBenefitYearly": "18,000 credits per year (1,500 per month, about CNY 18 value)"
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -97,13 +97,13 @@
   "PricePlans": {
     "free": {
       "name": "Free",
-      "description": "Start your personal knowledge base",
+      "description": "For light note-taking and local knowledge management",
       "features": {
-        "feature-1": "Local storage & basic editing",
-        "feature-2": "Daily AI credits refill (base quota)",
-        "feature-3": "Command palette & shortcuts",
-        "feature-4": "AI with your own API key",
-        "feature-5": "Ongoing updates & maintenance"
+        "feature-1": "Up to 100 atoms",
+        "feature-2": "1,500 initial credits (about CNY 1.5 value)",
+        "feature-3": "Local storage and basic editing",
+        "feature-4": "Unlimited bulk export",
+        "feature-5": ""
       },
       "limits": {
         "limit-1": "No cloud sync",
@@ -115,13 +115,13 @@
       "name": "Pro",
       "description": "For heavy writers and knowledge workers",
       "features": {
-        "feature-1": "Everything in Free",
-        "feature-2": "Advanced search & bulk ops",
-        "feature-3": "Auto backup & history",
-        "feature-4": "Daily AI credits refill (4× Free plan quota)",
-        "feature-5": "",
+        "feature-1": "Unlimited atoms",
+        "feature-2": "1,500 credits per month (about CNY 1.5 value)",
+        "feature-3": "Local storage and basic editing",
+        "feature-4": "Unlimited bulk export",
+        "feature-5": "10GB storage",
         "feature-6": "",
-        "feature-7": "Cloud sync (coming soon), 5GB storage"
+        "feature-7": ""
       },
       "limits": {
         "limit-1": "—",
@@ -130,12 +130,12 @@
     },
     "lifetime": {
       "name": "Lifetime",
-      "description": "One-time purchase for all advanced features",
+      "description": "One-time purchase for long-term access to all advanced features",
       "features": {
-        "feature-1": "All Pro features",
-        "feature-2": "5GB storage",
-        "feature-3": "Additional 100,000 credits on top of the Free plan (equivalent to CNY 50)",
-        "feature-4": "Cloud sync (coming soon), 5GB storage"
+        "feature-1": "Unlimited atoms",
+        "feature-2": "One-time 100,000 credits included (about CNY 100 value)",
+        "feature-3": "Unlimited bulk export",
+        "feature-4": "10GB storage"
       }
     }
   },
