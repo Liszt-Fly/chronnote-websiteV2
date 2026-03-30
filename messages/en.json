@@ -87,7 +87,7 @@
       "daysTrial": "{days}-day free trial",
       "limitedSlots": "Limited to {count} spots",
       "proCreditBenefitMonthly": "1,500 credits per month (about CNY 1.5 value)",
-      "proCreditBenefitYearly": "18,000 credits per year (1,500 per month, about CNY 18 value)"
+      "proCreditBenefitYearly": "1,500 credits per month (about CNY 1.5 value)"
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -106,9 +106,9 @@
         "feature-5": ""
       },
       "limits": {
-        "limit-1": "No cloud sync",
-        "limit-2": "No advanced automation",
-        "limit-3": "Community support"
+        "limit-1": "",
+        "limit-2": "",
+        "limit-3": ""
       }
     },
     "pro": {
