@@ -8,9 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { useCurrentUser } from '@/hooks/use-current-user';
-import { useMounted } from '@/hooks/use-mounted';
-import { useLocalePathname } from '@/i18n/navigation';
 import { formatPrice } from '@/lib/formatter';
 import { cn } from '@/lib/utils';
 import {
@@ -23,7 +20,6 @@ import {
 } from '@/payment/types';
 import { CheckCircleIcon, XCircleIcon } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { LoginWrapper } from '../auth/login-wrapper';
 import { Badge } from '../ui/badge';
 
 const LIFETIME_EARLY_BIRD_SLOTS = 699;
@@ -118,9 +114,6 @@ export function PricingCard({
   const t = useTranslations('PricingPage.PricingCard');
   const locale = useLocale();
   const price = getPriceForPlan(plan, interval, paymentType);
-  const currentUser = useCurrentUser();
-  const currentPath = useLocalePathname();
-  const mounted = useMounted();
   // console.log('pricing card, currentPath', currentPath);
 
   const isEarlyBirdPlan = plan.id === 'pro' || plan.id === 'lifetime';
@@ -239,17 +232,9 @@ export function PricingCard({
             {actionLabel}
           </Button>
         ) : plan.isFree ? (
-          mounted && currentUser ? (
-            <Button variant="outline" className="mt-4 w-full disabled">
-              {t('getStartedForFree')}
-            </Button>
-          ) : (
-            <LoginWrapper mode="modal" asChild callbackUrl={currentPath}>
-              <Button variant="outline" className="mt-4 w-full cursor-pointer">
-                {t('getStartedForFree')}
-              </Button>
-            </LoginWrapper>
-          )
+          <Button variant="outline" className="mt-4 w-full" disabled>
+            {t('getStartedForFree')}
+          </Button>
         ) : isCurrentPlan ? (
           <Button
             disabled
