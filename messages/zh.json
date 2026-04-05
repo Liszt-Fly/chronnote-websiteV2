@@ -85,7 +85,9 @@
       "getStarted": "开始免费试用",
       "notAvailable": "不可用",
       "daysTrial": "{days} 天试用期",
-      "limitedSlots": "限量 {count} 个名额"
+      "limitedSlots": "限量 {count} 个名额",
+      "buyInApp": "前往 App 购买",
+      "buyInAppHint": "请在 App 左下角点击「会员充值」完成购买"
     },
     "CheckoutButton": {
       "loading": "加载中...",
@@ -104,7 +106,7 @@
         "feature-5": ""
       },
       "limits": {
-        "limit-1": "",
+        "limit-1": "仅限 1 个工作区",
         "limit-2": "",
         "limit-3": ""
       }

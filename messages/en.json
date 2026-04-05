@@ -85,7 +85,9 @@
       "getStarted": "Get Started",
       "notAvailable": "Not Available",
       "daysTrial": "{days}-day free trial",
-      "limitedSlots": "Limited to {count} spots"
+      "limitedSlots": "Limited to {count} spots",
+      "buyInApp": "Purchase in App",
+      "buyInAppHint": "Open the App → bottom-left corner → tap \"Membership\""
     },
     "CheckoutButton": {
       "loading": "Loading...",
@@ -104,7 +106,7 @@
         "feature-5": ""
       },
       "limits": {
-        "limit-1": "",
+        "limit-1": "1 workspace only",
         "limit-2": "",
         "limit-3": ""
       }

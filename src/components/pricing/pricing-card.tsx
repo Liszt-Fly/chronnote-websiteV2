@@ -25,10 +25,9 @@ import { CheckCircleIcon, XCircleIcon } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { LoginWrapper } from '../auth/login-wrapper';
 import { Badge } from '../ui/badge';
-import { CheckoutButton } from './create-checkout-button';
 
 const LIFETIME_EARLY_BIRD_SLOTS = 699;
-const PRICING_CTA_DISABLED = true;
+const PRICING_CTA_DISABLED = false;
 
 interface PricingCardProps {
   plan: PricePlan;
@@ -260,23 +259,14 @@ export function PricingCard({
             {t('yourCurrentPlan')}
           </Button>
         ) : isPaidPlan ? (
-          mounted && currentUser ? (
-            <CheckoutButton
-              userId={currentUser.id}
-              planId={plan.id}
-              priceId={price.priceId}
-              metadata={metadata}
-              className="mt-4 w-full cursor-pointer"
-            >
-              {plan.isLifetime ? t('getLifetimeAccess') : t('getStarted')}
-            </CheckoutButton>
-          ) : (
-            <LoginWrapper mode="modal" asChild callbackUrl={currentPath}>
-              <Button variant="default" className="mt-4 w-full cursor-pointer">
-                {t('getStarted')}
-              </Button>
-            </LoginWrapper>
-          )
+          <div className="mt-4 space-y-2">
+            <Button variant="default" className="w-full cursor-default" disabled>
+              {t('buyInApp')}
+            </Button>
+            <p className="text-center text-xs text-muted-foreground">
+              {t('buyInAppHint')}
+            </p>
+          </div>
         ) : (
           <Button disabled className="mt-4 w-full">
             {t('notAvailable')}
