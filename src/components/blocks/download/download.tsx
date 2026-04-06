@@ -6,8 +6,6 @@ import { Apple, Globe, Laptop, Smartphone, TabletSmartphone } from 'lucide-react
 import { useTranslations } from 'next-intl';
 import { type ReactNode, useEffect, useState } from 'react';
 
-const FEISHU_FALLBACK_URL =
-  'https://gcne267coy02.feishu.cn/docx/JA1ndaZ2ZosjTmxz4fIc4AqtnCb';
 const INTERNAL_RELEASE_API = '/api/downloads/latest';
 
 interface BuildTarget {
@@ -95,8 +93,6 @@ export default function DownloadSection() {
               info={buildInfo.macIntel}
               loading={loading}
               primaryLabel={t('downloadNow')}
-              fallbackLabel={t('fallbackDownload')}
-              fallbackHref={FEISHU_FALLBACK_URL}
             />
             <DownloadRow
               arch={t('mac.apple')}
@@ -104,8 +100,6 @@ export default function DownloadSection() {
               info={buildInfo.macApple}
               loading={loading}
               primaryLabel={t('downloadNow')}
-              fallbackLabel={t('fallbackDownload')}
-              fallbackHref={FEISHU_FALLBACK_URL}
             />
 
             {/* Windows group */}
@@ -121,8 +115,6 @@ export default function DownloadSection() {
               info={buildInfo.windows}
               loading={loading}
               primaryLabel={t('downloadNow')}
-              fallbackLabel={t('fallbackDownload')}
-              fallbackHref={FEISHU_FALLBACK_URL}
             />
 
             {/* Other platforms */}
@@ -187,16 +179,12 @@ function DownloadRow({
   info,
   loading,
   primaryLabel,
-  fallbackLabel,
-  fallbackHref,
 }: {
   arch: string;
   badge: string;
   info: BuildTarget;
   loading: boolean;
   primaryLabel: string;
-  fallbackLabel: string;
-  fallbackHref: string;
 }) {
   const t = useTranslations('HomePage.download');
   const versionLabel = info.version
@@ -236,27 +224,6 @@ function DownloadRow({
           >
             <a href={info.url} target="_blank" rel="noreferrer">
               {primaryLabel}
-            </a>
-          </Button>
-        )}
-        {loading ? (
-          <Button
-            size="sm"
-            variant="outline"
-            className="h-8 rounded-md px-3.5 text-xs font-medium"
-            disabled
-          >
-            {fallbackLabel}
-          </Button>
-        ) : (
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="h-8 rounded-md px-3.5 text-xs font-medium"
-          >
-            <a href={fallbackHref} target="_blank" rel="noreferrer">
-              {fallbackLabel}
             </a>
           </Button>
         )}
